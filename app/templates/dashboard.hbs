@@ -1,15 +1,78 @@
 {{page-title "Dashboard"}}
-{{outlet}}
-
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-    <div class="card-title">
-        {{this.number}}
+<div class="row">
+    <div class="col">
+        <div class="card" style="width: 60rem;">
+            <div class="card-body">
+                <div class="card-title">
+                    {{this.number}}
+                </div>
+                {{ember-chart
+                type="line"
+                data=this.data
+                options=this.options
+                }}
+            </div>
+        </div>
     </div>
-        {{ember-chart
-        type="line"
-        data=this.data
-        options=this.options
-        }}
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <div class="card-title">
+                    {{this.number}}
+                </div>
+                {{ember-chart
+                type="line"
+                data=this.data
+                options=this.options
+                }}
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<div class="row">
+    <div class="card mr-4" style="width: 19rem;">
+        <div class="col-md">
+            <div class="card-body">
+                <div class="card-title">
+                    {{this.number}}
+                </div>
+                {{ember-chart
+                type="line"
+                data=this.data
+                options=this.options
+                }}
+            </div>
+        </div>
+    </div>
+    <div class="card mr-4" style="width: 19rem;">
+        <div class="col-md">
+            <div class="card-body">
+                <div class="card-title">
+                    {{this.number}}
+                </div>
+                {{ember-chart
+                type="line"
+                data=this.data
+                options=this.options
+                }}
+            </div>
+        </div>
+    </div>
+    <div class="card mr-4" style="width: 19rem;">
+        <div class="col-md">
+            <div class="card-body">
+                <div class="card-title">
+                    {{this.number}}
+                </div>
+                {{ember-chart
+                type="line"
+                data=this.data
+                options=this.options
+                }}
+            </div>
+        </div>
     </div>
 </div>
