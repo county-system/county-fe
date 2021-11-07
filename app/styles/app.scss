@@ -1,0 +1,31 @@
+// @import "bootstrap";
+
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow-x: hidden;
+    color: #fff;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    font-family: 'Lobster', cursive;
+    font-weight: 300;
+    font-size: 2.5em;
+}
+
+
+@import "ember-bootstrap/bootstrap";
+@import 'side-nav';

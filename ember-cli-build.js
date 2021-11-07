@@ -6,7 +6,17 @@ module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
     'ember-bootstrap': {
       bootstrapVersion: 4,
-      importBootstrapCSS: true,
+      importBootstrapFont: false,
+      importBootstrapCSS: false,
+    },
+    cssModules: {
+      intermediateOutputPath: 'app/styles/app.scss',
+      extension: 'scss',
+      headerModules: ['county-fe/styles/app'],
+    },
+    minifyCSS: {
+      enabled: true,
+      options: { processImport: true },
     },
   });
 
