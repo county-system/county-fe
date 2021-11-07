@@ -9,7 +9,7 @@
 
 label[for="sidebar-btn"] {
     position: fixed;
-    left: 15px;
+    left: 0px;
     top: 15px;
     z-index: 2;
     height: 30px;
@@ -42,13 +42,13 @@ label[for="sidebar-btn"] {
     bottom: 0;
     left: 0;
     z-index: 0;
-    background-color: #c0392b;
+    background-color: #000000;
 }
 
 .sidebar li .nav-item {
     background-color: #c0392b;
     padding: 1em;
-    color: #fff;
+    color: #56983F;
     width: 300px;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 400;
@@ -68,12 +68,18 @@ label[for="sidebar-btn"] {
 
 .sidebar li .nav-link {
     text-decoration: none;
-    color: #fff;
+    color: #56983F;
     font-family: 'Ubuntu', sans-serif;
 }
 
-.sidebar li .nav-item:hover {
-    background-color: #962d22;
+.sidebar li .nav-item a:hover,
+.sidebar li .nav-item a .active {
+    background-color: #56983F;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    background-color: #56983F;
 }
 
 .content {
