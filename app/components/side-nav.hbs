@@ -1,33 +1,28 @@
-{{!-- {{yield}} --}}
-<BsNav @type="tabs" @justified={{false}} @stacked={{true}} @fill={{false}} as |nav|>
-    <nav.item>
-        <nav.link-to @route="index">Home</nav.link-to>
-    </nav.item>
-    <nav.item>
-        <nav.link-to @route="index">Home</nav.link-to>
-    </nav.item>
-    <nav.item>
-        <nav.link-to @route="index">Home</nav.link-to>
-    </nav.item>
-    <nav.item>
-        <nav.link-to @route="index">Home</nav.link-to>
-    </nav.item>
-    <nav.item>
-        <nav.link-to @route="index">Home</nav.link-to>
-    </nav.item>
-    <nav.item>
-        <nav.link-to @route="index">Home</nav.link-to>
-    </nav.item>
-    <nav.item>
-        <nav.link-to @route="index">Home</nav.link-to>
-    </nav.item>
-    <nav.item>
-        <nav.link-to @route="index">Home</nav.link-to>
-    </nav.item>
+{{!-- <ul class="sidebar">
+    <li>Home</li>
+    <li><a href="/users">Users</a></li>
+    <li>Details</li>
+    <li>Where to buy</li>
+    <li>Contact</li>
+    <li>About</li>
+</ul> --}}
 
+<BsNav class="sidebar" @type="pills" @justified={{false}} @stacked={{true}} @fill={{false}} as |nav|>
+    <nav.item>
+        <nav.link-to @route="index">Home</nav.link-to>
+    </nav.item>
+    <nav.item>
+        <nav.link-to @route="users">Users</nav.link-to>
+    </nav.item>
+    <nav.item>
+        <nav.link-to @route="users">Users</nav.link-to>
+    </nav.item>
+    <nav.item>
+        <nav.link-to @route="users">Users</nav.link-to>
+    </nav.item>
     <nav.dropdown as |dd|>
         <dd.toggle>
-            Dropdown
+            Profile
             <span class="caret"></span>
         </dd.toggle>
         <dd.menu as |ddm|>
@@ -40,3 +35,6 @@
         </dd.menu>
     </nav.dropdown>
 </BsNav>
+
+<input type="checkbox" id="sidebar-btn" class="sidebar-btn" checked />
+<label for="sidebar-btn"></label>
