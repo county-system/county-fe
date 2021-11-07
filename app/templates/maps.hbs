@@ -1,0 +1,28 @@
+{{page-title "Maps"}}
+{{!-- {{outlet}} --}}
+<div class="leaflet-container">
+
+<LeafletMap @lat={{lat}} @lng={{lng}} @zoom={{zoom}} as |layers|>
+
+  <layers.tile @url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"/>
+
+  <layers.marker @location={{emberConfLocation}} as |marker|>
+    <marker.popup>
+      <h3>The Oregon Convention Center</h3>
+      777 NE Martin Luther King Jr Blvd<br>
+      Portland, OR 97232
+    </marker.popup>
+  </layers.marker>
+
+  <layers.marker @location={{hotel}} as |marker|>
+    <marker.popup>
+      <h3>Hotel</h3>
+    </marker.popup>
+  </layers.marker>
+
+</LeafletMap>
+</div>
+
+<p>
+    Specify child layer components here
+</p>

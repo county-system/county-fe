@@ -15,7 +15,7 @@ label[for="sidebar-btn"] {
     height: 30px;
     width: 30px;
     cursor: pointer;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect style='fill:rgb(255,255,255)' width='15' height='3'/><rect style='fill:rgb(255,255,255)' y='8' width='20' height='3'/><rect style='fill:rgb(255,255,255)' y='16' width='25' height='3'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect style='fill:rgb(150, 45, 34)' width='15' height='3'/><rect style='fill:rgb(150, 45, 34)' y='8' width='20' height='3'/><rect style='fill:rgb(150, 45, 34)' y='16' width='25' height='3'/></svg>");
     background-size: contain;
 }
 
@@ -79,7 +79,7 @@ label[for="sidebar-btn"] {
 .content {
     min-height: 100%;
     min-width: 100%;
-    background-color: #34495e;
+    background-color: #fff;
     position: relative;
     top: 0;
     bottom: 100%;
