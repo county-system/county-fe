@@ -1,20 +1,32 @@
 {{page-title "Maps"}}
 {{!-- {{outlet}} --}}
-<div class="mt-4 border border-success">
-      <LeafletMap @lat={{lat}} @lng={{lng}} @zoom={{zoom}} as |layers|>
-
-        <layers.tile @url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png" />
-
-        {{#each this.full as |f|}}
-        <layers.marker @location={{f}} as |marker|>
-          <marker.tooltip>
-            <p>{{this.emberConfLocationData}}</p>
-          </marker.tooltip>
-        </layers.marker>
-        {{/each}}
-
-        <layers.polyline @locations={{this.full}} />
-
-      </LeafletMap>
-
+{{!-- {{#each map in maps}}
+<div class="map-container">
+  <div class="map-title">
+    {{map.title}}
+  </div>
+  <div class="map-image">
+    <img src="{{map.image}}" alt="{{map.title}}">
+  </div>
+  <div class="map-description">
+    {{map.description}}
+  </div>
 </div>
+{{/each}} --}}
+
+
+<LeafletMap @lat={{lat}} @lng={{lng}} @zoom={{zoom}} as |layers|>
+
+  <layers.tile @url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png" />
+
+  {{#each this.full as |f|}}
+  <layers.marker @location={{f}} as |marker|>
+    <marker.tooltip>
+      <p>{{this.emberConfLocationData}}</p>
+    </marker.tooltip>
+  </layers.marker>
+  {{/each}}
+
+  <layers.polyline @locations={{this.full}} />
+
+</LeafletMap>

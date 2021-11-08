@@ -28,6 +28,7 @@
     "@ember/test-helpers": "^2.4.2",
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
+    "@kurkle/color": "^0.1.9",
     "babel-eslint": "^10.1.0",
     "bootstrap": "^4.6.0",
     "broccoli-asset-rev": "^3.0.0",
