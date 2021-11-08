@@ -1,12 +1,3 @@
-{{!-- <ul class="sidebar">
-    <li>Home</li>
-    <li><a href="/users">Users</a></li>
-    <li>Details</li>
-    <li>Where to buy</li>
-    <li>Contact</li>
-    <li>About</li>
-</ul> --}}
-
 <BsNav class="sidebar" @type="pills" @justified={{false}} @stacked={{true}} @fill={{false}} as |nav|>
     <nav.item>
         <nav.link-to @route="index">Home</nav.link-to>
@@ -19,15 +10,15 @@
     </nav.item>
     <nav.dropdown as |dd|>
         <dd.toggle>
-            Profile
+            Ministries
             <span class="caret"></span>
         </dd.toggle>
         <dd.menu as |ddm|>
             <ddm.item>
-                <ddm.link-to @route="index">Home</ddm.link-to>
+                <ddm.link-to @route="index">Projects</ddm.link-to>
             </ddm.item>
             <ddm.item>
-                <ddm.link-to @route="users">Users</ddm.link-to>
+                <ddm.link-to @route="users">KPI</ddm.link-to>
             </ddm.item>
         </dd.menu>
     </nav.dropdown>

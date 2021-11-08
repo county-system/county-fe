@@ -10,6 +10,29 @@ export default class DashboardController extends Controller {
   totalApproved = 0;
   totalRejected = 0;
 
+  reports = [
+    {
+      title: 'Total Submitted Reports',
+      number: 72,
+      shade: 'blue',
+    },
+    {
+      title: 'Pending Reports',
+      number: 72,
+      shade: 'blue',
+    },
+    {
+      title: 'Total Submitted Reports',
+      number: 72,
+      shade: 'blue',
+    },
+    {
+      title: 'Total Submitted Reports',
+      number: 72,
+      shade: 'blue',
+    },
+  ];
+
   reportsPending = [];
   reportsAwaitingApproval = [];
 
