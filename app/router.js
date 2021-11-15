@@ -10,4 +10,5 @@ Router.map(function () {
   this.route('users');
   this.route('dashboard');
   this.route('maps');
+  this.route('kpi');
 });
