@@ -1,14 +1,17 @@
 import Controller from '@ember/controller';
 import { set } from '@ember/object';
 import colorLib from '@kurkle/color';
+import { tracked } from '@glimmer/tracking';
 
 export default class DashboardController extends Controller {
-  totalReports = 0;
-  totalUsers = 0;
-  pendingReports = 0;
-  awaitingApproval = 0;
-  totalApproved = 0;
-  totalRejected = 0;
+  @tracked totalReports = 0;
+  @tracked totalUsers = 0;
+  @tracked pendingReports = 0;
+  @tracked awaitingApproval = 0;
+  @tracked totalApproved = 0;
+  @tracked totalRejected = 0;
+  @tracked type = 'line';
+
 
   reports = [
     {
@@ -65,34 +68,21 @@ export default class DashboardController extends Controller {
         data: [12, 19, 3, 5, 2, 3],
         // borderWidth: 1,
         // borderColor: 'rgb(54, 162, 235)',
-        // backgroundColor: this.transparentize('rgb(54, 162, 235)', 0.5),
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)',
-        ],
+        backgroundColor: this.transparentize('rgb(54, 162, 235)', 1),
+        borderColor: 'rgba(255, 99, 132, 1)',
         borderWidth: 1,
       },
     ],
   };
 
-  type = 'bar';
   options = {
     responsive: true,
     scales: {
+      x: {
+        display: false,
+      },
       y: {
-        beginAtZero: true,
+        display: false,
       },
     },
     plugins: {
