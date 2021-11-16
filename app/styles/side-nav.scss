@@ -70,16 +70,22 @@ label[for="sidebar-btn"] {
     text-decoration: none;
     color: #56983F;
     font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
 }
 
 .sidebar li .nav-item a:hover,
 .sidebar li .nav-item a .active {
     background-color: #56983F;
 }
+.nav-pills .nav-link svg{
+    fill: #56983F;
+}
 
 .nav-pills .nav-link.active,
-.nav-pills .show>.nav-link {
+.nav-pills .show>.nav-link,
+.nav-pills .nav-link.active svg {
     background-color: #56983F;
+    fill: #fff;
 }
 
 .content {

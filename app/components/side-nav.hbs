@@ -1,8 +1,6 @@
 <BsNav class="sidebar" @type="pills" @justified={{false}} @stacked={{true}} @fill={{false}} as |nav|>
     <nav.dropdown as |dd|>
-        <dd.toggle>
-            Dashboard
-            <span class="caret"></span>
+        <dd.toggle> {{svg-jar "dashboard_black"}} Dashboard <span class="caret"></span>
         </dd.toggle>
         <dd.menu as |ddm|>
             <ddm.item>
@@ -15,7 +13,7 @@
     </nav.dropdown>
     <nav.dropdown as |dd|>
         <dd.toggle>
-            Ministries
+            {{svg-jar "table_view"}} Ministries
             <span class="caret"></span>
         </dd.toggle>
         <dd.menu as |ddm|>
@@ -28,16 +26,16 @@
         </dd.menu>
     </nav.dropdown>
     <nav.item disabled>
-        <nav.link-to @route="maps">Existing Maps</nav.link-to>
+        <nav.link-to @route="maps">{{svg-jar "map_pin"}} Existing Maps</nav.link-to>
     </nav.item>
     <nav.item disabled>
-        <nav.link-to @route="maps">Downloads</nav.link-to>
+        <nav.link-to @route="maps">{{svg-jar "download"}} Downloads</nav.link-to>
     </nav.item>
     <nav.item>
-        <nav.link-to @route="maps">Systems</nav.link-to>
+        <nav.link-to @route="maps">{{svg-jar "settings_black"}} Settings</nav.link-to>
     </nav.item>
     <nav.item>
-        <nav.link-to @route="maps">Chats</nav.link-to>
+        <nav.link-to @route="maps">{{svg-jar "chat"}} Chats</nav.link-to>
     </nav.item>
 
 </BsNav>
