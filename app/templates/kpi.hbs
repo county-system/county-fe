@@ -28,15 +28,16 @@
 <div class="container mt-1">
     <div class="row justify-content-md-left align-items-center">
         <div class="col">
-            {{!--
-            <Common::Chart-Config @header="Total amount spent" @value={{fomartcurrency totalProjectCosts}} /> --}}
             {{ember-chart
             type=type
-            data=data
+            data=pieData
             options=options
             }}
             {{!-- plugins=CHARTPLUGINS --}}
             {{!-- customLegendElement=CUSTOMLEGENDELEMENT --}}
+
+            {{!-- <Common::Table-Config /> --}}
+
 
         </div>
     </div>

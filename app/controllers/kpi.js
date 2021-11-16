@@ -12,12 +12,12 @@ export default class KpiController extends Controller {
   @tracked incomplete = 0;
   @tracked complete = 0;
   @tracked modelData = [];
+  @tracked totalDatasets = [];
+  @tracked pieData = [];
 
   // get kpi() {
   //   return this.model;
   // }
-
-
 
   CHART_COLORS = {
     red: 'rgb(255, 99, 132)',
@@ -28,6 +28,16 @@ export default class KpiController extends Controller {
     purple: 'rgb(153, 102, 255)',
     grey: 'rgb(201, 203, 207)',
   };
+
+  @action
+  getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
 
   @action
   dropdownData() {
@@ -49,8 +59,7 @@ export default class KpiController extends Controller {
     this.totalProjectCosts = this.filteredKpiData().total;
     this.incomplete = this.filteredKpiData().incomplete;
     this.complete = this.filteredKpiData().complete;
-    this.tableRows = this.tableData().tableRows;
-    this.tableHeaders = this.tableData().tableHeaders;
+    this.pieData = this.pieDataTotalCost();
   }
 
   @action
@@ -85,19 +94,27 @@ export default class KpiController extends Controller {
     let total = [];
 
     data.forEach((item) => {
-      if (item.implementing_entity === this.value) {
-        if (item.implementing_entity === this.value) {
-          // total += parseInt(item.project_cost, 10);
-          total.push(parseInt(item.project_cost, 10));
-          labels.push(item.sub_county);
-        }
-      }
+      // if (item.implementing_entity === this.value) {
+      // total += parseInt(item.project_cost, 10);
+      total.push(parseInt(item.project_cost, 10));
+      labels.push(item.ward);
+      // }
     });
 
-    return {
-      total,
-      labels,
+    const newData = {
+      labels: labels,
+      // labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
+      datasets: [
+        {
+          label: 'Dataset 1',
+          data: total,
+          // data: [12, 19, 5, 2, 3],
+          backgroundColor: Object.values(this.CHART_COLORS),
+          // backgroundColor: this.getRandomColor(),
+        },
+      ],
     };
+    return newData;
   }
 
   @action
@@ -116,6 +133,7 @@ export default class KpiController extends Controller {
       datasets,
     };
   }
+
   options = {
     responsive: true,
     plugins: {
@@ -123,18 +141,5 @@ export default class KpiController extends Controller {
         position: 'top',
       },
     },
-  };
-
-  data = {
-    // labels: this.pieDataTotalCost().labels,
-    labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
-    datasets: [
-      {
-        label: 'Dataset 1',
-        // data: this.pieDataTotalCost().total,
-        data: [12, 19, 5, 2, 3],
-        backgroundColor: Object.values(this.CHART_COLORS),
-      },
-    ],
   };
 }
