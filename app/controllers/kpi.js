@@ -12,8 +12,6 @@ export default class KpiController extends Controller {
   @tracked incomplete = 0;
   @tracked complete = 0;
   @tracked modelData = [];
-  @tracked tableRows = [];
-  @tracked tableHeaders = [];
 
   // get kpi() {
   //   return this.model;
@@ -68,30 +66,8 @@ export default class KpiController extends Controller {
     };
   }
 
-  // rows = [
-  //   {
-  //     open: '8AM',
-  //     close: '8PM',
-  //   },
-  //   {
-  //     open: '11AM',
-  //     close: '9PM',
-  //   },
-  // ];
-
-  // columns = [
-  //   {
-  //     name: `Open time`,
-  //     valuePath: `open`,
-  //   },
-  //   {
-  //     name: `Close time`,
-  //     valuePath: `close`,
-  //   },
-  // ];
-
   @action
-  tableData() {
+  pieDataTotalCost() {
     const data = this.modelData;
     const tableHeaders = [];
     const tableRows = [];

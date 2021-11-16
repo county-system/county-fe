@@ -26,11 +26,9 @@
     </div>
 </div>
 <div class="container mt-1">
-    {{log tableRows}}
-    <ModelsTable @data={{tableRows}} @columns={{tableHeaders}}  />
-</div>
-{{!-- <div class="container mt-3">
-    <div class="row justify-content-md-left align-items-left">
-        <Common::Chart-Config @data={{data}} @type={{type}} @options={{options}} />
+    <div class="row justify-content-md-left align-items-center">
+        <div class="col">
+            <Common::Chart-Config @header="Total amount spent" @value={{fomartcurrency totalProjectCosts}} />
+        </div>
     </div>
-</div> --}}
+</div>
