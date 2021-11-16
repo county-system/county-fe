@@ -12,13 +12,8 @@ export default class KpiController extends Controller {
   @tracked totalProjectCosts = 0;
   @tracked incomplete = 0;
   @tracked complete = 0;
-  // @tracked modelData = [];
   @tracked totalDatasets = [];
   @tracked pieData = this.pieDataTotalCost();
-
-  // get kpi() {
-  //   return this.model;
-  // }
 
   CHART_COLORS = {
     red: 'rgb(255, 99, 132)',
@@ -89,30 +84,57 @@ export default class KpiController extends Controller {
     };
   }
 
+  // @action
+  // pieDataTotalCost() {
+  //   const data = this.modelData;
+  //   const labels = [];
+  //   let total = [];
+
+  //   data.forEach((item) => {
+  //     total.push(parseInt(item.project_cost, 10));
+  //     labels.push(item.ward);
+  //   });
+
+  //   const newData = {
+  //     labels: labels,
+  //     datasets: [
+  //       {
+  //         label: 'Dataset 1',
+  //         data: total,
+  //         backgroundColor: Object.values(this.CHART_COLORS),
+  //       },
+  //     ],
+  //   };
+  //   return newData;
+  // }
+
   @action
   pieDataTotalCost() {
     const data = this.modelData;
+    const wards = [];
     const labels = [];
     let total = [];
 
     data.forEach((item) => {
-      // if (item.implementing_entity === this.value) {
-      // total += parseInt(item.project_cost, 10);
-      total.push(parseInt(item.project_cost, 10));
-      labels.push(item.ward);
-      // }
+      if (!wards.includes(item.ward)) {
+        wards[item.ward] = parseInt(item.project_cost, 10);
+      } else if (wards.includes(item.ward)) {
+        wards[item.ward] = wards[item.ward] += parseInt(item.project_cost, 10);
+      }
     });
+
+    for (const key in wards) {
+      total.push(parseInt(wards[key], 10));
+      labels.push(key);
+    }
 
     const newData = {
       labels: labels,
-      // labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
       datasets: [
         {
-          label: 'Dataset 1',
+          label: labels,
           data: total,
-          // data: [12, 19, 5, 2, 3],
           backgroundColor: Object.values(this.CHART_COLORS),
-          // backgroundColor: this.getRandomColor(),
         },
       ],
     };
