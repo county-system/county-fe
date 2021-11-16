@@ -12,7 +12,6 @@ export default class DashboardController extends Controller {
   @tracked totalRejected = 0;
   @tracked type = 'line';
 
-
   reports = [
     {
       title: 'Total Submitted Reports',
