@@ -6,7 +6,7 @@ import { inject as service } from '@ember/service';
 export default class KpiController extends Controller {
   @service store;
   @tracked value;
-  @tracked type = 'bar';
+  @tracked type = 'pie';
   @tracked dropdown = this.dropdownData();
   @tracked totalProjectCosts = 0;
   @tracked incomplete = 0;
@@ -16,6 +16,18 @@ export default class KpiController extends Controller {
   // get kpi() {
   //   return this.model;
   // }
+
+
+
+  CHART_COLORS = {
+    red: 'rgb(255, 99, 132)',
+    orange: 'rgb(255, 159, 64)',
+    yellow: 'rgb(255, 205, 86)',
+    green: 'rgb(75, 192, 192)',
+    blue: 'rgb(54, 162, 235)',
+    purple: 'rgb(153, 102, 255)',
+    grey: 'rgb(201, 203, 207)',
+  };
 
   @action
   dropdownData() {
@@ -69,25 +81,22 @@ export default class KpiController extends Controller {
   @action
   pieDataTotalCost() {
     const data = this.modelData;
-    const tableHeaders = [];
-    const tableRows = [];
+    const labels = [];
+    let total = [];
 
     data.forEach((item) => {
       if (item.implementing_entity === this.value) {
-        for (const [key] of Object.entries(item)) {
-          tableHeaders.push({
-            name: `${key}`,
-            valuePath: `${key}`,
-          });
+        if (item.implementing_entity === this.value) {
+          // total += parseInt(item.project_cost, 10);
+          total.push(parseInt(item.project_cost, 10));
+          labels.push(item.sub_county);
         }
-        tableRows.push(item);
       }
     });
-    console.log(tableRows);
 
     return {
-      tableHeaders,
-      tableRows,
+      total,
+      labels,
     };
   }
 
@@ -117,28 +126,14 @@ export default class KpiController extends Controller {
   };
 
   data = {
-    labels: this.formattedData().labels,
+    // labels: this.pieDataTotalCost().labels,
+    labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
     datasets: [
       {
         label: 'Dataset 1',
-        data: this.formattedData().datasets,
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)',
-        ],
-        borderWidth: 1,
+        // data: this.pieDataTotalCost().total,
+        data: [12, 19, 5, 2, 3],
+        backgroundColor: Object.values(this.CHART_COLORS),
       },
     ],
   };
