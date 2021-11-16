@@ -13,7 +13,8 @@ export default class KpiController extends Controller {
   @tracked incomplete = 0;
   @tracked complete = 0;
   @tracked totalDatasets = [];
-  @tracked pieData = this.pieDataTotalCost();
+  @tracked pieData = this.pieDataTotalCost().newData;
+  @tracked totalWardAmountSpent = this.pieDataTotalCost().totalWardAmount;
 
   CHART_COLORS = {
     red: 'rgb(255, 99, 132)',
@@ -55,8 +56,6 @@ export default class KpiController extends Controller {
     this.totalProjectCosts = this.filteredKpiData().total;
     this.incomplete = this.filteredKpiData().incomplete;
     this.complete = this.filteredKpiData().complete;
-    // this.pieData = this.pieDataTotalCost();
-    // this.modelData = this.model;
   }
 
   @action
@@ -84,47 +83,26 @@ export default class KpiController extends Controller {
     };
   }
 
-  // @action
-  // pieDataTotalCost() {
-  //   const data = this.modelData;
-  //   const labels = [];
-  //   let total = [];
-
-  //   data.forEach((item) => {
-  //     total.push(parseInt(item.project_cost, 10));
-  //     labels.push(item.ward);
-  //   });
-
-  //   const newData = {
-  //     labels: labels,
-  //     datasets: [
-  //       {
-  //         label: 'Dataset 1',
-  //         data: total,
-  //         backgroundColor: Object.values(this.CHART_COLORS),
-  //       },
-  //     ],
-  //   };
-  //   return newData;
-  // }
-
   @action
   pieDataTotalCost() {
     const data = this.modelData;
     const wards = [];
     const labels = [];
-    let total = [];
+    let totalPerWard = [];
+    let totalWardAmount = 0;
 
     data.forEach((item) => {
-      if (!wards.includes(item.ward)) {
+      if (!wards.includes(item.ward) && item.ward !== 'turkana') {
         wards[item.ward] = parseInt(item.project_cost, 10);
-      } else if (wards.includes(item.ward)) {
+        totalWardAmount += parseInt(item.project_cost, 10);
+      } else if (wards.includes(item.ward) && item.ward !== 'turkana') {
         wards[item.ward] = wards[item.ward] += parseInt(item.project_cost, 10);
+        totalWardAmount += parseInt(item.project_cost, 10);
       }
     });
 
     for (const key in wards) {
-      total.push(parseInt(wards[key], 10));
+      totalPerWard.push(parseInt(wards[`${key}`], 10));
       labels.push(key);
     }
 
@@ -132,13 +110,18 @@ export default class KpiController extends Controller {
       labels: labels,
       datasets: [
         {
-          label: labels,
-          data: total,
+          label: 'Total Sum of money allocated',
+          data: totalPerWard,
           backgroundColor: Object.values(this.CHART_COLORS),
         },
       ],
     };
-    return newData;
+    console.log(totalWardAmount);
+
+    return {
+      newData,
+      totalWardAmount,
+    };
   }
 
   @action
