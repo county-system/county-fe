@@ -5,15 +5,16 @@ import { inject as service } from '@ember/service';
 
 export default class KpiController extends Controller {
   @service store;
+  @tracked modelData = this.model;
   @tracked value;
   @tracked type = 'pie';
   @tracked dropdown = this.dropdownData();
   @tracked totalProjectCosts = 0;
   @tracked incomplete = 0;
   @tracked complete = 0;
-  @tracked modelData = [];
+  // @tracked modelData = [];
   @tracked totalDatasets = [];
-  @tracked pieData = [];
+  @tracked pieData = this.pieDataTotalCost();
 
   // get kpi() {
   //   return this.model;
@@ -41,7 +42,7 @@ export default class KpiController extends Controller {
 
   @action
   dropdownData() {
-    this.modelData = this.model;
+    // this.modelData = this.model;
     const dropdown = [];
 
     this.modelData.forEach((item) => {
@@ -59,7 +60,8 @@ export default class KpiController extends Controller {
     this.totalProjectCosts = this.filteredKpiData().total;
     this.incomplete = this.filteredKpiData().incomplete;
     this.complete = this.filteredKpiData().complete;
-    this.pieData = this.pieDataTotalCost();
+    // this.pieData = this.pieDataTotalCost();
+    // this.modelData = this.model;
   }
 
   @action
