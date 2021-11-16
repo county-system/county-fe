@@ -4,14 +4,13 @@
 {{!-- {{#each @chapters as |chapter|}}
 <H5pListItem @chapter={{chapter}} />
 {{/each}} --}}
-{{log this.label}}
 
 <div class="card">
         {{ember-chart
-        type="bar"
-        data=this.data
-        width=900
+        type=@type
+        data=@data
+        width=700
         height=200
-        options=this.options
+        options=@options
         }}
 </div>

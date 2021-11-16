@@ -1,60 +1,169 @@
 import Controller from '@ember/controller';
+import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
+import { inject as service } from '@ember/service';
 
 export default class KpiController extends Controller {
-    // {
-  //     "id": "1245",
-  //     "project_name": "Purchase of poultry equipment and feeds",
-  //     "implementing_entity": "Agriculture, Pastoral Economy and Fisheries",
-  //     "financial_year": "2019/2020",
-  //     "sub_county": "turkana",
-  //     "ward": "",
-  //     "project_status": "tenderawarded",
-  //     "project_cost": "1000000.00"
-  // },
-  // get data() {
-  //   return this.args.data;
-  // }
-  // get chartConfig() {
-  //   return {
-  //     type: 'bar',
-  //     data: this.data,
-  //     options: {
-  //       responsive: true,
-  //       plugins: {
-  //         legend: {
-  //           position: 'top',
-  //         },
-  //         title: {
-  //           display: true,
-  //           text: 'Chart.js Floating Bar Chart',
-  //         },
-  //       },
-  //     },
-  //   };
+  @service store;
+  @tracked value;
+  @tracked type = 'bar';
+  @tracked dropdown = this.dropdownData();
+  @tracked totalProjectCosts = 0;
+  @tracked incomplete = 0;
+  @tracked complete = 0;
+  @tracked modelData = [];
+  @tracked tableRows = [];
+  @tracked tableHeaders = [];
+
+  // get kpi() {
+  //   return this.model;
   // }
 
-  // // get labels() {
-  // //   console.log(this.model, '----');
-  // //   return this.model.map((d) => d.financial_year);
-  // // }
+  @action
+  dropdownData() {
+    this.modelData = this.model;
+    const dropdown = [];
 
-  // data = {
-  //   labels: this.labels,
-  //   datasets: [
-  //     {
-  //       label: 'Dataset 1',
-  //       data: labels.map(() => {
-  //         return [Utils.rand(-100, 100), Utils.rand(-100, 100)];
-  //       }),
-  //       backgroundColor: Utils.CHART_COLORS.red,
-  //     },
-  //     {
-  //       label: 'Dataset 2',
-  //       data: labels.map(() => {
-  //         return [Utils.rand(-100, 100), Utils.rand(-100, 100)];
-  //       }),
-  //       backgroundColor: Utils.CHART_COLORS.blue,
-  //     },
-  //   ],
-  // };
+    this.modelData.forEach((item) => {
+      if (!dropdown.includes(item.implementing_entity)) {
+        dropdown.push(item.implementing_entity);
+      }
+    });
+
+    return dropdown;
+  }
+
+  @action
+  dropdownValue(event) {
+    this.value = event.target.value;
+    this.totalProjectCosts = this.filteredKpiData().total;
+    this.incomplete = this.filteredKpiData().incomplete;
+    this.complete = this.filteredKpiData().complete;
+    this.tableRows = this.tableData().tableRows;
+    this.tableHeaders = this.tableData().tableHeaders;
+  }
+
+  @action
+  filteredKpiData() {
+    const data = this.modelData;
+    let total = 0;
+    let incomplete = 0;
+    let complete = 0;
+
+    data.forEach((item) => {
+      if (item.implementing_entity === this.value) {
+        total += parseInt(item.project_cost, 10);
+        if (item.project_status === 'incomplete') {
+          incomplete += 1;
+        } else if (item.project_status === 'complete') {
+          complete += 1;
+        }
+      }
+    });
+
+    return {
+      incomplete,
+      complete,
+      total,
+    };
+  }
+
+  // rows = [
+  //   {
+  //     open: '8AM',
+  //     close: '8PM',
+  //   },
+  //   {
+  //     open: '11AM',
+  //     close: '9PM',
+  //   },
+  // ];
+
+  // columns = [
+  //   {
+  //     name: `Open time`,
+  //     valuePath: `open`,
+  //   },
+  //   {
+  //     name: `Close time`,
+  //     valuePath: `close`,
+  //   },
+  // ];
+
+  @action
+  tableData() {
+    const data = this.modelData;
+    const tableHeaders = [];
+    const tableRows = [];
+
+    data.forEach((item) => {
+      if (item.implementing_entity === this.value) {
+        for (const [key] of Object.entries(item)) {
+          tableHeaders.push({
+            name: `${key}`,
+            valuePath: `${key}`,
+          });
+        }
+        tableRows.push(item);
+      }
+    });
+    console.log(tableRows);
+
+    return {
+      tableHeaders,
+      tableRows,
+    };
+  }
+
+  @action
+  formattedData(key = 'sub_county', value = 'project_status') {
+    const data = this.modelData;
+    const labels = [];
+    const datasets = [];
+
+    data.forEach((item) => {
+      labels.push(item[key]);
+      datasets.push(item[value]);
+    });
+
+    return {
+      labels,
+      datasets,
+    };
+  }
+  options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+    },
+  };
+
+  data = {
+    labels: this.formattedData().labels,
+    datasets: [
+      {
+        label: 'Dataset 1',
+        data: this.formattedData().datasets,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
 }

@@ -1,8 +1,36 @@
 {{page-title "Kpi"}}
-{{outlet}}
-<div class="">
-    <p class="card-text">
-        you have reached kpi
-    </p>
+<div class="row">
+    <div class="col">
+        <form>
+            <select {{on "change" this.dropdownValue value="target.value" }} class="form-select"
+                aria-label="Default select example">
+                <option selected>Select data by project</option>
+                {{#each dropdown as |dt|}}
+                <option value={{dt}}>{{dt}}</option>
+                {{/each}}
+            </select>
+        </form>
+    </div>
 </div>
-{{!-- <Common::Chart-Config @data={{data}} @labels={{labels}} @model={{model}}/> --}}
+<div class="container mt-3">
+    <div class="row justify-content-md-left align-items-center">
+        <div class="col">
+            <Common::Card-Config @header="Total amount spent" @value={{fomartcurrency totalProjectCosts}} />
+        </div>
+        <div class="col">
+            <Common::Card-Config @header="Complete projects" @value={{complete}} />
+        </div>
+        <div class="col">
+            <Common::Card-Config @header="Incomplete projects" @value={{incomplete}} />
+        </div>
+    </div>
+</div>
+<div class="container mt-1">
+    {{log tableRows}}
+    <ModelsTable @data={{tableRows}} @columns={{tableHeaders}}  />
+</div>
+{{!-- <div class="container mt-3">
+    <div class="row justify-content-md-left align-items-left">
+        <Common::Chart-Config @data={{data}} @type={{type}} @options={{options}} />
+    </div>
+</div> --}}

@@ -27,6 +27,7 @@ module.exports = function (defaults) {
       enabled: true,
       options: { processImport: true },
     },
+    experimentalDecorators: true,
   });
 
   // Use `app.import` to add additional libraries to the generated
