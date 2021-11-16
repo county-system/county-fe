@@ -1,21 +1,18 @@
 <BsNav class="sidebar" @type="pills" @justified={{false}} @stacked={{true}} @fill={{false}} as |nav|>
-     <nav.dropdown as |dd|>
+    <nav.dropdown as |dd|>
         <dd.toggle>
             Dashboard
             <span class="caret"></span>
         </dd.toggle>
         <dd.menu as |ddm|>
             <ddm.item>
-                <ddm.link-to @route="dashboard">Dashboard</ddm.link-to>
+                <ddm.link-to @route="dashboard">Projects</ddm.link-to>
             </ddm.item>
             <ddm.item>
                 <ddm.link-to @route="kpi">KPI</ddm.link-to>
             </ddm.item>
         </dd.menu>
     </nav.dropdown>
-    <nav.item>
-        <nav.link-to @route="maps">Maps</nav.link-to>
-    </nav.item>
     <nav.dropdown as |dd|>
         <dd.toggle>
             Ministries
@@ -30,6 +27,19 @@
             </ddm.item>
         </dd.menu>
     </nav.dropdown>
+    <nav.item disabled>
+        <nav.link-to @route="maps">Existing Maps</nav.link-to>
+    </nav.item>
+    <nav.item disabled>
+        <nav.link-to @route="maps">Downloads</nav.link-to>
+    </nav.item>
+    <nav.item>
+        <nav.link-to @route="maps">Systems</nav.link-to>
+    </nav.item>
+    <nav.item>
+        <nav.link-to @route="maps">Chats</nav.link-to>
+    </nav.item>
+
 </BsNav>
 
 <input type="checkbox" id="sidebar-btn" class="sidebar-btn" checked />

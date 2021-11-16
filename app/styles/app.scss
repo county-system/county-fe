@@ -23,10 +23,12 @@ html {
 h1 {
     font-family: 'Lobster', cursive;
     font-weight: 300;
-    font-size: 2.5em;
+    font-size: 3.5em;
 }
 
+
 @import "ember-bootstrap/bootstrap";
+@import 'dashboard';
 @import 'side-nav';
 @import 'maps';
 @import 'kpi';
