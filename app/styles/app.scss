@@ -21,10 +21,37 @@ html {
 }
 
 h1 {
-    font-family: 'Lobster', cursive;
+    // font-family: 'Lobster', cursive;
     font-weight: 300;
     font-size: 3.5em;
 }
+
+h1.text-home {
+    -webkit-text-stroke: 3px green;
+    -webkit-text-fill-color: white;
+    font-size: 6.5rem;
+    font-weight: 500;
+}
+
+.btn.login {
+    width: 9rem;
+    height: 3rem;
+    border-radius: 50%
+}
+
+.green {
+    color: #56983F !important;
+}
+
+.bg-green {
+    background-color: #56983F !important;
+    color: #fff !important;
+}
+
+.align-content {
+    align-content: center;
+}
+
 
 
 @import "ember-bootstrap/bootstrap";
@@ -32,3 +59,5 @@ h1 {
 @import 'side-nav';
 @import 'maps';
 @import 'kpi';
+@import 'top-nav';
+@import 'index';

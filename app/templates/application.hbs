@@ -1,6 +1,13 @@
 {{page-title "CountyFe"}}
 
-<Side-Nav />
+{{#if (not-eq this.route "index")}}
+
+<Header::Side-Nav />
+
+{{else if (eq this.route "index")}}
+    <Header::Top-Nav />
+{{/if}}
+
 <div class="content border border-success">
     {{outlet}}
 </div>

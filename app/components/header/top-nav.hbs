@@ -1,0 +1,24 @@
+{{!-- {{yield}} --}}
+
+<BsNavbar
+  @type="dark"
+  @backgroundColor="dark"
+  @collapsed={{true}} as |navbar|>
+  <div class="navbar-header">
+    {{navbar.toggle}}
+    {{#link-to "index" class="navbar-brand"}} {{svg-jar "turkana_logo_main"}}{{/link-to}}
+  </div>
+  <navbar.content>
+    <navbar.nav as |nav|>
+      <nav.item>
+        <nav.link-to @route="index">{{uppercase "Turkana County"}}</nav.link-to>
+      </nav.item>
+    </navbar.nav>
+  </navbar.content>
+  {{!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> --}}
+<Common::Profile-Icon @icon={{svg-jar "account_circle_white"}} @class="rounded-pill" />
+
+</BsNavbar>
