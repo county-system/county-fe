@@ -1,12 +1,16 @@
 import Route from '@ember/routing/route';
 import { inject } from '@ember/service';
 
-export default class IndexRoute extends Route {
+export default class LoginRoute extends Route {
   @inject me;
 
   beforeModel() {
     if (this.me.user) {
-      this.transitionTo('dashboard');
+      this.transitionTo('kpi');
     }
+  }
+
+  model() {
+    return this.store.createRecord('user');
   }
 }

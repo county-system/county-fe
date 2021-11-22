@@ -1,0 +1,39 @@
+{{yield}}
+<div class="d-flex justify-content-center align-items-center">
+    <div class="login-form">
+        <header>
+            <h1>Login</h1>
+        </header>
+        <BsForm class="login-form" @formLayout="vertical" @model={{@registeredUser}} @onSubmit={{this.login}} as |form|>
+            {{#each @registeredUser.errors as |err| }}
+            {{#if (eq err.key "errors")}}
+            <BsAlert @type="danger" @fade={{true}}>
+                {{err.validation}}
+            </BsAlert>
+            {{/if}}
+            {{/each}}
+
+            <div class="login-form-fields">
+                <form.element id="username" @controlType="text" @label="username" @property="username" as |el|>
+                    <el.control autocomplete="username" placeholder="enter username"></el.control>
+                </form.element>
+
+
+                <form.element id="password" @controlType="password" @label="password" @property="password" as |el|>
+                    <el.control autocomplete="current-password" placeholder="enter_password">
+                    </el.control>
+                </form.element>
+            </div>
+
+            {{#if this.loading}}
+            <button class="bg-primary form-control" type="button">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> authenticating
+            </button>
+            {{else}}
+            <BsButton class="bg-primary form-control mb-2" @defaultText="login" @buttonType="submit">
+            </BsButton>
+
+            {{/if}}
+        </BsForm>
+    </div>
+</div>

@@ -1,2 +1,4 @@
 {{yield}}
-<button type="button" class="btn btn-success {{@class}}"><span class={{@span}}>login</span> {{@icon}}</button>
+<LinkTo @route={{@link}} class="pr-4">
+  <button type="button" class="btn btn-success {{@class}}"><span class={{@span}}>{{@text}}</span> {{@icon}}</button>
+</LinkTo>

@@ -20,6 +20,18 @@ module.exports = function (environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      'ember-simple-auth': {
+        authorizer: 'authorizer:token',
+        authenticationRoute: 'login',
+      },
+      'ember-simple-auth-token': {
+        refreshTokenPropertyName: 'refresh',
+        tokenPropertyName: 'access',
+        serverTokenEndpoint: '/api/v2/auth',
+        serverTokenRefreshEndpoint: '/api/v2/auth/token-refresh',
+        refreshAccessTokens: true,
+        refreshLeeway: 300, // refresh 5 minutes (300 seconds) before expiration
+      },
     },
   };
 

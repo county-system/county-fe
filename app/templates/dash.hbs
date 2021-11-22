@@ -1,0 +1,39 @@
+{{page-title "Dash"}}
+{{outlet}}
+
+<div class="row">
+    <div class="col-md-2">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-header">KPI</h5>
+                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                <p class="card-text">Have a look at our charts</p>
+                <LinkTo @route="kpi" class="pr-4">
+                    <a href="#" class="btn btn-primary">Visit KPI's</a>
+                </LinkTo>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-header">Projects</h5>
+                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                <p class="card-text">Integrated projects data</p>
+                <a href="#" class="btn btn-primary">Visit project</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-header">Existing Maps</h5>
+                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                <p class="card-text">Check out maps</p>
+                <LinkTo @route="maps" class="pr-4">
+                    <a href="#" class="btn btn-primary">Visit Maps</a>
+                </LinkTo>
+            </div>
+        </div>
+    </div>
+</div>

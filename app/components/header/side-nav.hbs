@@ -1,17 +1,9 @@
 <BsNav class="sidebar" @type="pills" @justified={{false}} @stacked={{true}} @fill={{false}} as |nav|>
-    <nav.dropdown as |dd|>
-        <dd.toggle> {{svg-jar "dashboard_black"}} Dashboard <span class="caret"></span>
-        </dd.toggle>
-        <dd.menu as |ddm|>
-            <ddm.item>
-                <ddm.link-to @route="dashboard">Projects</ddm.link-to>
-            </ddm.item>
-            <ddm.item>
-                <ddm.link-to @route="kpi">KPI</ddm.link-to>
-            </ddm.item>
-        </dd.menu>
-    </nav.dropdown>
-    <nav.dropdown as |dd|>
+    <nav.item disabled>
+        <nav.link-to @route="dash">{{svg-jar "dashboard_black"}} Dashboard</nav.link-to>
+    </nav.item>
+
+    {{!-- <nav.dropdown as |dd|>
         <dd.toggle>
             {{svg-jar "table_view"}} Ministries
             <span class="caret"></span>
@@ -24,18 +16,21 @@
                 <ddm.link-to @route="kpi">KPI</ddm.link-to>
             </ddm.item>
         </dd.menu>
-    </nav.dropdown>
-    <nav.item disabled>
-        <nav.link-to @route="maps">{{svg-jar "map_pin"}} Existing Maps</nav.link-to>
-    </nav.item>
-    <nav.item disabled>
-        <nav.link-to @route="maps">{{svg-jar "download"}} Downloads</nav.link-to>
+    </nav.dropdown> --}}
+    <nav.item>
+        <nav.link-to  @route="maps">{{svg-jar "map_pin"}} Existing Maps</nav.link-to>
     </nav.item>
     <nav.item>
-        <nav.link-to @route="maps">{{svg-jar "settings_black"}} Settings</nav.link-to>
+        <nav.link-to class="disabled" @route="users">{{svg-jar "download"}} Downloads</nav.link-to>
     </nav.item>
     <nav.item>
-        <nav.link-to @route="maps">{{svg-jar "chat"}} Chats</nav.link-to>
+        <nav.link-to class="disabled" @route="users">{{svg-jar "map_pin"}} Integrated Systems</nav.link-to>
+    </nav.item>
+    <nav.item disabled>
+        <nav.link-to class="disabled" @route="users">{{svg-jar "settings_black"}} Settings</nav.link-to>
+    </nav.item>
+    <nav.item disabled>
+        <nav.link-to class="disabled" @route="users">{{svg-jar "chat"}} Chats</nav.link-to>
     </nav.item>
 
 </BsNav>

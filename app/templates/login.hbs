@@ -1,0 +1,5 @@
+{{page-title "Login"}}
+{{!-- {{outlet}} --}}
+
+<Authentication::Login @registeredUser={{changeset this.model this.LoginValidations}}
+                       @authenticationSuccessful={{this.login}} />

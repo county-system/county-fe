@@ -1,24 +1,19 @@
 {{!-- {{yield}} --}}
 
-<BsNavbar
-  @type="dark"
-  @backgroundColor="dark"
-  @collapsed={{true}} as |navbar|>
+<BsNavbar @type="dark" @backgroundColor="dark" @collapsed={{true}} as |navbar|>
   <div class="navbar-header">
     {{navbar.toggle}}
-    {{#link-to "index" class="navbar-brand"}} {{svg-jar "turkana_logo_main"}}{{/link-to}}
+    {{#link-to "index" class="navbar-brand"}} {{svg-jar "turkana_logo_main"}} {{uppercase "Turkana County"}}{{/link-to}}
   </div>
   <navbar.content>
-    <navbar.nav as |nav|>
-      <nav.item>
-        <nav.link-to @route="index">{{uppercase "Turkana County"}}</nav.link-to>
-      </nav.item>
-    </navbar.nav>
   </navbar.content>
-  {{!-- <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form> --}}
-<Common::Profile-Icon @icon={{svg-jar "account_circle_white"}} @class="rounded-pill" />
-
+  {{#if this.session.isAuthenticated}}
+    <button type="button">Logout</button>
+    {{#if this.currentUser.user}}
+      <p>Signed in as {{this.currentUser.user.name}}</p>
+    <Common::Profile-Icon @icon={{svg-jar "account_circle_white" }} @link="login" @class="rounded-pill" @text="Signed in as {{this.currentUser.user.name}}" />
+    {{/if}}
+  {{else}}
+    <Common::Profile-Icon @icon={{svg-jar "account_circle_white" }} @link="login" @class="rounded-pill" @text="login" />
+  {{/if}}
 </BsNavbar>
