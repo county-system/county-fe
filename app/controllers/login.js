@@ -13,7 +13,7 @@ export default class LoginController extends Controller {
 
       previousTransition.retry();
     } else {
-      this.transitionTo('kpi');
+      this.transitionTo('dash');
     }
   }
 }

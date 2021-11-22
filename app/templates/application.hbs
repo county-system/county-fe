@@ -1,9 +1,12 @@
 {{page-title "CountyFe"}}
 
-{{#if (and eq this.route "login" (eq this.route "index"))}}
-    <Header::Top-Nav />
+{{#if (eq this.route "index")}}
+<Header::Top-Nav />
+
+    {{else if (eq this.route "login")}}
+<Header::Top-Nav />
 {{else}}
-    <Header::Side-Nav />
+<Header::Side-Nav />
 {{/if}}
 
 <div class="content border border-success">

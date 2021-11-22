@@ -6,7 +6,7 @@ export default class LoginRoute extends Route {
 
   beforeModel() {
     if (this.me.user) {
-      this.transitionTo('kpi');
+      this.transitionTo('dash');
     }
   }
 

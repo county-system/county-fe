@@ -1,9 +1,14 @@
 <BsNav class="sidebar" @type="pills" @justified={{false}} @stacked={{true}} @fill={{false}} as |nav|>
+    <div class="navbar-header">
+        {{navbar.toggle}}
+        {{#link-to "index" class="navbar-brand green"}} {{svg-jar "turkana_logo_main"}} {{uppercase "Turkana
+        County"}}{{/link-to}}
+    </div>
     <nav.item>
         <nav.link-to @route="dash">{{svg-jar "dashboard_black"}} Dashboard</nav.link-to>
     </nav.item>
     <nav.item>
-        <nav.link-to  @route="maps">{{svg-jar "map_pin"}} Existing Maps</nav.link-to>
+        <nav.link-to @route="maps">{{svg-jar "map_pin"}} Existing Maps</nav.link-to>
     </nav.item>
     <nav.item>
         <nav.link-to class="disabled" @route="users">{{svg-jar "download"}} Downloads</nav.link-to>
