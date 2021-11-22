@@ -34,12 +34,11 @@ html {
 }
 
 
-
 @import "ember-bootstrap/bootstrap";
 @import 'index';
 @import 'login';
 @import 'side-nav';
 @import 'maps';
+@import 'top-nav';
 @import 'dashboard';
 @import 'kpi';
-@import 'top-nav';

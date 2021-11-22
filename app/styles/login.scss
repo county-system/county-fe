@@ -1,52 +1,52 @@
 .login-form {
-    text-align: left;
-    width: 400px;
-    margin: 2% 2% 10%;
-    background-color: white;
+  text-align: left;
+  width: 400px;
+  margin: 2% 2% 10%;
+  background-color: white;
 
-    h1 {
-      font-weight: bold;
-      font-size: 2rem;
-    }
-
-    form {
-      padding: 0 2rem;
-    }
-
-    header {
-      margin-bottom: 1rem;
-      padding: 0.5rem;
-      height: 150px;
-      background-color: lighten(#56983F, 10%);
-      background-image: url('/images/logo-background.png');
-      display: flex;
-      align-items: center;
-      color: white;
-    }
-
-    .line-text {
-      width: 100%;
-      text-align: center;
-      border-bottom: 1px solid #b0babf;
-      line-height: 0.1em;
-      margin: 47px 0 40px;
-    }
-
-    .line-text span {
-      background: #fff;
-      color: #3f484d;
-      padding: 0 10px;
-    }
-
-    button {
-      border-color: #f8f8ff;
-    }
-
-    .btn-facebook {
-      background-color: #1877f2;
-    }
-
-    .btn-linkedIn {
-      background-color: #0077b5;
-    }
+  h1 {
+    font-weight: bold;
+    font-size: 2rem;
   }
+
+  form {
+    padding: 0 2rem;
+  }
+
+  header {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    height: 150px;
+    background-color: lighten(#56983F, 10%);
+    background-image: url('/images/logo-background.png');
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+
+  .line-text {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #b0babf;
+    line-height: 0.1em;
+    margin: 47px 0 40px;
+  }
+
+  .line-text span {
+    background: #fff;
+    color: #3f484d;
+    padding: 0 10px;
+  }
+
+  button {
+    border-color: #f8f8ff;
+  }
+
+  .btn-facebook {
+    background-color: #1877f2;
+  }
+
+  .btn-linkedIn {
+    background-color: #0077b5;
+  }
+}
