@@ -6,3 +6,11 @@
     background-color: #56983F !important;
     color: #fff !important;
 }
+
+.example>.progress+.progress{
+    margin-top: 1rem;
+}
+
+.example h5 {
+    font-size: 0.9rem;
+}
