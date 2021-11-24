@@ -2,16 +2,22 @@
 
 {{#if (eq this.route "index")}}
 <Header::Top-Nav />
+<div class="content-home">
+    {{outlet}}
+</div>
 
     {{else if (eq this.route "login")}}
 <Header::Top-Nav />
-{{else}}
-<Header::Side-Nav />
-{{/if}}
-
-<div class="content border border-success">
+<div class="content">
     {{outlet}}
 </div>
+
+{{else}}
+<Header::Side-Nav />
+<div class="content">
+    {{outlet}}
+</div>
+{{/if}}
 
 {{!--
 downloadables
