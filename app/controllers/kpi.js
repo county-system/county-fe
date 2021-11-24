@@ -21,10 +21,26 @@ export default class KpiController extends Controller {
     orange: 'rgb(255, 159, 64)',
     yellow: 'rgb(255, 205, 86)',
     green: 'rgb(75, 192, 192)',
+    grey: 'rgb(201, 203, 207)',
     blue: 'rgb(54, 162, 235)',
     purple: 'rgb(153, 102, 255)',
-    grey: 'rgb(201, 203, 207)',
   };
+
+  @action
+  chartColors(num) {
+    // return Math.floor(Math.random() * 16777215).toString(16);
+
+    const result = [...Array(num)].map((_) => {
+      return `rgb(${Math.round(Math.random() * 255)}, ${Math.round(
+        Math.random() * 255
+      )}, ${Math.round(Math.random() * 255)})`;
+    });
+    return result;
+    // const r = Math.round(Math.random() * 255);
+    // const g = Math.round(Math.random() * 255);
+    // const b = Math.round(Math.random() * 255);
+    // console.log(`rgb (${r}, ${g}, ${b})`);
+  }
 
   @action
   getRandomColor() {
@@ -105,18 +121,18 @@ export default class KpiController extends Controller {
       totalPerWard.push(parseInt(wards[`${key}`], 10));
       labels.push(key);
     }
-
     const newData = {
       labels: labels,
       datasets: [
         {
           label: 'Total Sum of money allocated',
           data: totalPerWard,
-          backgroundColor: Object.values(this.CHART_COLORS),
+          // backgroundColor: Object.values(this.CHART_COLORS),
+          backgroundColor: this.chartColors(totalPerWard.length),
         },
       ],
     };
-    console.log(totalWardAmount);
+    console.log(newData.datasets[0]);
 
     return {
       newData,
