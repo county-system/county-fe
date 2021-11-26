@@ -2,14 +2,14 @@
     // min-height: 93% !important;
     background-image: url(../images/landing.jpeg);
     background-repeat: no-repeat;
-    background-size: 1700px;
+    background-size: 100%;
     padding: 100px;
     position: fixed;
     left: 0;
     top: 66px;
     right: 0;
     bottom: 0;
-    width: 100%;
+    padding-left: 0 !important;
 }
 .content-home{
     min-height: 0 !important;
