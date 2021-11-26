@@ -1,110 +1,144 @@
-{{page-title "Users"}}
-{{outlet}}
-<div class="p-3">
-    {{#if @model}}
-    <div class="d-flex align-items-center mb-3">
-        <p class="m-0">
-            {{this.paginationSummary}}
-        </p>
-        <div class="user-search">
-            <Input class="form-control search-input ml-3" @value={{this.searchTerm}} @type="search" {{on 'input'
-                this.isSearching}} />
-            <span class="search-icon {{if this.searchTerm 'd-none'}}"></span>
+<div class="row">
+    <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card bg-green text-light shadow border-0 rounded-0">
+            <div class="card-body">
+                <div class="card-innerBody d-flex align-items-center">
+                    <div class="card-icon">
+                        {{svg-jar "reports"}}
+                    </div>
+                    <div class="ml-auto">
+                        <p class="card-label text-right">Total Reports</p>
+                        <h4 class="card-text text-right ">5,045</h4>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <table class="table table-striped users">
-        <thead>
-            <tr>
-                <th>
-                    <Input @type="checkbox" @checked={{this.isAllUserRowsSelected}} {{on 'change'
-                        this.toggleAllRowSelection}} />
-                </th>
-                <th>
-                    name
-                </th>
-                <th>
-                    email
-                </th>
-                <th>
-                    last_login
-                </th>
-                <th>
-                    role
-                </th>
-                <th>
-                    status
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each this.users as |user|}}
-            <tr>
-                <td>
-                    <Input @type="checkbox" @checked={{exec this.isUserRowSelected user}} {{on 'change' (fn
-                        this.toggleRowSelection user)}} />
-                </td>
-                <td>
-                    <span data-toggle="tooltip" data-placement="right" title={{user.name}}>
-                        <UserDetails @user={{user}} />
-                    </span>
-                </td>
-                <td>
-                    <span data-toggle="tooltip" data-placement="right" title={{user.email}}>
-                        {{user.email}}
-                    </span>
-                </td>
-                <td>
-                    {{user.lastLoginTime}}
-                </td>
-                <td>
-                    <EditRole @user={{user}} @roles={{this.roles}} />
-                </td>
-                <td>
-                    {{#if user.emailVerified}}
-                    <span class="text-primary" data-toggle="tooltip" data-placement="right" title="verified_email">
-                        {{svg-jar 'verified-user' width='34px'}}
-                    </span>
-                    {{else}}
-                    <span class="text-muted" data-toggle="tooltip" data-placement="right" title="unverfied_email">
-                        {{svg-jar 'unverified-user' width='34px'}}
-                    </span>
-                    {{/if}}
-                </td>
-            </tr>
-            {{/each}}
-        </tbody>
-    </table>
-    <div class="d-flex justify-content-between align-items-center">
-        <div class="d-flex">
-            <p class="mr-3 mb-0 w-100">
-                per_page
-            </p>
-            <select class="form-control h-75 w-50" {{on 'change' this.updatePerPage}}>
-                {{#each this.perPageOptions as |opt|}}
-                {{#if opt.selected}}
-                <option value="{{opt.value}}" selected>
-                    {{opt.value}}
-                </option>
-                {{else}}
-                <option value="{{opt.value}}">
-                    {{opt.value}}
-                </option>
-                {{/if}}
-                {{/each}}
-            </select>
+
+    <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card bg-green text-light shadow border-0 rounded-0">
+            <div class="card-body">
+                <div class="card-innerBody d-flex align-items-center">
+                    <div class="card-icon">
+                        {{svg-jar "add-user"}}
+                    </div>
+                    <div class="ml-auto">
+                        <p class="card-label text-right">Add User</p>
+                        {{!-- <h4 class="card-text text-right ">5,045</h4> --}}
+                    </div>
+                </div>
+            </div>
         </div>
-        <ul class="pagination">
-            <li class="page-item {{if this.hasPreviousPage '' 'disabled'}}">
-                <span class="page-link" role="button" {{on 'click' this.goToPrevPage}}>
-                    previous
-                </span>
-            </li>
-            <li class="page-item {{if this.hasNextPage '' 'disabled'}}">
-                <span class="page-link" role="button" {{on 'click' this.goToNextPage}}>
-                    next
-                </span>
-            </li>
-        </ul>
     </div>
-    {{/if}}
+    <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card bg-green text-light shadow border-0 rounded-0">
+            <div class="card-body">
+                <div class="card-innerBody d-flex align-items-center">
+                    <div class="card-icon">
+                        {{svg-jar "add-group"}}
+                    </div>
+                    <div class="ml-auto">
+                        <p class="card-label text-right">Create Group</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card bg-green text-light shadow border-0 rounded-0">
+            <div class="card-body">
+                <div class="card-innerBody d-flex align-items-center">
+                    <div class="card-icon">
+                        {{svg-jar "calendar"}}
+                    </div>
+                    <div class="ml-auto">
+                        <p class="card-label text-right">View Calendar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Account Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="switch1">
+                            <label class="custom-control-label" for="switch1"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <img src="../images/avatar.png" alt="avatar" class="img-fluid rounded-circle" width="50">
+                    </td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="switch2">
+                            <label class="custom-control-label" for="switch2"></label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="switch3">
+                            <label class="custom-control-label" for="switch3"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <img src="../images/avatar.png" alt="avatar" class="img-fluid rounded-circle" width="50">
+                    </td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    <td>
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                            <label class="custom-control-label" for="customSwitch2"></label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                            <label class="custom-control-label" for="customSwitch1"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <img src="../images/avatar.png" alt="avatar" class="img-fluid rounded-circle" width="50">
+                    </td>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                    <td>
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch3">
+                            <label class="custom-control-label" for="customSwitch3"></label>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
 </div>

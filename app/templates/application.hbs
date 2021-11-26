@@ -1,12 +1,12 @@
 {{page-title "CountyFe"}}
-
+{{!--
 {{#if (eq this.route "index")}}
 <Header::Top-Nav />
 <div class="content-home">
     {{outlet}}
 </div>
 
-    {{else if (eq this.route "login")}}
+{{else if (eq this.route "login")}}
 <Header::Top-Nav />
 <div class="content">
     {{outlet}}
@@ -17,11 +17,25 @@
 <div class="content">
     {{outlet}}
 </div>
-{{/if}}
+{{/if}} --}}
 
 {{!--
 downloadables
 integrations - kobo collect, arcgis
 profiles - user email linkage, user profile
 coloring dashboards
- --}}
+--}}
+
+{{!--
+<Header::Top-Nav />
+<main class="flex">
+
+</main> --}}
+
+<Header::Top-Nav />
+<div class="page-wrapper chiller-theme toggled">
+    <Header::Side-Nav />
+    <main class="page-content">
+        {{outlet}}
+    </main>
+</div>

@@ -1,46 +1,38 @@
 {{page-title "Dash"}}
 {{outlet}}
+<div>
+    <h4 class="mb-4 text-muted">Dashboard </h4>
 
-<div class="card-deck">
-    <div class="card bg-light mb-3" style="max-width: 18rem;">
-        <h5 class="card-header">KPI</h5>
-        <div class="card-body">
-            <h5 class="card-title">Get data from all county projects</h5>
-            <p class="card-text">Summary of data</p>
-            <LinkTo @route="kpi" class="pr-4">
-                <a href="#" class="btn btn-primary">Visit KPI's</a>
-            </LinkTo>
+    <div class="row">
+        <div class="col-md-3 col-lg-2 mb-4">
+            <div class="card bg-green text-light shadow border-0 rounded-0">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Summary data of county projects</h5>
+                    <LinkTo @route="kpi" class="pr-4">
+                        <a href="#" class="btn btn-primary">Visit KPI's</a>
+                    </LinkTo>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-        <h5 class="card-header">Projects</h5>
-        <div class="card-body">
-            <h5 class="card-title">Integrated projects data</h5>
-            <p class="card-text">Quick sample text to create the.</p>
-            <LinkTo @route="kpi" class="pr-4">
-                <a href="#" class="btn btn-primary">Visit project</a>
-            </LinkTo>
+        <div class="col-md-3 col-lg-2 mb-4">
+            <div class="card bg-green text-light shadow border-0 rounded-0">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Maps data positioning</h5>
+                    <LinkTo @route="maps" class="pr-4">
+                        <a href="#" class="btn btn-primary">Visit Maps</a>
+                    </LinkTo>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-        <h5 class="card-header">Dashboard</h5>
-        <div class="card-body">
-            <h5 class="card-title">Check out dashboard</h5>
-            <p class="card-text">Quick sample text to create the.</p>
-            <LinkTo @route="dashboard" class="pr-4">
-                <a href="#" class="btn btn-primary">Visit Dashboard</a>
-            </LinkTo>
-        </div>
-    </div>
-    <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
-        <h5 class="card-header">Existing Maps</h5>
-        <div class="card-body">
-            <h5 class="card-title">Maps information</h5>
-            <p class="card-text">Quick sample text to create the.</p>
-            <LinkTo @route="maps" class="pr-4">
-                <a href="#" class="btn btn-primary">Visit Maps</a>
-            </LinkTo>
+        <div class="col-md-3 col-lg-2 mb-4">
+            <div class="card bg-green text-light shadow border-0 rounded-0">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Check out dashboard</h5>
+                    <LinkTo @route="kpi" class="pr-4">
+                        <a href="#" class="btn btn-primary">Visit project</a>
+                    </LinkTo>
+                </div>
+            </div>
         </div>
     </div>
 </div>

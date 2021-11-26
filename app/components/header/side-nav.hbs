@@ -1,35 +1,109 @@
-<BsNav class="sidebar" @type="pills" @justified={{false}} @stacked={{true}} @fill={{false}} as |nav|>
-    <div class="navbar-header">
-        {{navbar.toggle}}
-        {{#link-to "index" class="navbar-brand green"}} {{svg-jar "turkana_logo_main"}} {{uppercase "Turkana
-        County"}}{{/link-to}}
+<div {{did-insert this.sideNavActions}} class='alert'></div>
+<span id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+  {{!-- <i class="fas fa-bars"></i> --}}
+  {{svg-jar "bars-solid"}}
+</span>
+<nav id="sidebar" class="sidebar-wrapper">
+  <div class="sidebar-content">
+    <div class="sidebar-brand">
+      {{!-- <a href="#">pro sidebar</a> --}}
+      {{#link-to "index" class="green"}} {{svg-jar "turkana_logo_main"}} {{uppercase "Turkana County"}}{{/link-to}}
+      <div id="close-sidebar">
+        <i class="fas fa-times"></i>
+      </div>
+
     </div>
-    <nav.item>
-        <nav.link-to @route="dash">{{svg-jar "dashboard_black"}} Dashboard</nav.link-to>
-    </nav.item>
-    <nav.item>
-        <nav.link-to @route="maps">{{svg-jar "map_pin"}} Existing Maps</nav.link-to>
-    </nav.item>
-    <nav.item>
-        <nav.link-to class="disabled" @route="users">{{svg-jar "download"}} Downloads</nav.link-to>
-    </nav.item>
-     <nav.item>
-        <nav.link-to class="disabled" @route="users">{{svg-jar "download"}} Admin</nav.link-to>
-    </nav.item>
-     <nav.item>
-        <nav.link-to class="disabled" @route="users">{{svg-jar "download"}} Help</nav.link-to>
-    </nav.item>
-    <nav.item>
-        <nav.link-to class="disabled" @route="users">{{svg-jar "map_pin"}} Integrated Systems</nav.link-to>
-    </nav.item>
-    <nav.item>
-        <nav.link-to class="disabled" @route="users">{{svg-jar "settings_black"}} Settings</nav.link-to>
-    </nav.item>
-    <nav.item>
-        <nav.link-to class="disabled" @route="users">{{svg-jar "chat"}} Chats</nav.link-to>
-    </nav.item>
+    <div class="sidebar-header">
+      <div class="user-pic">
+        <img class="img-responsive img-rounded"
+          src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+          alt="User picture">
+      </div>
+      <div class="user-info">
+        <span class="user-name">Jhon
+          <strong>Smith</strong>
+        </span>
+        <span class="user-role">Administrator</span>
+        <span class="user-status">
+          <i class="fa fa-circle"></i>
+          <span>Online</span>
+        </span>
+      </div>
+    </div>
+    <div class="sidebar-menu">
+      <ul>
+        {{!-- <li class="header-menu">
+          <span>General</span>
+        </li> --}}
 
-</BsNav>
-
-<input type="checkbox" id="sidebar-btn" class="sidebar-btn" checked />
-<label for="sidebar-btn"></label>
+        <li class="sidebar">
+          {{#link-to "dash" class="green"}}
+          <i class="fa fa-tachometer-alt"></i>
+          Dashboard
+          {{/link-to}}
+        </li>
+        <li class="sidebar">
+          {{#link-to "maps" class="green"}}
+          <i class="fa fa-map-marker-alt"></i>
+          Existing Maps
+          {{/link-to}}
+        </li>
+        <li class="sidebar">
+          {{#link-to "users" class="green"}}
+          <i class="fa fa-download"></i>
+          Downloads
+          {{/link-to}}
+        </li>
+        <li class="sidebar">
+          {{#link-to "users" class="green"}}
+          <i class="fa fa-download"></i>
+          Admin
+          {{/link-to}}
+        </li>
+        <li class="sidebar">
+          {{#link-to "users" class="green"}}
+          <i class="fa fa-download"></i>
+          Help
+          {{/link-to}}
+        </li>
+        <li class="sidebar">
+          {{#link-to "users" class="green"}}
+          <i class="fa fa-map-pin"></i>
+          Integrated Systems
+          {{/link-to}}
+        </li>
+        <li class="sidebar">
+          {{#link-to "users" class="green"}}
+          <i class="fa fa-cog"></i>
+          Settings
+          {{/link-to}}
+        </li>
+        <li class="sidebar">
+          {{#link-to "users" class="green"}}
+          <i class="fa fa-comments"></i>
+          Chats
+          {{/link-to}}
+        </li>
+      </ul>
+    </div>
+    <!-- sidebar-menu  -->
+  </div>
+  <!-- sidebar-content  -->
+  <div class="sidebar-footer">
+    <a href="#">
+      <i class="fa fa-bell"></i>
+      <span class="badge badge-pill badge-warning notification">3</span>
+    </a>
+    <a href="#">
+      <i class="fa fa-envelope"></i>
+      <span class="badge badge-pill badge-success notification">7</span>
+    </a>
+    <a href="#">
+      <i class="fa fa-cog"></i>
+      <span class="badge-sonar"></span>
+    </a>
+    <a href="#">
+      <i class="fa fa-power-off"></i>
+    </a>
+  </div>
+</nav>

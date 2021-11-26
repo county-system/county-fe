@@ -2,8 +2,7 @@
 
 <BsNavbar @type="dark" @backgroundColor="dark" @collapsed={{true}} as |navbar|>
   <div class="navbar-header">
-    {{navbar.toggle}}
-    {{#link-to "index" class="navbar-brand"}} {{svg-jar "turkana_logo_main"}} {{uppercase "Turkana County"}}{{/link-to}}
+    {{#link-to "index" class="navbar-brand ml-3" }} {{svg-jar "turkana_logo_main"}}{{/link-to}}
   </div>
   <navbar.content>
   </navbar.content>
@@ -14,7 +13,6 @@
     <Common::Profile-Icon @icon={{svg-jar "account_circle_white" }} @link="login" @class="rounded-pill" @text="Signed in as {{this.currentUser.user.name}}" />
     {{/if}}
   {{else}}
-    <Common::Profile-Icon @link="dash" @class="rounded-pill" @text="Dashboard" />
     <Common::Profile-Icon @icon={{svg-jar "account_circle_white" }} @link="login" @class="rounded-pill" @text="login" />
   {{/if}}
 </BsNavbar>
