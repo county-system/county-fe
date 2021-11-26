@@ -1,5 +1,6 @@
 {{page-title "Login"}}
 {{!-- {{outlet}} --}}
-
-<Authentication::Login @registeredUser={{changeset this.model this.LoginValidations}}
-                       @authenticationSuccessful={{this.login}} />
+<div class="login-form-parent">
+            <Authentication::Login @registeredUser={{changeset this.model this.LoginValidations}}
+                @authenticationSuccessful={{this.login}} />
+</div>

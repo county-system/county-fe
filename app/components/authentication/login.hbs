@@ -1,9 +1,6 @@
 {{yield}}
 <div class="d-flex justify-content-center align-items-center">
     <div class="login-form">
-        <header>
-            <h1>Login</h1>
-        </header>
         <BsForm class="login-form" @formLayout="vertical" @model={{@registeredUser}} @onSubmit={{this.login}} as |form|>
             {{#each @registeredUser.errors as |err| }}
             {{#if (eq err.key "errors")}}

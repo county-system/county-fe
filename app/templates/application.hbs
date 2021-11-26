@@ -31,10 +31,11 @@ coloring dashboards
 <main class="flex">
 
 </main> --}}
+{{!-- <div {{did-insert this.bgImage}}></div> --}}
 
 <Header::Top-Nav />
 <div class="page-wrapper chiller-theme toggled">
-    {{#if (not-eq this.route "index")}}
+    {{#if (and not-eq this.route "login" (not-eq this.route "index"))}}
     <Header::Side-Nav />
     {{/if}}
     <main class="page-content">

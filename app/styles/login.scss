@@ -1,8 +1,21 @@
+.login-form-parent {
+  left: 0;
+  top: 66px;
+  right: 0;
+  bottom: 0;
+  padding-left: 0 !important;
+  position: absolute;
+}
+
+
 .login-form {
   text-align: left;
-  width: 400px;
   margin: 2% 2% 10%;
   background-color: white;
+
+  @media screen and (min-width: 340px) {
+    width: 400px;
+  }
 
   h1 {
     font-weight: bold;
