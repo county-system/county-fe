@@ -35,7 +35,7 @@ coloring dashboards
 
 <Header::Top-Nav />
 <div class="page-wrapper chiller-theme toggled">
-    {{#if (and not-eq this.route "login" (not-eq this.route "index"))}}
+    {{#if (not-eq this.route "index")}}
     <Header::Side-Nav />
     {{/if}}
     <main class="page-content">
