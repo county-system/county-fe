@@ -15,13 +15,14 @@
     </div>
     <div class="sidebar-header">
       <div class="user-pic">
-        <img class="img-responsive img-rounded"
+        {{!-- <img class="img-responsive img-rounded"
           src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
-          alt="User picture">
+          alt="User picture"> --}}
+          {{svg-jar "avatar"}}
       </div>
       <div class="user-info">
-        <span class="user-name">Jhon
-          <strong>Smith</strong>
+        <span class="user-name">Jere
+          <strong>Apalia</strong>
         </span>
         <span class="user-role">Administrator</span>
         <span class="user-status">
@@ -45,7 +46,7 @@
         <li class="sidebar">
           {{#link-to "maps" class="green"}}
           <i class="fa fa-map-marker-alt"></i>
-          Existing Maps
+          Maps
           {{/link-to}}
         </li>
         <li class="sidebar">

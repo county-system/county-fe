@@ -13,4 +13,5 @@ Router.map(function () {
   this.route('kpi');
   this.route('login');
   this.route('dash');
+  this.route('reports');
 });
