@@ -119,7 +119,6 @@ export default class KpiController extends Controller {
         },
       ],
     };
-    console.log(newData.datasets[0]);
 
     return {
       newData,
