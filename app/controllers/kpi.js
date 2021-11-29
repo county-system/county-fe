@@ -15,6 +15,7 @@ export default class KpiController extends Controller {
   @tracked totalDatasets = [];
   @tracked pieData = this.pieDataTotalCost().newData;
   @tracked totalWardAmountSpent = this.pieDataTotalCost().totalWardAmount;
+  @tracked totalProjectsCount = this.pieDataTotalCost().totalProjects;
 
   @action
   chartColors(num) {
@@ -90,14 +91,17 @@ export default class KpiController extends Controller {
     const labels = [];
     let totalPerWard = [];
     let totalWardAmount = 0;
+    let totalProjects = 0;
 
     data.forEach((item) => {
       if (!wards.includes(item.ward) && item.ward !== 'turkana') {
         wards[item.ward] = parseInt(item.project_cost, 10);
         totalWardAmount += parseInt(item.project_cost, 10);
+        totalProjects += 1;
       } else if (wards.includes(item.ward) && item.ward !== 'turkana') {
         wards[item.ward] = wards[item.ward] += parseInt(item.project_cost, 10);
         totalWardAmount += parseInt(item.project_cost, 10);
+        totalProjects += 1;
       }
     });
 
@@ -120,6 +124,7 @@ export default class KpiController extends Controller {
     return {
       newData,
       totalWardAmount,
+      totalProjects,
     };
   }
 
