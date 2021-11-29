@@ -14,4 +14,5 @@ Router.map(function () {
   this.route('login');
   this.route('dash');
   this.route('reports');
+  this.route('downloads');
 });
