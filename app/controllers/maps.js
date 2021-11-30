@@ -1,8 +1,9 @@
 import Controller from '@ember/controller';
+import { tracked } from '@glimmer/tracking';
 
 export default class MapsController extends Controller {
-  // lat = -1.286389;
-  // lng = 36.817223;
+  @tracked maps = true;
+
   lat = 3.2416605;
   lng = 34.6609485;
   zoom = 6;
@@ -19,4 +20,8 @@ export default class MapsController extends Controller {
     [3.120818, 35.6046763],
     [3.0947407, 35.7156056],
   ];
+
+  get myStyle() {
+    return 'padding: 20px 1px !important;';
+  }
 }
