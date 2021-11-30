@@ -5,21 +5,32 @@
 https://www.google.com/maps/place/Turkana+County/@2.9783772,34.2324817,8z/data=!3m1!4b1!4m5!3m4!1s0x17835ec9930e52c1:0x61edf66a08eab395!8m2!3d3.3122477!4d35.5657862
 --}}
 
-
 <div class="row" style='{{if this.maps this.myStyle}}'>
   <div class="col-md-9 col-lg-9">
-    <GMap @lat={{lat}} @lng={{lng}} @zoom={{8}} @minZoom={{7}}
-      @data="!3m1!4b1!4m5!3m4!1s0x17835ec9930e52c1:0x61edf66a08eab395!8m2!3d3.3122477!4d35.5657862"
-      @panControl={{false}} @streetViewControl={{false}} />
+    <GMap @lat={{lat}} @lng={{lng}} @zoom={{8}} @minZoom={{5}} @panControl={{false}} @streetViewControl={{false}} as
+      |map|>
+
+
+
+      {{#each londonLocations as |location|}}
+      <map.overlay @lat={{location.lat}} @lng={{location.lng}} @onMouseover={{fn (mut location.active) true}}
+        @onMouseleave={{fn (mut location.active) false}}>
+        {{log location}}
+
+        <div class="tooltip {{if location.active " active"}}">
+          £{{location.price}}
+        </div>
+      </map.overlay>
+      {{/each}}
+
+    </GMap>
 
   </div>
   <div class="col-md-3 col-lg-3">
     <ul class="list-group">
-      <li class="list-group-item">Cras justo odio</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Morbi leo risus</li>
-      <li class="list-group-item">Porta ac consectetur ac</li>
-      <li class="list-group-item">Vestibulum at eros</li>
+      <li class="list-group-item">Population density</li>
+      <li class="list-group-item">Housing</li>
+      <li class="list-group-item">Topography</li>
     </ul>
   </div>
 

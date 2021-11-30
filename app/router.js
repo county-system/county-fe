@@ -4,6 +4,14 @@ import config from 'county-fe/config/environment';
 export default class Router extends EmberRouter {
   location = config.locationType;
   rootURL = config.rootURL;
+
+  constructor() {
+    super(...arguments);
+
+    this.on('routeDidChange', function () {
+      window.scrollTo?.(0, 0);
+    });
+  }
 }
 
 Router.map(function () {
@@ -15,4 +23,5 @@ Router.map(function () {
   this.route('dash');
   this.route('reports');
   this.route('downloads');
+  this.route('not-found', { path: '/*path' });
 });
