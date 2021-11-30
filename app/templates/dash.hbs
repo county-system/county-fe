@@ -1,14 +1,14 @@
 {{page-title "Dash"}}
 {{outlet}}
 <div>
-    <h4 class="mb-4 text-muted">Dashboard </h4>
+    <h4 class="mb-4 text-muted">System Navigation </h4>
 
     <div class="row">
         <div class="col-md-3 col-lg-2 mb-4">
-            <div class="card bg-green text-light shadow border-0 rounded-0">
+            <div class="card bg-purple text-light shadow border-0 rounded-0">
                 <div class="card-body text-center">
                     <h5 class="card-title">Summary data of county projects</h5>
-                    <LinkTo @route="kpi" class="pr-4">
+                    <LinkTo @route="kpi">
                         <a href="#" class="btn btn-primary">Visit KPI's</a>
                     </LinkTo>
                 </div>
@@ -18,27 +18,27 @@
             <div class="card bg-green text-light shadow border-0 rounded-0">
                 <div class="card-body text-center">
                     <h5 class="card-title">Maps data positioning</h5>
-                    <LinkTo @route="maps" class="pr-4">
+                    <LinkTo @route="maps">
                         <a href="#" class="btn btn-primary">Visit Maps</a>
                     </LinkTo>
                 </div>
             </div>
         </div>
         <div class="col-md-3 col-lg-2 mb-4">
-            <div class="card bg-green text-light shadow border-0 rounded-0">
+            <div class="card bg-blue text-light shadow border-0 rounded-0">
                 <div class="card-body text-center">
                     <h5 class="card-title">Check out projects</h5>
-                    <LinkTo @route="dashboard" class="pr-4">
+                    <LinkTo @route="dashboard">
                         <a href="#" class="btn btn-primary">Visit Projects</a>
                     </LinkTo>
                 </div>
             </div>
         </div>
         <div class="col-md-3 col-lg-2 mb-4">
-            <div class="card bg-green text-light shadow border-0 rounded-0">
+            <div class="card bg-purple text-light shadow border-0 rounded-0">
                 <div class="card-body text-center">
                     <h5 class="card-title">County reports update</h5>
-                    <LinkTo @route="reports" class="pr-4">
+                    <LinkTo @route="reports">
                         <a href="#" class="btn btn-primary">Visit M&#38;E</a>
                     </LinkTo>
                 </div>
@@ -48,7 +48,7 @@
             <div class="card bg-green text-light shadow border-0 rounded-0">
                 <div class="card-body text-center">
                     <h5 class="card-title">County Systems in use</h5>
-                    <LinkTo @route="reports" class="pr-4">
+                    <LinkTo @route="reports">
                         <a href="#" class="btn btn-primary">Visit Systems</a>
                     </LinkTo>
                 </div>

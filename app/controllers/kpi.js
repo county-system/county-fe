@@ -8,6 +8,7 @@ export default class KpiController extends Controller {
   @tracked modelData = this.model;
   @tracked value;
   @tracked type = 'pie';
+  @tracked chartType1 = 'bar';
   @tracked dropdown = this.dropdownData();
   @tracked totalProjectCosts = 0;
   @tracked incomplete = 0;
@@ -57,6 +58,13 @@ export default class KpiController extends Controller {
     this.totalProjectCosts = this.filteredKpiData().total;
     this.incomplete = this.filteredKpiData().incomplete;
     this.complete = this.filteredKpiData().complete;
+  }
+
+  @action
+  chartTypeOption(event) {
+    console.log('event.target.value');
+    console.log(event.target.value);
+    this.chartType1 = event.target.value;
   }
 
   @action

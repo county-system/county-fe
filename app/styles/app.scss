@@ -20,15 +20,6 @@ html {
     height: 100%;
 }
 
-.green {
-    color: #56983F !important;
-}
-
-.bg-green {
-    background-color: #56983F !important;
-    color: #fff !important;
-}
-
 .align-content {
     align-content: center;
 }
@@ -43,3 +34,4 @@ html {
 @import 'dashboard';
 @import 'kpi';
 @import 'downloads';
+@import 'colors';
