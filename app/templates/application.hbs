@@ -1,37 +1,5 @@
 {{page-title "CountyFe"}}
-{{!--
-{{#if (eq this.route "index")}}
-<Header::Top-Nav />
-<div class="content-home">
-    {{outlet}}
-</div>
-
-{{else if (eq this.route "login")}}
-<Header::Top-Nav />
-<div class="content">
-    {{outlet}}
-</div>
-
-{{else}}
-<Header::Side-Nav />
-<div class="content">
-    {{outlet}}
-</div>
-{{/if}} --}}
-
-{{!--
-downloadables
-integrations - kobo collect, arcgis
-profiles - user email linkage, user profile
-coloring dashboards
---}}
-
-{{!--
-<Header::Top-Nav />
-<main class="flex">
-
-</main> --}}
-{{!-- <div {{did-insert this.bgImage}}></div> --}}
+{{outlet}}
 
 <Header::Top-Nav />
 <div class="page-wrapper chiller-theme toggled">

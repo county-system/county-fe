@@ -1,21 +1,31 @@
 {{page-title "Maps"}}
-{{!-- {{outlet}} --}}
-{{!-- {{#each map in maps}}
-<div class="map-container">
-  <div class="map-title">
-    {{map.title}}
+{{outlet}}
+
+{{!--
+https://www.google.com/maps/place/Turkana+County/@2.9783772,34.2324817,8z/data=!3m1!4b1!4m5!3m4!1s0x17835ec9930e52c1:0x61edf66a08eab395!8m2!3d3.3122477!4d35.5657862
+--}}
+
+
+<div class="row">
+  <div class="col-md-9 col-lg-9">
+    <GMap @lat={{lat}} @lng={{lng}} @zoom={{8}} @minZoom={{7}}
+      @data="!3m1!4b1!4m5!3m4!1s0x17835ec9930e52c1:0x61edf66a08eab395!8m2!3d3.3122477!4d35.5657862"
+      @panControl={{false}} @streetViewControl={{false}} />
+
   </div>
-  <div class="map-image">
-    <img src="{{map.image}}" alt="{{map.title}}">
+  <div class="col-md-3 col-lg-3">
+    <ul class="list-group">
+      <li class="list-group-item">Cras justo odio</li>
+      <li class="list-group-item">Dapibus ac facilisis in</li>
+      <li class="list-group-item">Morbi leo risus</li>
+      <li class="list-group-item">Porta ac consectetur ac</li>
+      <li class="list-group-item">Vestibulum at eros</li>
+    </ul>
   </div>
-  <div class="map-description">
-    {{map.description}}
-  </div>
+
 </div>
-{{/each}} --}}
 
-
-<LeafletMap @lat={{lat}} @lng={{lng}} @zoom={{zoom}} as |layers|>
+{{!-- <LeafletMap @lat={{lat}} @lng={{lng}} @zoom={{zoom}} as |layers|>
 
   <layers.tile @url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png" />
 
@@ -29,4 +39,4 @@
 
   <layers.polyline @locations={{this.full}} />
 
-</LeafletMap>
+</LeafletMap> --}}

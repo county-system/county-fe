@@ -1,8 +1,10 @@
 import Controller from '@ember/controller';
 
 export default class MapsController extends Controller {
-  lat = -1.286389;
-  lng = 36.817223;
+  // lat = -1.286389;
+  // lng = 36.817223;
+  lat = 3.2416605;
+  lng = 34.6609485;
   zoom = 6;
 
   emberConfLocation = [3.0947667, 35.6155151];
