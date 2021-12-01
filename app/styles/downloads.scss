@@ -55,3 +55,18 @@
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
 }
+.downloads .dropdown {
+    position: absolute;
+    width: auto;
+    right: 35px;
+    height: auto;
+    display: none;
+}
+
+.downloads .toggler:focus {
+    outline: none;
+}
+
+.downloads .toggler:focus+.dropdown {
+    display: block;
+}

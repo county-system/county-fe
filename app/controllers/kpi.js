@@ -63,7 +63,6 @@ export default class KpiController extends Controller {
   @action
   chartTypeOption(event) {
     console.log('event.target.value');
-    console.log(event.target.value);
     this.chartType1 = event.target.value;
   }
 
