@@ -5,49 +5,47 @@
 https://www.google.com/maps/place/Turkana+County/@2.9783772,34.2324817,8z/data=!3m1!4b1!4m5!3m4!1s0x17835ec9930e52c1:0x61edf66a08eab395!8m2!3d3.3122477!4d35.5657862
 --}}
 
-<div class="row" style='{{if this.maps this.myStyle}}'>
+<div class="row" style='{{if maps this.myStyle}}'>
   <div class="col-md-9 col-lg-9">
-    <GMap @lat={{lat}} @lng={{lng}} @zoom={{8}} @minZoom={{5}} @panControl={{false}} @streetViewControl={{false}} as
-      |map|>
+    <GMap @lat={{london.lat}} @lng={{london.lng}} @zoom={{10}} @minZoom={{5}} @panControl={{false}}
+      @streetViewControl={{false}} @gestureHandling="greedy" @disableDefaultUI={{true}} as |map|>
 
+      <map.markerClusterer
+      {{!-- @onClick={{this.whenAClusterMarkerIsClicked}} --}}
+      @onClick={{toggle "markerTooltipOpen" this}}
+    @onClusteringbegin={{this.whenABatchOfMarkersIsToBeClustered}}
+    @onClusteringend={{this.whenABatchOfMarkersHasBeenClustered}} as |cluster|>
 
+        {{#each this.filteredRentals as |rental|}}
+        <cluster.marker @lat={{rental.lat}} @lng={{rental.lng}} />
+        {{/each}}
 
-      {{#each londonLocations as |location|}}
-      <map.overlay @lat={{location.lat}} @lng={{location.lng}} @onMouseover={{fn (mut location.active) true}}
-        @onMouseleave={{fn (mut location.active) false}}>
-        {{log location}}
+      </map.markerClusterer>
 
-        <div class="tooltip {{if location.active " active"}}">
-          £{{location.price}}
-        </div>
-      </map.overlay>
-      {{/each}}
+      {{!-- {{#each this.filteredRentals key="id" as |rental index|}}
+      <map.marker @lat={{rental.lat}} @lng={{rental.lng}} @zIndex={{if rental.active 1000 index}}
+        @onClick={{toggle "markerTooltipOpen" this}} @onMouseover={{fn this.handleMouseEnter rental}} @onMouseleave={{fn
+        this.handleMouseLeave rental}} as |marker|>
+        <marker.infoWindow @isOpen={{this.markerTooltipOpen}} @onCloseclick={{fn (mut this.markerTooltipOpen) false}}>
+
+          <div class="text-center">
+            <div>
+              {{rental.price}} <i>HTML</i> content in infoWindow!
+            </div>
+          </div>
+
+        </marker.infoWindow>
+      </map.marker>
+      {{/each}} --}}
 
     </GMap>
 
   </div>
   <div class="col-md-3 col-lg-3">
-    <ul class="list-group">
+    <ul class="list-group green bg-green-hover">
       <li class="list-group-item">Population density</li>
       <li class="list-group-item">Housing</li>
       <li class="list-group-item">Topography</li>
     </ul>
   </div>
-
 </div>
-
-{{!-- <LeafletMap @lat={{lat}} @lng={{lng}} @zoom={{zoom}} as |layers|>
-
-  <layers.tile @url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png" />
-
-  {{#each this.full as |f|}}
-  <layers.marker @location={{f}} as |marker|>
-    <marker.tooltip>
-      <p>{{this.emberConfLocationData}}</p>
-    </marker.tooltip>
-  </layers.marker>
-  {{/each}}
-
-  <layers.polyline @locations={{this.full}} />
-
-</LeafletMap> --}}

@@ -1,0 +1,20 @@
+[
+    {
+        "type": "population",
+        "name": "Population",
+        "ward": "Ward 1",
+        "population": "1,000",
+        "households": "1,000",
+        "household_density": "1,000",
+        "lat": 51.46675984258327,
+        "lng": -0.10392119256580425
+    },
+    {
+        "type": "population",
+        "name": "Population",
+        "ward": "Ward 2",
+        "population": "1,000",
+        "lat": 51.49795022147168,
+        "lng": -0.14683709022233726
+    }
+]

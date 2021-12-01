@@ -19,15 +19,15 @@ export default class MapDataService extends Service {
   primaryMapStyle = darkStyle;
   lightStyle = lightStyle;
 
-  //   london = {
-  //     lat: 51.507568,
-  //     lng: -0.127762,
-  //   };
-
   london = {
-    lat: 3.2416605,
-    lng: 34.6609485,
+    lat: 51.507568,
+    lng: -0.127762,
   };
+
+  // london = {
+  //   lat: -3.1416605,
+  //   lng: 36.6609485,
+
   @tracked
   londonLocations = [];
 
@@ -39,7 +39,7 @@ export default class MapDataService extends Service {
     });
   }
 
-  createLocations(numLocations = 4) {
+  createLocations(numLocations = 6) {
     let { lat, lng } = this.london,
       origin = new this.google.maps.LatLng(lat, lng);
 

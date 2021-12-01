@@ -24,4 +24,5 @@ Router.map(function () {
   this.route('reports');
   this.route('downloads');
   this.route('not-found', { path: '/*path' });
+  this.route('systems');
 });

@@ -14,6 +14,9 @@ module.exports = function (defaults) {
       extension: 'scss',
       headerModules: ['county-fe/styles/app'],
     },
+    'ember-composable-helpers': {
+      only: ['array', 'join', 'toggle'],
+    },
     minifyCSS: {
       enabled: true,
       options: { processImport: true },

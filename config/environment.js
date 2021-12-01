@@ -17,6 +17,7 @@ module.exports = function (environment) {
       },
     },
     'ember-google-maps': {
+      language: 'en',
       key: process.env.GOOGLE_MAPS_API_KEY, // Using .env files in this example
       libraries: ['geometry', 'places'], // Optional libraries
       // client: undefined,

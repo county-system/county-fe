@@ -35,7 +35,7 @@
     "bootstrap": "^4.6.0",
     "broccoli-asset-rev": "^3.0.0",
     "chart.js": "^3.6.0",
-    "ember-auto-import": "^1.11.3",
+    "ember-auto-import": "^2.2.4",
     "ember-bootstrap": "^4.9.0",
     "ember-bootstrap-changeset-validations": "^4.0.0",
     "ember-cli": "~3.28.3",
@@ -49,12 +49,14 @@
     "ember-cli-sass": "^10.0.1",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-terser": "^4.0.2",
+    "ember-composable-helpers": "^4.5.0",
     "ember-css-modules": "^1.5.0",
     "ember-css-modules-sass": "^1.1.0",
     "ember-data": "~3.28.0",
     "ember-export-application-global": "^2.0.1",
     "ember-fetch": "^8.1.1",
     "ember-google-maps": "^5.0.0",
+    "ember-google-maps-markerclustererplus": "^1.0.1",
     "ember-load-initializers": "^2.1.2",
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-page-title": "^6.2.2",
@@ -87,5 +89,8 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "webpack": "^5.64.4"
   }
 }
