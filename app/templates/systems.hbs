@@ -2,25 +2,35 @@
 {{outlet}}
 
 <div>
-    <h4 class="mb-4 text-muted">System Navigation </h4>
+    <h4 class="mb-4 text-muted">Integrated Systems</h4>
 
     <div class="row">
-        <div class="col-md-3 col-lg-2 mb-4">
+        <div class="col-md-5 col-lg-3 mb-4">
             <div class="card bg-green text-light shadow border-0 rounded-0">
                 <div class="card-body text-center">
                     <h5 class="card-title">ArcGis Mapping System</h5>
-                    <LinkTo @route="kpi">
-                        <a href="#" class="btn btn-primary disabled">Learn More</a>
+                    <LinkTo @route="kpi" @disabled={{true}}>
+                        <a href="#" class="btn btn-primary">Learn More</a>
                     </LinkTo>
                 </div>
             </div>
         </div>
-        <div class="col-md-3 col-lg-2 mb-4">
+        <div class="col-md-5 col-lg-3 mb-4">
             <div class="card bg-green text-light shadow border-0 rounded-0">
                 <div class="card-body text-center">
                     <h5 class="card-title">County Revenue Systems</h5>
-                    <LinkTo @route="maps">
-                        <a href="#" class="btn btn-primary disabled">Learn More</a>
+                    <LinkTo @route="maps" @disabled={{true}}>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </LinkTo>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 col-lg-4 mb-4">
+            <div class="card bg-green text-light shadow border-0 rounded-0">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Partner and Donor Fund Systems</h5>
+                    <LinkTo @route="maps" @disabled={{true}}>
+                        <a href="#" class="btn btn-primary">Learn More</a>
                     </LinkTo>
                 </div>
             </div>
