@@ -24,7 +24,6 @@
                     </div>
                     <div class="ml-auto">
                         <p class="card-label text-right">Add User</p>
-                        {{!-- <h4 class="card-text text-right ">5,045</h4> --}}
                     </div>
                 </div>
             </div>
@@ -64,81 +63,92 @@
 
 <div class="row">
     <div class="col">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Department</th>
-                    <th scope="col">Account Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="switch1">
-                            <label class="custom-control-label" for="switch1"></label>
-                        </div>
-                    </td>
-                    <td>
-                        <img src="../images/avatar.png" alt="avatar" class="img-fluid rounded-circle" width="50">
-                    </td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>
-                        <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="switch2">
-                            <label class="custom-control-label" for="switch2"></label>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="switch3">
-                            <label class="custom-control-label" for="switch3"></label>
-                        </div>
-                    </td>
-                    <td>
-                        <img src="../images/avatar.png" alt="avatar" class="img-fluid rounded-circle" width="50">
-                    </td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>
-                        <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="customSwitch2">
-                            <label class="custom-control-label" for="customSwitch2"></label>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                            <label class="custom-control-label" for="customSwitch1"></label>
-                        </div>
-                    </td>
-                    <td>
-                        <img src="../images/avatar.png" alt="avatar" class="img-fluid rounded-circle" width="50">
-                    </td>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    <td>
-                        <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="customSwitch3">
-                            <label class="custom-control-label" for="customSwitch3"></label>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
+        <div class="table-responsive table-responsive-md table-responsive-sm">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Department</th>
+                        <th scope="col">Joined</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Account Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="switch1">
+                                <label class="custom-control-label" for="switch1"></label>
+                            </div>
+                        </td>
+                        <td>
+                            {{!-- <img src="../images/avatar.png" alt="avatar" class="img-fluid rounded-circle"
+                                width="50"> --}}
+                            <img class="img-responsive img-rounded rounded-circle" width="50" src="/images/prof.jpeg"
+                                alt="User picture">
+                        </td>
+                        <td>Jere</td>
+                        <td>Apalia</td>
+                        <td>@mdo</td>
+                        <td>3 months ago</td>
+                        <td>SuperAdmin</td>
+                        <td>
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="switch2">
+                                <label class="custom-control-label" for="switch2"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="switch3">
+                                <label class="custom-control-label" for="switch3"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <img src="../images/avatar.png" alt="avatar" class="img-fluid rounded-circle" width="50">
+                        </td>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        <td>3 months ago</td>
+                        <td>Admin</td>
+                        <td>
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                                <label class="custom-control-label" for="customSwitch2"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                <label class="custom-control-label" for="customSwitch1"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <img src="../images/avatar.png" alt="avatar" class="img-fluid rounded-circle" width="50">
+                        </td>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>3 months ago</td>
+                        <td>Admin</td>
+                        <td>
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch3">
+                                <label class="custom-control-label" for="customSwitch3"></label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-
 </div>
