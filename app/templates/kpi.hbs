@@ -53,11 +53,23 @@
                                 <h3>Amount Allocated per ward</h3>
                                 <span tabindex="1" class="toggler">{{svg-jar "three-dots-vertical"}}</span>
                                 <div class="dropdown shadow border-0 rounded-5">
-                                    <ul class="list-group shadow border-5 rounded-5" {{on "click" this.chartTypeOption
-                                        value="target.value" }}>
-                                        <li class="list-group-item bg-green" value="line">Line Graph</li>
-                                        <li class="list-group-item bg-green" value="bar">Bar Graph</li>
-                                    </ul>
+                                    {{log chartType1}}
+                                    <BsButtonGroup @class="btn-group-vertical" @value={{chartType1}}
+                                        @type="button" @onChange={{action this.chartTypeOption buttonGroupValue}} as |bg|>
+                                        <div class="list-group">
+                                            <bg.button @value="line"
+                                                class="bg-green list-group-item list-group-item-action">
+                                                Line Graph</bg.button>
+                                            <bg.button @value="bar"
+                                                class="bg-green list-group-item list-group-item-action">
+                                                Bar Graph
+                                            </bg.button>
+                                            <bg.button @value="pie"
+                                                class="bg-green list-group-item list-group-item-action">
+                                                Pie Graph
+                                            </bg.button>
+                                        </div>
+                                    </BsButtonGroup>
                                 </div>
                             </div>
                         </div>

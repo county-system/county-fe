@@ -29,6 +29,12 @@ export default class KpiController extends Controller {
   }
 
   @action
+  chartTypeOption(data) {
+    console.log(data);
+    this.chartType1 = data[0];
+  }
+
+  @action
   getRandomColor() {
     const letters = '0123456789ABCDEF';
     let color = '#';
@@ -40,7 +46,6 @@ export default class KpiController extends Controller {
 
   @action
   dropdownData() {
-    // this.modelData = this.model;
     const dropdown = [];
 
     this.modelData.forEach((item) => {
@@ -58,12 +63,6 @@ export default class KpiController extends Controller {
     this.totalProjectCosts = this.filteredKpiData().total;
     this.incomplete = this.filteredKpiData().incomplete;
     this.complete = this.filteredKpiData().complete;
-  }
-
-  @action
-  chartTypeOption(event) {
-    console.log('event.target.value');
-    this.chartType1 = event.target.value;
   }
 
   @action
