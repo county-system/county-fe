@@ -7,14 +7,13 @@ https://www.google.com/maps/place/Turkana+County/@2.9783772,34.2324817,8z/data=!
 
 <div class="row" style='{{if maps this.myStyle}}'>
   <div class="col-md-9 col-lg-9">
-    <GMap @lat={{london.lat}} @lng={{london.lng}} @zoom={{10}} @minZoom={{5}} @panControl={{false}}
+    <GMap @lat={{london.lat}} @lng={{london.lng}} @zoom={{4}} @minZoom={{1}} @panControl={{false}}
       @streetViewControl={{false}} @gestureHandling="greedy" @disableDefaultUI={{true}} as |map|>
 
-      <map.markerClusterer
-      {{!-- @onClick={{this.whenAClusterMarkerIsClicked}} --}}
-      @onClick={{toggle "markerTooltipOpen" this}}
-    @onClusteringbegin={{this.whenABatchOfMarkersIsToBeClustered}}
-    @onClusteringend={{this.whenABatchOfMarkersHasBeenClustered}} as |cluster|>
+      <map.markerClusterer {{!-- @onClick={{this.whenAClusterMarkerIsClicked}}
+        @onClusteringbegin={{this.whenABatchOfMarkersIsToBeClustered}}
+        @onClusteringend={{this.whenABatchOfMarkersHasBeenClustered}} --}} @onClick={{toggle "markerTooltipOpen" this}}
+        as |cluster|>
 
         {{#each this.filteredRentals as |rental|}}
         <cluster.marker @lat={{rental.lat}} @lng={{rental.lng}} />
@@ -42,10 +41,14 @@ https://www.google.com/maps/place/Turkana+County/@2.9783772,34.2324817,8z/data=!
 
   </div>
   <div class="col-md-3 col-lg-3">
-    <ul class="list-group green bg-green-hover">
-      <li class="list-group-item">Population density</li>
-      <li class="list-group-item">Housing</li>
-      <li class="list-group-item">Topography</li>
-    </ul>
+
+    <BsButtonGroup @class="btn-group-vertical" @type="button" @onChange={{action this.filterBy}} as |bg|>
+      <div class="list-group">
+        <bg.button @value="population" class="green bg-green-hover list-group-item list-group-item-action">Population density</bg.button>
+        <bg.button @value="housing" class="green bg-green-hover list-group-item list-group-item-action">Housing</bg.button>
+        <bg.button @value="schools" class="green bg-green-hover list-group-item list-group-item-action">Schools</bg.button>
+        <bg.button @value="topography"class="green bg-green-hover list-group-item list-group-item-action" disabled>Topography</bg.button>
+      </div>
+    </BsButtonGroup>
   </div>
 </div>

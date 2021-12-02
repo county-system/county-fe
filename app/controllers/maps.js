@@ -1,34 +1,10 @@
 import Controller from '@ember/controller';
-import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { throttle } from '@ember/runloop';
-
-class Rental {
-  @tracked id;
-  @tracked lat;
-  @tracked lng;
-  @tracked type;
-  @tracked price;
-  @tracked active;
-
-  constructor(args) {
-    return Object.assign(this, args);
-  }
-}
 export default class MapsController extends Controller {
   @tracked maps = true;
-
-  @service mapData;
-
-  get myStyle() {
-    return 'padding: 0 !important;margin-right: 1px;';
-  }
-  @service
-  googleMapsApi;
-
-  @service
-  mapData;
+  @tracked mapData = this.model;
 
   @tracked
   mapTooltipOpen = false;
@@ -39,30 +15,30 @@ export default class MapsController extends Controller {
   @tracked mapBounds;
   @tracked mapZoom;
 
-  @tracked
-  rentals = [];
-
-  london = this.mapData.london;
-  primaryMapStyle = this.mapData.primaryMapStyle;
-
-  constructor() {
-    super(...arguments);
-
-    this.getRentals().then((rentals) => {
-      this.rentals = rentals;
-    });
+  get myStyle() {
+    return 'padding: 0 !important;margin-right: 1px;';
   }
 
-  get google() {
-    return this.googleMapsApi.google;
+  london = {
+    lat: -2.5201429,
+    lng: 34.0149256,
+  };
+
+  @action
+  filterBy(filters) {
+    const newMapData = this.model.filter((data) => {
+      return data.type == filters[0];
+    });
+    this.mapData = newMapData;
   }
 
   get filteredRentals() {
-    return this.rentals.filter((rental) => {
+    return this.mapData.filter((rental) => {
       let { mapBounds } = this;
 
       if (mapBounds) {
         let { lat, lng } = rental;
+        console.log(lat, lng);
 
         // TODO: Look into this again...
         let northEast = mapBounds.getNorthEast(),
@@ -91,27 +67,10 @@ export default class MapsController extends Controller {
     });
   }
 
-  getRentals() {
-    return this.google.then(() => {
-      return this.mapData.londonLocations.map(
-        (location) => new Rental({ ...location, active: false })
-      );
-    });
-  }
 
   @action
   saveBounds({ map }) {
     throttle(this, this._saveBounds, map, 30);
-  }
-
-  @action
-  scrollToListing(listing) {
-    let id = `rental-${listing.id}`,
-      el = document.getElementById(id);
-
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
   }
 
   @action
