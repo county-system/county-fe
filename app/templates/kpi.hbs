@@ -53,20 +53,13 @@
                                 <h3>Amount Allocated per ward</h3>
                                 <span tabindex="1" class="toggler">{{svg-jar "three-dots-vertical"}}</span>
                                 <div class="dropdown shadow border-0 rounded-5">
-                                    {{log chartType1}}
-                                    <BsButtonGroup @class="btn-group-vertical" @value={{chartType1}}
-                                        @type="button" @onChange={{action this.chartTypeOption buttonGroupValue}} as |bg|>
+                                    <BsButtonGroup @class="btn-group-vertical" @type="button" @onChange={{action
+                                        this.chartTypeOption}} as |bg|>
                                         <div class="list-group">
-                                            <bg.button @value="line"
-                                                class="bg-green list-group-item list-group-item-action">
-                                                Line Graph</bg.button>
-                                            <bg.button @value="bar"
-                                                class="bg-green list-group-item list-group-item-action">
-                                                Bar Graph
+                                            <bg.button @value="line" class="bg-green list-group-item list-group-item-action">Line Graph</bg.button>
+                                            <bg.button @value="bar" class="bg-green list-group-item list-group-item-action">Bar Graph
                                             </bg.button>
-                                            <bg.button @value="pie"
-                                                class="bg-green list-group-item list-group-item-action">
-                                                Pie Graph
+                                            <bg.button @value="pie" class="bg-green list-group-item list-group-item-action">Pie Graph
                                             </bg.button>
                                         </div>
                                     </BsButtonGroup>
@@ -85,7 +78,7 @@
                 <div class="col-md-6 col-lg-6 mb-4">
                     <div class="card mt-4">
                         <div class="card-header bg-transparent">
-                            <h3 class="justify-content-md align-items-center">Amount spent per ward</h3>
+                            <h3 class="justify-content-md align-items-center">Amount Allocated per ward</h3>
                         </div>
                         <div class="card-body">
                             {{ember-chart

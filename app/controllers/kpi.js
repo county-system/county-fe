@@ -7,9 +7,8 @@ export default class KpiController extends Controller {
   @service store;
   @tracked modelData = this.model;
   @tracked value;
-  @tracked type = 'pie';
-  @tracked chartType1 = 'bar';
-  @tracked dropdown = this.dropdownData();
+  @tracked type;
+  @tracked chartType1;
   @tracked totalProjectCosts = 0;
   @tracked incomplete = 0;
   @tracked complete = 0;
@@ -17,6 +16,12 @@ export default class KpiController extends Controller {
   @tracked pieData = this.pieDataTotalCost().newData;
   @tracked totalWardAmountSpent = this.pieDataTotalCost().totalWardAmount;
   @tracked totalProjectsCount = this.pieDataTotalCost().totalProjects;
+
+  constructor() {
+    super(...arguments);
+    this.chartType1 = 'bar';
+    this.type = 'pie';
+  }
 
   @action
   chartColors(num) {
@@ -31,7 +36,7 @@ export default class KpiController extends Controller {
   @action
   chartTypeOption(data) {
     console.log(data);
-    this.chartType1 = data[0];
+    this.chartType1 = 'pie';
   }
 
   @action

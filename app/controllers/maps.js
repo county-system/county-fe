@@ -27,7 +27,6 @@ export default class MapsController extends Controller {
 
   @action
   filterBy(filters) {
-    console.log(filters);
     const newMapData = this.model.filter((data) => {
       return data.type == filters[0];
     });
