@@ -5,6 +5,7 @@ import { throttle } from '@ember/runloop';
 export default class MapsController extends Controller {
   @tracked maps = true;
   @tracked mapData = this.model;
+  @tracked buttonGroupValue;
 
   @tracked
   mapTooltipOpen = false;
@@ -26,10 +27,12 @@ export default class MapsController extends Controller {
 
   @action
   filterBy(filters) {
+    console.log(filters);
     const newMapData = this.model.filter((data) => {
       return data.type == filters[0];
     });
     this.mapData = newMapData;
+    this.buttonGroupValue = filters[0];
   }
 
   get filteredRentals() {

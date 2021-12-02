@@ -41,13 +41,17 @@ https://www.google.com/maps/place/Turkana+County/@2.9783772,34.2324817,8z/data=!
 
   </div>
   <div class="col-md-3 col-lg-3">
-
-    <BsButtonGroup @class="btn-group-vertical" @type="button" @onChange={{action this.filterBy}} as |bg|>
+    <BsButtonGroup @class="btn-group-vertical" @value={{buttonGroupValue}} @type="button" @onChange={{action
+      this.filterBy}} as |bg|>
       <div class="list-group">
-        <bg.button @value="population" class="green bg-green-hover list-group-item list-group-item-action">Population density</bg.button>
-        <bg.button @value="housing" class="green bg-green-hover list-group-item list-group-item-action">Housing</bg.button>
-        <bg.button @value="schools" class="green bg-green-hover list-group-item list-group-item-action">Schools</bg.button>
-        <bg.button @value="topography"class="green bg-green-hover list-group-item list-group-item-action" disabled>Topography</bg.button>
+        <bg.button @value="population" class="green bg-green-hover list-group-item list-group-item-action">Population
+          density</bg.button>
+        <bg.button @value="housing" class="green bg-green-hover list-group-item list-group-item-action">Housing
+        </bg.button>
+        <bg.button @value="schools" class="green bg-green-hover list-group-item list-group-item-action">Schools
+        </bg.button>
+        <bg.button @value="topography" class="green bg-green-hover list-group-item list-group-item-action" disabled>
+          Topography</bg.button>
       </div>
     </BsButtonGroup>
   </div>
