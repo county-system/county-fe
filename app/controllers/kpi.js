@@ -12,6 +12,7 @@ export default class KpiController extends Controller {
   @tracked totalProjectCosts = 0;
   @tracked incomplete = 0;
   @tracked complete = 0;
+  @tracked dropdown = this.dropdownData();
   @tracked totalDatasets = [];
   @tracked pieData = this.pieDataTotalCost().newData;
   @tracked totalWardAmountSpent = this.pieDataTotalCost().totalWardAmount;
