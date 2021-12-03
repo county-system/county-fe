@@ -34,8 +34,4 @@ export default class DashboardRoute extends Route {
       },
     ];
   }
-
-  // model() {
-  //   return this.store.findAll('dashboard');
-  // }
 }
