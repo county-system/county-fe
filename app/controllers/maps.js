@@ -70,7 +70,6 @@ export default class MapsController extends Controller {
     });
   }
 
-
   @action
   saveBounds({ map }) {
     throttle(this, this._saveBounds, map, 30);

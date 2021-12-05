@@ -25,4 +25,5 @@ Router.map(function () {
   this.route('downloads');
   this.route('not-found', { path: '/*path' });
   this.route('systems');
+  this.route('settings');
 });
