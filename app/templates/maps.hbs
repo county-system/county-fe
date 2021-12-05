@@ -37,9 +37,10 @@
     </GMap>
 
   </div>
+
+  {{!-- {{log buttonGroupValue}} --}}
   <div class="col-md-3 col-lg-3">
-    <BsButtonGroup @class="btn-group-vertical" @value={{buttonGroupValue}} @type="button" @onChange={{action
-      this.filterBy}} as |bg|>
+    <BsButtonGroup @class="btn-group-vertical" @value={{buttonGroupValue}} @type="button" @onChange={{action (mut buttonGroupValue) this.filterBy }} as |bg|>
       <div class="list-group">
         <bg.button @value="population" class="green bg-green-hover list-group-item list-group-item-action">Population
           density</bg.button>

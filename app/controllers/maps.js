@@ -27,11 +27,12 @@ export default class MapsController extends Controller {
 
   @action
   filterBy(filters) {
+    console.log('cont', this.buttonGroupValue);
     const newMapData = this.model.filter((data) => {
       return data.type == filters[0];
     });
     this.mapData = newMapData;
-    this.buttonGroupValue = filters[0];
+    // this.buttonGroupValue = filters[0];
   }
 
   get filteredRentals() {
