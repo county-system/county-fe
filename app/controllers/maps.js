@@ -32,7 +32,7 @@ export default class MapsController extends Controller {
       return data.type == filters[0];
     });
     this.mapData = newMapData;
-    // this.buttonGroupValue = filters[0];
+    this.buttonGroupValue = filters[0];
   }
 
   get filteredRentals() {
