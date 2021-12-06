@@ -6,7 +6,7 @@ export default class ApplicationAdapter extends RESTAdapter {
   @service session;
 
   namespace = 'api/v1';
-  host = config.APP.API_HOST;
+  host = config.backend.BACKEND_API;
 
   get headers() {
     console.log(this.session?.data?.authenticated?.access);
