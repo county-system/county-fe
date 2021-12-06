@@ -19,8 +19,9 @@ export default class MeService extends Service {
     if (this.session.isAuthenticated) {
       // const tokenData = authenticator.getTokenData(session.access);
       const tokenData = this.getUserIdFromToken(session.access);
-      this.user = await this.store.queryRecord('user', tokenData);
-      console.log(this.user);
+      console.log('tokenData', tokenData);
+      this.user = await this.store.findRecord('user', tokenData);
+      console.log('this.user', this.user);
       // try {
       //   this.user = await this.store.findRecord('user', tokenData.user_id);
       // } catch (e) {
