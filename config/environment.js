@@ -26,24 +26,29 @@ module.exports = function (environment) {
       // mapIds: ['1234', '2345'],
     },
 
+    backend: {
+      BACKEND_API: process.env.BACKEND_API,
+      BACKEND_API_VERSION: process.env.BACKEND_API_VERSION,
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-      'ember-simple-auth': {
-        authorizer: 'authorizer:token',
-        authenticationRoute: 'login',
-      },
-      'ember-simple-auth-token': {
-        refreshTokenPropertyName: 'refresh',
-        tokenPropertyName: 'access',
-        serverTokenEndpoint: '/api/v2/auth',
-        serverTokenRefreshEndpoint: '/api/v2/auth/token-refresh',
-        refreshAccessTokens: true,
-        refreshLeeway: 300, // refresh 5 minutes (300 seconds) before expiration
-      },
+      API_HOST: process.env.BACKEND_API,
+    },
+    'ember-simple-auth': {
+      authorizer: 'authorizer:token',
+      authenticationRoute: 'login',
+    },
+    'ember-simple-auth-token': {
+      refreshTokenPropertyName: 'refresh',
+      tokenPropertyName: 'access',
+      serverTokenEndpoint: process.env.BACKEND_API + '/api/token-auth/',
+      serverTokenRefreshEndpoint: process.env.BACKEND_API + '/api/token/refresh/',
+      refreshAccessTokens: true,
+      refreshLeeway: 300, // refresh 5 minutes (300 seconds) before expiration
     },
   };
-
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

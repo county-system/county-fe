@@ -1,5 +1,4 @@
 import Service, { inject as service } from '@ember/service';
-import { getOwner } from '@ember/application';
 import { tracked } from '@glimmer/tracking';
 import fetch from 'fetch';
 import JWT from 'ember-simple-auth-token/authenticators/jwt';
