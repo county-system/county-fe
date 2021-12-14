@@ -126,7 +126,7 @@ export default class KpiController extends Controller {
     let totalPerWard = [];
     let totalWardAmount = 0;
     let totalProjects = 0;
-    
+
     data.forEach((item) => {
       if (
         !implementing_entities.includes(item.implementing_entity) &&
@@ -160,15 +160,13 @@ export default class KpiController extends Controller {
         {
           label: 'Money allocated',
           data: totalPerWard,
-          backgroundColor: this.chartColors(totalPerWard.length),
+          backgroundColor: this.chartColors(totalProjects),
         },
       ],
     };
 
     return {
       newData,
-      totalWardAmount,
-      totalProjects,
     };
   }
 
