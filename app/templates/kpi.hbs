@@ -1,4 +1,18 @@
 {{page-title "Kpi"}}
+
+<div>
+    <h4 class="mb-4 text-muted green">County Totals</h4>
+    <div class="row">
+        <div class="col-md-4 col-lg-3">
+            <Common::Card-Config @class="bg-green text-light " @header="Total Amount Allocated" @section="section"
+                @value={{fomartcurrency totalWardAmountSpent}} />
+        </div>
+        <div class="col-md-4 col-lg-3">
+            <Common::Card-Config @class="bg-green text-light" @header="# of Projects in the County" @section="section"
+                @value={{totalProjectsCount}} />
+        </div>
+    </div>
+</div>
 <div class="row">
     <div class="col">
         <div class="wrapper">
@@ -12,36 +26,95 @@
         </div>
     </div>
 </div>
-
-<div>
-    <h4 class="mb-4 text-muted green">County Totals</h4>
-    <div class="row">
-        <div class="col-md-3 col-lg-3 mb-4">
-            <Common::Card-Config @class="bg-green text-light " @header="Total Amount Allocated" @section="section"
-                @value={{fomartcurrency totalWardAmountSpent}} />
-        </div>
-        <div class="col-md-3 col-lg-3 mb-4">
-            <Common::Card-Config @class="bg-green text-light" @header="# of Projects in the County" @section="section"
-                @value={{totalProjectsCount}} />
-        </div>
-    </div>
-</div>
 <div>
     <h4 class="mb-4 text-muted green">Projects Data: <span class="green">{{this.value}}</span> </h4>
     <div class="row">
-        <div class="col-md-3 col-lg-3 mb-4">
+        <div class="col-md-4 col-lg-3 mb-4">
             <Common::Card-Config @class="text-dark bg-white" @header="Project Amount" @value={{fomartcurrency
                 totalProjectCosts}} />
         </div>
-        <div class="col-md-3 col-lg-3 mb-4">
+        <div class="col-md-4 col-lg-3 mb-4">
             <Common::Card-Config @class="text-dark bg-white" @header="Complete projects" @value={{complete}} />
         </div>
-        <div class="col-md-3 col-lg-3 mb-4">
+        <div class="col-md-4 col-lg-3 mb-4">
             <Common::Card-Config @class="text-dark bg-white" @header="Incomplete projects" @value={{incomplete}} />
         </div>
     </div>
 </div>
-<div>
+{{!-- <div class="row">
+    <div class="col">
+        <div class="wrapper">
+            <select {{on "change" this.dropdownValueWard value="target.value" }} onfocus='this.size=5;'
+                onblur='this.size=1;' class="form-select" aria-label="Default select example">
+                <option selected>Select ward</option>
+                {{#each dropdownWard as |dt|}}
+                <option value={{dt}}>{{dt}}</option>
+                {{/each}}
+            </select>
+        </div>
+    </div>
+</div> --}}
+<div class="row shadow p-4">
+    <div class="col-md-12 col-lg-12 mb-4 border border-light">
+
+        <div class="wrapper">
+            <select {{on "change" this.dropdownValueWard value="target.value" }} onfocus='this.size=5;'
+                onblur='this.size=1;' class="form-select" aria-label="Default select example">
+                <option selected>Select ward</option>
+                {{#each dropdownWard as |dt|}}
+                <option value={{dt}}>{{dt}}</option>
+                {{/each}}
+            </select>
+        </div>
+    </div>
+    <div class="col-md-12 col-lg-12 p-4 mb-4 border shadow border-light">
+
+        <div class="d-flex flex-row justify-content-between kpi">
+            <h4 class="mb-4 text-muted green">Amount Allocated for ward:
+                <span class="green">{{this.dropDownValue}}</span>
+            </h4>
+            <span tabindex="1" class="toggler">{{svg-jar "three-dots-vertical"}}</span>
+            <div class="dropdown shadow border-0 rounded-5">
+                <BsButtonGroup @class="btn-group-vertical" @type="button" @onChange={{action this.chartTypeOption}} as
+                    |bg|>
+                    <div class="list-group">
+                        <bg.button @value="line" class="bg-green list-group-item list-group-item-action">
+                            Line
+                            Graph</bg.button>
+                        <bg.button @value="bar" class="bg-green list-group-item list-group-item-action">Bar
+                            Graph
+                        </bg.button>
+                        <bg.button @value="pie" class="bg-green list-group-item list-group-item-action">Pie
+                            Graph
+                        </bg.button>
+                    </div>
+                </BsButtonGroup>
+            </div>
+        </div>
+
+        {{ember-chart
+        type=chartType1
+        data=pieWardData
+        options=options
+        }}
+
+    </div>
+
+    <div class="col-md-12 col-lg-12 p-4 mb-4 border shadow border-light">
+        <div class="d-flex flex-row justify-content-between kpi">
+            <h4 class="mb-4 text-muted green">Amount Allocated for ward:
+                <span class="green">{{this.dropDownValue}}</span>
+            </h4>
+        </div>
+        {{ember-chart
+        type=type
+        data=pieWardData
+        options=options
+        }}
+    </div>
+</div>
+
+{{!-- <div>
     <h4 class="mb-4 text-muted green">County Totals</h4>
     <BsTab as |tab|>
         <tab.pane @title="Totals Bar Chart">
@@ -56,10 +129,14 @@
                                     <BsButtonGroup @class="btn-group-vertical" @type="button" @onChange={{action
                                         this.chartTypeOption}} as |bg|>
                                         <div class="list-group">
-                                            <bg.button @value="line" class="bg-green list-group-item list-group-item-action">Line Graph</bg.button>
-                                            <bg.button @value="bar" class="bg-green list-group-item list-group-item-action">Bar Graph
+                                            <bg.button @value="line"
+                                                class="bg-green list-group-item list-group-item-action">Line Graph
                                             </bg.button>
-                                            <bg.button @value="pie" class="bg-green list-group-item list-group-item-action">Pie Graph
+                                            <bg.button @value="bar"
+                                                class="bg-green list-group-item list-group-item-action">Bar Graph
+                                            </bg.button>
+                                            <bg.button @value="pie"
+                                                class="bg-green list-group-item list-group-item-action">Pie Graph
                                             </bg.button>
                                         </div>
                                     </BsButtonGroup>
@@ -106,4 +183,4 @@
             </div>
         </tab.pane>
     </BsTab>
-</div>
+</div> --}}

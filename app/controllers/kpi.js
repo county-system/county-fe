@@ -8,13 +8,17 @@ export default class KpiController extends Controller {
   @tracked modelData = this.model;
   @tracked value;
   @tracked type;
+  @tracked dropDownValue;
   @tracked chartType1;
   @tracked totalProjectCosts = 0;
   @tracked incomplete = 0;
   @tracked complete = 0;
   @tracked dropdown = this.dropdownData();
+  @tracked dropdownWard = this.dropdownDataWard();
   @tracked totalDatasets = [];
   @tracked pieData = this.pieDataTotalCost().newData;
+  @tracked pieWardData;
+
   @tracked totalWardAmountSpent = this.pieDataTotalCost().totalWardAmount;
   @tracked totalProjectsCount = this.pieDataTotalCost().totalProjects;
 
@@ -64,6 +68,24 @@ export default class KpiController extends Controller {
   }
 
   @action
+  dropdownDataWard() {
+    const dropdown = [];
+
+    this.modelData.forEach((item) => {
+      if (!dropdown.includes(item.ward)) {
+        dropdown.push(item.ward);
+      }
+    });
+    return dropdown;
+  }
+
+  @action
+  dropdownValueWard(event) {
+    this.dropDownValue = event.target.value;
+    this.pieWardData = this.wardData().newData;
+  }
+
+  @action
   dropdownValue(event) {
     this.value = event.target.value;
     this.totalProjectCosts = this.filteredKpiData().total;
@@ -93,6 +115,60 @@ export default class KpiController extends Controller {
       incomplete,
       complete,
       total,
+    };
+  }
+
+  @action
+  wardData() {
+    const data = this.modelData;
+    const implementing_entities = [];
+    const labels = [];
+    let totalPerWard = [];
+    let totalWardAmount = 0;
+    let totalProjects = 0;
+    
+    data.forEach((item) => {
+      if (
+        !implementing_entities.includes(item.implementing_entity) &&
+        item.ward === this.dropDownValue
+      ) {
+        implementing_entities[item.implementing_entity] = parseInt(
+          item.project_cost,
+          10
+        );
+        totalWardAmount += parseInt(item.project_cost, 10);
+        totalProjects += 1;
+      } else if (
+        implementing_entities.includes(item.implementing_entity) &&
+        item.ward === this.dropDownValue
+      ) {
+        implementing_entities[item.implementing_entity] = implementing_entities[
+          item.implementing_entity
+        ] += parseInt(item.project_cost, 10);
+        totalWardAmount += parseInt(item.project_cost, 10);
+        totalProjects += 1;
+      }
+    });
+
+    for (const key in implementing_entities) {
+      totalPerWard.push(parseInt(implementing_entities[`${key}`], 10));
+      labels.push(key);
+    }
+    const newData = {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Money allocated',
+          data: totalPerWard,
+          backgroundColor: this.chartColors(totalPerWard.length),
+        },
+      ],
+    };
+
+    return {
+      newData,
+      totalWardAmount,
+      totalProjects,
     };
   }
 
