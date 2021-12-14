@@ -124,7 +124,6 @@ export default class KpiController extends Controller {
     const implementing_entities = [];
     const labels = [];
     let totalPerWard = [];
-    let totalWardAmount = 0;
     let totalProjects = 0;
 
     data.forEach((item) => {
@@ -136,7 +135,6 @@ export default class KpiController extends Controller {
           item.project_cost,
           10
         );
-        totalWardAmount += parseInt(item.project_cost, 10);
         totalProjects += 1;
       } else if (
         implementing_entities.includes(item.implementing_entity) &&
@@ -145,7 +143,6 @@ export default class KpiController extends Controller {
         implementing_entities[item.implementing_entity] = implementing_entities[
           item.implementing_entity
         ] += parseInt(item.project_cost, 10);
-        totalWardAmount += parseInt(item.project_cost, 10);
         totalProjects += 1;
       }
     });
@@ -232,9 +229,15 @@ export default class KpiController extends Controller {
 
   options = {
     responsive: true,
-    plugins: {
-      legend: {
-        position: 'top',
+    // plugins: {
+    //   legend: {
+    //     position: 'top',
+    //   },
+    // },
+    scales: {
+      myScale: {
+        type: 'logarithmic',
+        position: 'right', // `axis` is determined by the position as `'y'`
       },
     },
   };

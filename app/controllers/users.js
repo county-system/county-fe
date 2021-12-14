@@ -14,6 +14,7 @@ export default class UsersController extends Controller {
   LoginValidations = LoginValidations;
   @tracked modelData = this.model;
   @tracked modal1 = false;
+  @tracked totalUsers = this.modelData.length;
 
   constructor() {
     super(...arguments);

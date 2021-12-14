@@ -7,8 +7,8 @@
                         {{svg-jar "reports"}}
                     </div>
                     <div class="ml-auto">
-                        <p class="card-label text-right">Total Reports</p>
-                        <h4 class="card-text text-right ">5,045</h4>
+                        <p class="card-label text-right">Total Users</p>
+                        <h4 class="card-text text-right ">{{totalUsers}}</h4>
                     </div>
                 </div>
             </div>
@@ -170,7 +170,8 @@
                         </td>
                         <td>
                             {{#if user.image}}
-                            <img class="img-responsive img-rounded  rounded-circle" alt="" src={{user.image}} role="presentation">
+                            <img class="img-responsive img-rounded  rounded-circle" alt="" src={{user.image}}
+                                role="presentation">
                             {{else}}
                             <img src="../images/avatar.png" alt="avatar" class="img-fluid rounded-circle" width="50"
                                 role="presentation">
