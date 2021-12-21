@@ -26,4 +26,5 @@ Router.map(function () {
   this.route('not-found', { path: '/*path' });
   this.route('systems');
   this.route('settings');
+  this.route('projects');
 });

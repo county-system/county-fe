@@ -20,6 +20,7 @@
             <select {{on "change" this.dropdownValue value="target.value" }} onfocus='this.size=5;'
                 onblur='this.size=1;' class="form-select" aria-label="Default select example">
                 <option selected>Select data by project</option>
+                {{log dropdown}}
                 {{#each dropdown as |dt|}}
                 <option value={{dt}}>{{dt}}</option>
                 {{/each}}

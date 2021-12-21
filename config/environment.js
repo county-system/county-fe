@@ -44,7 +44,8 @@ module.exports = function (environment) {
       refreshTokenPropertyName: 'refresh',
       tokenPropertyName: 'access',
       serverTokenEndpoint: process.env.BACKEND_API + '/api/token-auth/',
-      serverTokenRefreshEndpoint: process.env.BACKEND_API + '/api/token/refresh/',
+      serverTokenRefreshEndpoint:
+        process.env.BACKEND_API + '/api/token/refresh/',
       refreshAccessTokens: true,
       refreshLeeway: 300, // refresh 5 minutes (300 seconds) before expiration
     },
