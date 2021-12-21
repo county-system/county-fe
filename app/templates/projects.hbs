@@ -24,27 +24,24 @@
         <div class="col-md-8 col-lg-8 p-3 bg-green">
             <h4 class="mb-4 text-white">Ministerial Budget Allocations</h4>
             <div class="row">
-                <div class="col-md-2 col-lg-3">
-                    <p class="prog-text text-shadow">Agriculture and Others</p>
+                {{#each sideProgressData as |pg|}}
+                <div class="col-md-6 col-lg-6">
+                    <p class="prog-text text-shadow">{{pg.title}}</p>
                 </div>
-                <div class="col-md-8 col-lg-9">
-                    <div class="progress mb-3" style="height: 20px;">
-                        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                            aria-valuemin="0" aria-valuemax="100">0.287bn</div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="progress" style="height: 20px;">
+                        <div class="progress-bar" role="progressbar" style="width: {{pg.percentage}}%"
+                            aria-valuenow="{{pg.percentage}}" aria-valuemin="0" aria-valuemax="100">{{pg.value}}</div>
                     </div>
                 </div>
-            </div>
-
-
-            <div class="progress mb-3">
-                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                    aria-valuemax="100">50%</div>
-            </div>
-            <div class="progress mb-3">
-                <div class="progress-bar" role="progressbar" style="width: {{percent}}" aria-valuenow="100"
-                    aria-valuemin="0" aria-valuemax="100">{{amount}}</div>
+                {{/each}}
             </div>
         </div>
+    </div>
+    <div class="row">
+        <h4 class="mb-4 text-muted">Full Report</h4>
+
+
 
     </div>
 
