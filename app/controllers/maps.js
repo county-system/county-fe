@@ -2,6 +2,7 @@ import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { throttle } from '@ember/runloop';
+import { inject as service } from '@ember/service';
 export default class MapsController extends Controller {
   @tracked maps = true;
   @tracked mapData = this.model;
@@ -16,32 +17,53 @@ export default class MapsController extends Controller {
   @tracked mapBounds;
   @tracked mapZoom;
 
+  @service flashMessages;
+
+  @action
+  flashMessage(message) {
+    this.flashMessages.info(message);
+  }
+
+  @action
+  flashMessageThrottle(message) {
+    throttle(this, 'send', 'flashMessage', message, 300, true);
+  }
+
   get myStyle() {
     return 'padding: 0 !important;margin-right: 1px;';
   }
 
   london = {
-    lat: -2.5201429,
-    lng: 34.0149256,
+    lat: 3.278959,
+    lng: 35.4661995,
   };
 
   @action
-  filterBy(filters) {
-    console.log('cont', this.buttonGroupValue);
-    const newMapData = this.model.filter((data) => {
-      return data.type == filters[0];
-    });
-    this.mapData = newMapData;
-    this.buttonGroupValue = filters[0];
+  filterBy(event) {
+    console.log('event', event[0]);
+    this.buttonGroupValue = event;
+    // const newMapData = this.model.filter((data) => {
+    //   return data.type == filters;
+    // });
+    // this.mapData = newMapData;
   }
 
-  get filteredRentals() {
-    return this.mapData.filter((rental) => {
+  get filterOptions() {
+    const dropdown = [];
+    this.model.forEach((item) => {
+      if (!dropdown.includes(item.type)) {
+        dropdown.push(item.type);
+      }
+    });
+    return dropdown;
+  }
+
+  get filteredLocation() {
+    return this.mapData.filter((location) => {
       let { mapBounds } = this;
 
       if (mapBounds) {
-        let { lat, lng } = rental;
-        console.log(lat, lng);
+        let { lat, lng } = location;
 
         // TODO: Look into this again...
         let northEast = mapBounds.getNorthEast(),
@@ -76,13 +98,13 @@ export default class MapsController extends Controller {
   }
 
   @action
-  handleMouseEnter(rental) {
-    rental.active = true;
+  handleMouseEnter(location) {
+    location.active = true;
   }
 
   @action
-  handleMouseLeave(rental) {
-    rental.active = false;
+  handleMouseLeave(location) {
+    location.active = false;
   }
 
   _saveBounds(map) {

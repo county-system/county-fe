@@ -4,53 +4,29 @@
 
 <div class="row" style='{{if maps this.myStyle}}'>
   <div class="col-md-9 col-lg-9">
-    <GMap @lat={{london.lat}} @lng={{london.lng}} @zoom={{4}} @minZoom={{1}} @panControl={{false}}
+    <GMap @lat={{london.lat}} @lng={{london.lng}} @zoom={{7}} @minZoom={{4}} @panControl={{false}}
       @streetViewControl={{false}} @gestureHandling="greedy" @disableDefaultUI={{true}} as |map|>
 
-      <map.markerClusterer {{!-- @onClick={{this.whenAClusterMarkerIsClicked}}
-        @onClusteringbegin={{this.whenABatchOfMarkersIsToBeClustered}}
-        @onClusteringend={{this.whenABatchOfMarkersHasBeenClustered}} --}} @onClick={{toggle "markerTooltipOpen" this}}
-        as |cluster|>
-
-        {{#each this.filteredRentals as |rental|}}
-        <cluster.marker @lat={{rental.lat}} @lng={{rental.lng}} />
-        {{/each}}
-
-      </map.markerClusterer>
-
-      {{!-- {{#each this.filteredRentals key="id" as |rental index|}}
-      <map.marker @lat={{rental.lat}} @lng={{rental.lng}} @zIndex={{if rental.active 1000 index}}
-        @onClick={{toggle "markerTooltipOpen" this}} @onMouseover={{fn this.handleMouseEnter rental}} @onMouseleave={{fn
-        this.handleMouseLeave rental}} as |marker|>
-        <marker.infoWindow @isOpen={{this.markerTooltipOpen}} @onCloseclick={{fn (mut this.markerTooltipOpen) false}}>
-
-          <div class="text-center">
-            <div>
-              {{rental.price}} <i>HTML</i> content in infoWindow!
-            </div>
-          </div>
-
-        </marker.infoWindow>
-      </map.marker>
-      {{/each}} --}}
-
+      {{#each this.filteredLocation key="id" as |location id |}}
+      <map.marker @lat={{location.lat}} @lng={{location.lng}} @draggable={{true}} @onClick={{fn this.flashMessage
+        (concat "Clicked: " location.lat ", " location.lng)}} /> />
+      {{/each}}
     </GMap>
 
   </div>
 
-  {{!-- {{log buttonGroupValue}} --}}
   <div class="col-md-3 col-lg-3">
-    <BsButtonGroup @class="btn-group-vertical" @value={{buttonGroupValue}} @type="button" @onChange={{action (mut buttonGroupValue) this.filterBy }} as |bg|>
+    <BsButtonGroup @class="btn-group-vertical" @value={{buttonGroupValue}}
+    @type="checkbox"
+    {{!-- @onChange={{action (mut buttonGroupValue)}} --}}
+       @onChange={{fn this.filterBy}}
+       as |bg|>
       <div class="list-group">
-        <bg.button @value="population" class="green bg-green-hover list-group-item list-group-item-action">Population
-          density</bg.button>
-        <bg.button @value="housing" class="green bg-green-hover list-group-item list-group-item-action">Housing
+        {{#each this.filterOptions as |option|}}
+        <bg.button class="green bg-green-hover list-group-item list-group-item-action" @value={{option}}>{{option}}
         </bg.button>
-        <bg.button @value="schools" class="green bg-green-hover list-group-item list-group-item-action">Schools
-        </bg.button>
-        <bg.button @value="topography" class="green bg-green-hover list-group-item list-group-item-action" disabled>
-          Topography</bg.button>
-      </div>
+        {{/each}}
+        </div>
     </BsButtonGroup>
   </div>
 </div>
