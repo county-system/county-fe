@@ -40,12 +40,11 @@ export default class MapsController extends Controller {
 
   @action
   filterBy(event) {
-    console.log('event', event[0]);
+    console.log('event', event);
     this.buttonGroupValue = event;
-    // const newMapData = this.model.filter((data) => {
-    //   return data.type == filters;
-    // });
-    // this.mapData = newMapData;
+    this.mapData = this.model.filter((data) => {
+      return data.type == event;
+    });
   }
 
   get filterOptions() {
