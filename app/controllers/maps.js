@@ -12,6 +12,7 @@ export default class MapsController extends Controller {
   @tracked mapBounds;
   @tracked mapZoom;
   @service flashMessages;
+  @service googleMapsApi;
 
   @action
   flashMessage(message) {
@@ -31,6 +32,7 @@ export default class MapsController extends Controller {
 
   @action
   filterBy(event) {
+    console.log('event', event);
     this.buttonGroupValue = event;
 
     if (event == 'all') {
@@ -41,6 +43,23 @@ export default class MapsController extends Controller {
       });
     }
   }
+
+  @action
+  scrollToListing(listing) {
+    let id = `rental-${listing.id}`;
+    let el = document.getElementById(id);
+
+    console.log(el);
+
+    // if (el) {
+    //   el.scrollIntoView({ behavior: 'smooth' });
+    // }
+  }
+
+  // @action
+  // flashMessageThrottle(message) {
+  //   throttle(this, 'send', 'flashMessage', message, 300, true);
+  // }
 
   get filterOptions() {
     const dropdown = [];

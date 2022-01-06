@@ -9,29 +9,28 @@
 
 <div class="row" style='{{if maps this.myStyle}}'>
   <div class="col-md-9 col-lg-9">
-    <GMap @lat={{london.lat}} @lng={{london.lng}} @zoom={{7}} @minZoom={{4}} @panControl={{false}}
-      @streetViewControl={{false}} @gestureHandling="greedy" @disableDefaultUI={{true}} as |map|>
 
-      {{!-- {{#each this.filteredLocation key="id" as |location id |}}
-      <map.marker @lat={{location.lat}} @lng={{location.lng}} @draggable={{true}} @visible={{true}} @onClick={{fn
-        this.flashMessage location}} />
-      {{/each}} --}}
+    <GMap @lat={{london.lat}} @lng={{london.lng}} @zoom={{8}} @styles={{this.myStyle}} class="ember-google-map-cover"
+      @scrollwheel={{false}} @panControl={{false}} @streetViewControl={{false}} @gestureHandling="greedy"
+      @disableDefaultUI={{true}} @zoomControl={{false}} @fullscreenControl={{true}} as |g|>
 
       {{#each this.filteredLocation key="id" as |location id |}}
-      <map.marker @lat={{location.lat}} @lng={{location.lng}} @draggable={{true}} @visible={{true}} @onClick={{fn
-        this.flashMessage location.name}} as |m|>
 
-        <m.infoWindow @isOpen={{this.markerTooltipOpen}} @onCloseclick={{fn (mut this.markerTooltipOpen) false}}
-          @lat={{location.lat}} @lng={{location.lng}} @content={{location.name}} @visible={{false}}>
+      <g.infoWindow @lat={{location.lat}} @lng={{location.lng}} @isOpen={{this.mapTooltipOpen}} @onCloseclick={{fn (mut
+        this.mapTooltipOpen) false}} @content="<i>Simple text tooltip</i>" />
+
+      <g.marker @lat={{location.lat}} @lng={{location.lng}} @onClick={{fn this.flashMessage location.name}} as |m|>
+        {{!-- @onClick={{fn this.flashMessage location.name}}
+        @onClick={{toggle "markerTooltipOpen" this}} --}}
+
+        <m.infoWindow @isOpen={{this.markerTooltipOpen}} @onCloseclick={{fn (mut this.markerTooltipOpen) false}}>
           <div class="text-center">
-            <img src="/images/doge.jpg" alt="Such doge!" width="200">
-            <div>Custom <i>HTML</i> content in infoWindow!</div>
+            <div>Name: {{location.name}} </div>
+            <div>Name: {{location.lat}} </div>
           </div>
-
         </m.infoWindow>
-      </map.marker>
 
-
+      </g.marker>
       {{/each}}
 
     </GMap>
