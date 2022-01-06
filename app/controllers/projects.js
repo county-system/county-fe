@@ -61,11 +61,19 @@ export default class ProjectsController extends Controller {
       datasets: [
         {
           label: 'My First Dataset',
-          data: [60, 40],
+          data: [36, 64],
           backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)'],
           hoverOffset: 4,
         },
       ],
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
+        },
+      },
     },
   };
 
@@ -131,4 +139,28 @@ export default class ProjectsController extends Controller {
       percentage: '40',
     },
   ];
+  get tableData() {
+    console.log(this.modelData.length);
+    const data = this.modelData;
+    let total = 0;
+    let incomplete = 0;
+    let complete = 0;
+
+    data.forEach((item) => {
+      if (item.implementing_entity === this.value) {
+        total += parseInt(item.project_cost, 10);
+        if (item.project_status === 'incomplete') {
+          incomplete += 1;
+        } else if (item.project_status === 'complete') {
+          complete += 1;
+        }
+      }
+    });
+
+    return {
+      incomplete,
+      complete,
+      total,
+    };
+  }
 }

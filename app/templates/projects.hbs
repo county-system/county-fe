@@ -7,41 +7,77 @@
         <div class="col-md-4 col-lg-2">
             <div class="card text-center p-2 mb-3 shadow border-0 rounded-0 bg-{{dt.color}} text-light">
                 <div class="card-body">
-                    <h2 class="mb-2">{{dt.value}}</h2>
-                    <h4 class="card-title">{{dt.title}}</h4>
+                    <h2 class="mb-2" style="font-size:20px;">{{dt.value}}</h2>
+                    <h4 class="card-title" style="font-size:15px;">{{dt.title}}</h4>
                 </div>
             </div>
         </div>
         {{/each}}
     </div>
-    <div class="row">
-        <div class="col-md-4 col-lg-4">
-            {{ember-chart
-            type=this.chartData.type
-            data=this.chartData.data
-            }}
-        </div>
-        <div class="col-md-8 col-lg-8 p-3 bg-green">
-            <h4 class="mb-4 text-white">Ministerial Budget Allocations</h4>
-            <div class="row">
-                {{#each sideProgressData as |pg|}}
-                <div class="col-md-6 col-lg-6">
-                    <p class="prog-text text-shadow">{{pg.title}}</p>
-                </div>
-                <div class="col-md-6 col-lg-6">
-                    <div class="progress" style="height: 20px;">
-                        <div class="progress-bar" role="progressbar" style="width: {{pg.percentage}}%"
-                            aria-valuenow="{{pg.percentage}}" aria-valuemin="0" aria-valuemax="100">{{pg.value}}</div>
+        <div class="row bg-dark p-4">
+            <div class="col-md-4 col-lg-4 text-white">
+                <h4 class="mb-3 text-white">SHARE OF THE BUDGET</h4>
+                {{ember-chart
+                type=this.chartData.type
+                data=this.chartData.data
+                width=200
+                height=200
+                options=this.chartData.options
+                }}
+            </div>
+            <div class="col-md-8 col-lg-8 p-3 bg-green">
+                <h4 class="mb-3 text-white">Ministerial Budget Allocations</h4>
+                <div class="row">
+                    {{#each sideProgressData as |pg|}}
+                    <div class="col-md-6 col-lg-6">
+                        <p class="prog-text text-white" style="font-size:12px;">{{pg.title}}</p>
                     </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="progress" style="font-weight:600; height: 16px; background-color: inherit;border-radius: unset;">
+                            <div class="progress-bar green" role="progressbar" style="background-color: #F7931E;width: {{pg.percentage}}%"
+                                aria-valuenow="{{pg.percentage}}" aria-valuemin="0" aria-valuemax="100">{{pg.value}}
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
                 </div>
-                {{/each}}
             </div>
         </div>
-    </div>
-    <div class="row">
-        <h4 class="mb-4 text-muted">Full Report</h4>
 
+    <div class="row mt-4">
+        <h3 class="mb-4 green">Full Report</h3>
 
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">GOVERNANCE_OR_MINISTERIAL</th>
+                    <th scope="col">BUDGET OFFICE</th>
+                    <th scope="col">% BUDGET</th>
+                    <th scope="col">% OVERALL BUDGET </th>
+                    <th scope="col">% COMPLETED</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
 
     </div>
 

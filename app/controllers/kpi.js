@@ -156,8 +156,11 @@ export default class KpiController extends Controller {
       datasets: [
         {
           label: 'Money allocated',
+          axis: 'y',
           data: totalPerWard,
           backgroundColor: this.chartColors(totalProjects),
+          borderColor: this.chartColors(totalProjects),
+          borderWith: 1,
         },
       ],
     };
@@ -227,18 +230,47 @@ export default class KpiController extends Controller {
     };
   }
 
-  options = {
-    responsive: true,
-    // plugins: {
-    //   legend: {
-    //     position: 'top',
+  // options = {
+  //   responsive: true,
+  //   // plugins: {
+  //   //   legend: {
+  //   //     position: 'top',
+  //   //   },
+  //   // },
+  //   scales: {
+  //     myScale: {
+  //       type: 'logarithmic',
+  //       position: 'right', // `axis` is determined by the position as `'y'`
+  //     },
+  //   },
+  // };
+
+  chartOptions = {
+    indexAxis: 'y',
+    //   responsive: true,
+    //   scales: {
+    //     y: {
+    //       beginAtZero: true,
+    //     },
     //   },
-    // },
-    scales: {
-      myScale: {
-        type: 'logarithmic',
-        position: 'right', // `axis` is determined by the position as `'y'`
-      },
-    },
+    //   elements: {
+    //     bar: {
+    //       borderWidth: 2,
+    //     },
+    //   },
+    // // };
+    // // chartPlugins = {
+    //   legend: {
+    //     position: 'right',
+    //     labels: {
+    //       font: {
+    //         size: 12,
+    //       },
+    //     },
+    //   },
+    //   title: {
+    //     display: true,
+    //     text: 'Bar Chart',
+    //   },
   };
 }
