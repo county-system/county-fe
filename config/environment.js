@@ -31,6 +31,10 @@ module.exports = function (environment) {
       BACKEND_API_VERSION: process.env.BACKEND_API_VERSION,
     },
 
+    flashMessageDefaults: {
+      extendedTimeout: 500,
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created

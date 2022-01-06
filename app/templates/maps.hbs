@@ -1,32 +1,52 @@
 {{page-title "Maps"}}
 {{outlet}}
 
+<div class="alerts-container">
+  {{#each this.flashMessages.queue as |flash|}}
+  <FlashMessage @flash={{flash}} />
+  {{/each}}
+</div>
 
 <div class="row" style='{{if maps this.myStyle}}'>
   <div class="col-md-9 col-lg-9">
     <GMap @lat={{london.lat}} @lng={{london.lng}} @zoom={{7}} @minZoom={{4}} @panControl={{false}}
       @streetViewControl={{false}} @gestureHandling="greedy" @disableDefaultUI={{true}} as |map|>
 
-      {{#each this.filteredLocation key="id" as |location id |}}
-      <map.marker @lat={{location.lat}} @lng={{location.lng}} @draggable={{true}} @onClick={{fn this.flashMessage
-        (concat "Clicked: " location.lat ", " location.lng)}} /> />
-      {{/each}}
-    </GMap>
+      {{!-- {{#each this.filteredLocation key="id" as |location id |}}
+      <map.marker @lat={{location.lat}} @lng={{location.lng}} @draggable={{true}} @visible={{true}} @onClick={{fn
+        this.flashMessage location}} />
+      {{/each}} --}}
 
+      {{#each this.filteredLocation key="id" as |location id |}}
+      <map.marker @lat={{location.lat}} @lng={{location.lng}} @draggable={{true}} @visible={{true}} @onClick={{fn
+        this.flashMessage location.name}} as |m|>
+
+        <m.infoWindow @isOpen={{this.markerTooltipOpen}} @onCloseclick={{fn (mut this.markerTooltipOpen) false}}
+          @lat={{location.lat}} @lng={{location.lng}} @content={{location.name}} @visible={{false}}>
+          <div class="text-center">
+            <img src="/images/doge.jpg" alt="Such doge!" width="200">
+            <div>Custom <i>HTML</i> content in infoWindow!</div>
+          </div>
+
+        </m.infoWindow>
+      </map.marker>
+
+
+      {{/each}}
+
+    </GMap>
   </div>
 
   <div class="col-md-3 col-lg-3">
-    <BsButtonGroup @class="btn-group-vertical" @value={{buttonGroupValue}}
-    @type="radio"
-    {{!-- @onChange={{action (mut buttonGroupValue)}} --}}
-       @onChange={{fn this.filterBy}}
-       as |bg|>
+    <BsButtonGroup @class="btn-group-vertical" @value={{buttonGroupValue}} @type="radio" @onChange={{fn this.filterBy}}
+      as |bg|>
       <div class="list-group">
+        <bg.button class="green bg-green-hover list-group-item list-group-item-action" @value="all">SHOW ALL</bg.button>
         {{#each this.filterOptions as |option|}}
         <bg.button class="green bg-green-hover list-group-item list-group-item-action" @value={{option}}>{{option}}
         </bg.button>
         {{/each}}
-        </div>
+      </div>
     </BsButtonGroup>
   </div>
 </div>

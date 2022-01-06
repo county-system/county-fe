@@ -1,3 +1,4 @@
+$grid-gutter-width: 2rem;
 
 *,
 *:before,
@@ -22,7 +23,6 @@ html {
 .align-content {
     align-content: center;
 }
-
 
 @import "ember-bootstrap/bootstrap";
 @import 'index';

@@ -7,26 +7,17 @@ export default class MapsController extends Controller {
   @tracked maps = true;
   @tracked mapData = this.model;
   @tracked buttonGroupValue;
-
-  @tracked
-  mapTooltipOpen = false;
-
-  @tracked
-  markerTooltipOpen = false;
-
+  @tracked mapTooltipOpen = false;
+  @tracked markerTooltipOpen = false;
   @tracked mapBounds;
   @tracked mapZoom;
-
   @service flashMessages;
 
   @action
   flashMessage(message) {
+    console.log('message', message);
+    // let message = (concat "Clicked: " location.lat ", " location.lng)
     this.flashMessages.info(message);
-  }
-
-  @action
-  flashMessageThrottle(message) {
-    throttle(this, 'send', 'flashMessage', message, 300, true);
   }
 
   get myStyle() {
@@ -40,11 +31,15 @@ export default class MapsController extends Controller {
 
   @action
   filterBy(event) {
-    console.log('event', event);
     this.buttonGroupValue = event;
-    this.mapData = this.model.filter((data) => {
-      return data.type == event;
-    });
+
+    if (event == 'all') {
+      this.mapData = this.model;
+    } else {
+      this.mapData = this.model.filter((data) => {
+        return data.type == event;
+      });
+    }
   }
 
   get filterOptions() {
