@@ -2,7 +2,8 @@ import Service, { inject as service } from '@ember/service';
 import fetch from 'fetch';
 
 export default class ApiService extends Service {
-  api = 'http://127.0.0.1:8000/v1/';
+  // api = 'http://127.0.0.1:8000/v1/';
+  api = 'https://api.todolist.com/v1/';
   @service session;
   @service store;
 
@@ -11,7 +12,7 @@ export default class ApiService extends Service {
       this.store.adapterFor('user').urlForCreateRecord('user'),
       {
         method: 'GET',
-        body: JSON.stringify({ user: fields }),
+        body: JSON.stringify({ user: 'fields' }),
         headers: { 'Content-type': 'application/json; charset=UTF-8' },
       }
     );
@@ -23,10 +24,11 @@ export default class ApiService extends Service {
 
   async getApiData(endpoint) {
     const res = await fetch(
-      this.store.adapterFor('user').urlForCreateRecord('user'),
+      // this.store.adapterFor('user').urlForCreateRecord('user'),
+      endpoint,
       {
         method: 'GET',
-        body: JSON.stringify({ user: fields }),
+        body: JSON.stringify({ user: 'fields' }),
         headers: { 'Content-type': 'application/json; charset=UTF-8' },
       }
     );
