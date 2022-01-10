@@ -1,5 +1,6 @@
 {{page-title "Projects"}}
 {{outlet}}
+
 <div>
     <h4 class="mb-4 text-muted green">Turkana County Projects Allocations</h4>
     <div class="row">
@@ -14,71 +15,302 @@
         </div>
         {{/each}}
     </div>
-        <div class="row bg-dark p-4">
-            <div class="col-md-4 col-lg-4 text-white">
-                <h4 class="mb-3 text-white">SHARE OF THE BUDGET</h4>
-                {{ember-chart
-                type=this.chartData.type
-                data=this.chartData.data
-                width=200
-                height=200
-                options=this.chartData.options
-                }}
-            </div>
-            <div class="col-md-8 col-lg-8 p-3 bg-green">
-                <h4 class="mb-3 text-white">Ministerial Budget Allocations</h4>
-                <div class="row">
-                    {{#each sideProgressData as |pg|}}
-                    <div class="col-md-6 col-lg-6">
-                        <p class="prog-text text-white" style="font-size:12px;">{{pg.title}}</p>
-                    </div>
-                    <div class="col-md-6 col-lg-6">
-                        <div class="progress" style="font-weight:600; height: 16px; background-color: inherit;border-radius: unset;">
-                            <div class="progress-bar green" role="progressbar" style="background-color: #F7931E;width: {{pg.percentage}}%"
-                                aria-valuenow="{{pg.percentage}}" aria-valuemin="0" aria-valuemax="100">{{pg.value}}
-                            </div>
+    <div class="row bg-dark p-4">
+        <div class="col-md-4 col-lg-4 text-white">
+            <h4 class="mb-3 text-white">SHARE OF THE BUDGET</h4>
+            {{ember-chart
+            type=this.chartData.type
+            data=this.chartData.data
+            width=200
+            height=200
+            options=this.chartData.options
+            }}
+        </div>
+        <div class="col-md-8 col-lg-8 p-3 bg-green">
+            <h4 class="mb-3 text-white">Ministerial Budget Allocations</h4>
+            <div class="row">
+                {{#each sideProgressData as |pg|}}
+                <div class="col-md-6 col-lg-6">
+                    <p class="prog-text text-white" style="font-size:12px;">{{pg.title}}</p>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="progress"
+                        style="font-weight:600; height: 16px; background-color: inherit;border-radius: unset;">
+                        <div class="progress-bar green" role="progressbar"
+                            style="background-color: #F7931E;width: {{pg.percentage}}%"
+                            aria-valuenow="{{pg.percentage}}" aria-valuemin="0" aria-valuemax="100">{{pg.value}}
                         </div>
                     </div>
-                    {{/each}}
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <h3 class="mb-4 green">{{ uppercase "Full Report"}}</h3>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">GOVERNANCE_OR_MINISTERIAL</th>
+                        <th scope="col">BUDGET OFFICE</th>
+                        <th scope="col">% BUDGET</th>
+                        <th scope="col">% OVERALL BUDGET </th>
+                        <th scope="col">ACTUAL COST</th>
+                        <th scope="col">% COMPLETED</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        {{!-- <th scope="row">1</th> --}}
+                        <td>GOVERNANCE</td>
+                        <td>60,000,000</td>
+                        <td>56</td>
+                        <td>42</td>
+                        <td>31,275,000</td>
+                        <td>21</td>
+                    </tr>
+                    <tr>
+                        <td>GOVERNANCE</td>
+                        <td>60,000,000</td>
+                        <td>56</td>
+                        <td>42</td>
+                        <td>31,275,000</td>
+                        <td>21</td>
+                    </tr>
+                    <tr class="bg-green">
+                        <td>{{ uppercase "Total"}}</td>
+                        <td>60,000,000</td>
+                        <td>56</td>
+                        <td>42</td>
+                        <td>31,275,000</td>
+                        <td>21</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <h3 class="mb-4 green">{{ uppercase "Budget summary"}}</h3>
+        <div class="col-md-12">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Select Office or County</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+        <div class="col-md-6 mt-4">
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>Construction of Model ECDE Centre</td>
+                            <td>60,000,000</td>
+                        </tr>
+                        <tr>
+                            <td>Model ECDE Centre Play and Other Materials</td>
+                            <td>31,275,000</td>
+                        </tr>
+                        <tr>
+                            <td>Construction of Model ECDE Centre</td>
+                            <td>60,000,000</td>
+                        </tr>
+                        <tr>
+                            <td>Model ECDE Centre Play and Other Materials</td>
+                            <td>31,275,000</td>
+                        </tr>
+                        <tr>
+                            <td>Construction of Model ECDE Centre</td>
+                            <td>60,000,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            {{ember-chart
+            type="bar"
+            data=this.chartData.data
+            options=this.chartData.options
+            }}
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-6 p-4 border">
+            <h3 class="mb-4 green">{{ uppercase "Turkana County Projects Allocations"}}</h3>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">PROJECT NAME</th>
+                            <th scope="col">PROJECT BUDGET</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {{!-- <th scope="row">1</th> --}}
+                            <td>GOVERNANCE</td>
+                            <td>60,000,000</td>
+                        </tr>
+                        <tr>
+                            {{!-- <th scope="row">1</th> --}}
+                            <td>GOVERNANCE</td>
+                            <td>60,000,000</td>
+                        </tr>
+                        <tr>
+                            {{!-- <th scope="row">1</th> --}}
+                            <td>GOVERNANCE</td>
+                            <td>60,000,000</td>
+                        </tr>
+                        <tr>
+                            {{!-- <th scope="row">1</th> --}}
+                            <td>GOVERNANCE</td>
+                            <td>60,000,000</td>
+                        </tr>
+                        <tr>
+                            {{!-- <th scope="row">1</th> --}}
+                            <td>GOVERNANCE</td>
+                            <td>60,000,000</td>
+                        </tr>
+                        <tr>
+                            {{!-- <th scope="row">1</th> --}}
+                            <td>GOVERNANCE</td>
+                            <td>60,000,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6 p-4 border">
+            <BsButtonGroup @value={{buttonGroupValue}} @type="radio" @onChange={{action (mut buttonGroupValue)}} as
+                |bg|>
+                <bg.button @value="5" class="green bg-green bg-green-hover">{{uppercase "top 5"}}</bg.button>
+                <bg.button @value="10" class="green bg-green bg-green-hover">{{uppercase "top 10"}}</bg.button>
+                <bg.button @value="50" class="green bg-green bg-green-hover">{{uppercase "top 50"}}</bg.button>
+                <bg.button @value="100" class="green bg-green bg-green-hover">{{uppercase "top 100"}}</bg.button>
+            </BsButtonGroup>
+            <p>You selected: {{buttonGroupValue}}</p>
+            <ul class="list-unstyled">
+                <li class="mt-1">GOVERNANCE</li>
+                <li class="mt-1">DEPUTY GOVERNOR</li>
+                <li class="mt-1">AGRICULTURE, PASTORAL ECONOMY AND FISHERIES</li>
+                <li class="mt-1">EDUCATION, SPORTS AND SOCIAL PROTECTION</li>
+                <li class="mt-1">WATER, ENVIRONMENT AND MINERAL RESOURCES</li>
+                <li class="mt-1">FINANCE AND ECONOMIC PLANNING</li>
+                <li class="mt-1">LODWAR MUNICIPALITY</li>
+                <li class="mt-1">TOURISM, CULTURE AND NATURAL RESOURCES</li>
+                <li class="mt-1">LANDS, ENERGY, HOUSING AND URBAN AREAS</li>
+                <li class="mt-1">HEALTH SERVICES AND SANITATION</li>
+                <li class="mt-1">INFRASTRUCTURE, TRANSPORT AND PUBLIC WORKS</li>
+                <li class="mt-1">TRADE, GENDER AND YOUTH AFFAIRS</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row mt-4 p-2 border">
+        <h3 class="mb-4 green">{{ uppercase "Turkana County Ward Projects"}}</h3>
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Ward</th>
+                            <th scope="col">Budget</th>
+                            <th scope="col">Number of Projects</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {{!-- <th scope="row">1</th> --}}
+                            <td>GOVERNANCE</td>
+                            <td>60,000,000</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            {{!-- <th scope="row">1</th> --}}
+                            <td>GOVERNANCE</td>
+                            <td>60,000,000</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            {{!-- <th scope="row">1</th> --}}
+                            <td>GOVERNANCE</td>
+                            <td>60,000,000</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            {{!-- <th scope="row">1</th> --}}
+                            <td>GOVERNANCE</td>
+                            <td>60,000,000</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            {{!-- <th scope="row">1</th> --}}
+                            <td>GOVERNANCE</td>
+                            <td>60,000,000</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            {{!-- <th scope="row">1</th> --}}
+                            <td>GOVERNANCE</td>
+                            <td>60,000,000</td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-4 col-lg-2">
+            <div class="card text-center p-2 mb-3 shadow border-0 rounded-0 bg-purple text-light">
+                <div class="card-body">
+                    <h4 class="card-title" style="font-size:15px;">{{uppercase "COUNTY PROJECTS ALLOCATION"}}</h4>
+                    <a href="#" class="btn btn-primary">View more</a>
                 </div>
             </div>
         </div>
-
-    <div class="row mt-4">
-        <h3 class="mb-4 green">Full Report</h3>
-
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">GOVERNANCE_OR_MINISTERIAL</th>
-                    <th scope="col">BUDGET OFFICE</th>
-                    <th scope="col">% BUDGET</th>
-                    <th scope="col">% OVERALL BUDGET </th>
-                    <th scope="col">% COMPLETED</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-            </tbody>
-        </table>
-
+        <div class="col-md-4 col-lg-2">
+            <div class="card text-center p-2 mb-3 shadow border-0 rounded-0 bg-blue text-light">
+                <div class="card-body">
+                    <h4 class="card-title" style="font-size:15px;">{{uppercase "COUNTY PROJECTS ALLOCATION"}}</h4>
+                    <a href="#" class="btn btn-primary">View more</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-2">
+            <div class="card text-center p-2 mb-3 shadow border-0 rounded-0 bg-brown text-light">
+                <div class="card-body">
+                    <h4 class="card-title" style="font-size:15px;">{{uppercase "COUNTY PROJECTS ALLOCATION"}}</h4>
+                    <a href="#" class="btn btn-primary">View more</a>
+                </div>
+            </div>
+        </div>
     </div>
-
+    <div class="row">
+    <div class="col-md-2 col-lg-2 mb-4">
+        <div class="card bg-green text-light shadow border-0 rounded-0">
+            <div class="card-body text-center">
+                <div class="card-icon">
+                    {{svg-jar "add-report" width='60px'}}
+                    <p class="card-label">ADD REPORT</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 col-lg-2 mb-4">
+        <div class="card bg-green text-light shadow border-0 rounded-0">
+            <div class="card-body text-center">
+                <div class="card-icon">
+                    {{svg-jar "edit" width='60px'}}
+                    <p class="card-label">EDIT REPORT</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>

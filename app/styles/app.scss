@@ -36,3 +36,26 @@ html {
 @import 'maps';
 @import 'users';
 @import 'settings';
+
+
+html {
+    font-size: 0.9rem;
+}
+
+@include media-breakpoint-up(sm) {
+    html {
+        font-size: 1.2rem;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    html {
+        font-size: 0.9rem;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    html {
+        font-size: 0.9rem;
+    }
+}
