@@ -7,7 +7,7 @@
                         {{svg-jar "reports"}}
                     </div>
                     <div class="ml-auto">
-                        <p class="card-label text-right">Total Users</p>
+                        <p class="card-label text-right">Total Reports</p>
                         <h4 class="card-text text-right ">{{totalUsers}}</h4>
                     </div>
                 </div>
@@ -154,10 +154,11 @@
                         <td>3 months ago</td>
                         <td>SuperAdmin</td>
                         <td>
-                            <div class="custom-control custom-switch">
+                            {{!-- <div class="custom-control custom-switch">
                                 <input type="checkbox" class="custom-control-input" id="customSwitch">
                                 <label class="custom-control-label" for="customSwitch"></label>
-                            </div>
+                            </div> --}}
+                            <a href="#">View Profile</a>
                         </td>
                     </tr>
                     {{#each modelData as |user index|}}
@@ -169,13 +170,13 @@
                             </div>
                         </td>
                         <td>
-                            {{#if user.image}}
+                            {{!-- {{#if user.image}}
                             <img class="img-responsive img-rounded  rounded-circle" alt="" src={{user.image}}
                                 role="presentation">
-                            {{else}}
+                            {{else}} --}}
                             <img src="../images/avatar.png" alt="avatar" class="img-fluid rounded-circle" width="50"
                                 role="presentation">
-                            {{/if}}
+                            {{!-- {{/if}} --}}
                         </td>
                         <td>{{ user.first_name}}</td>
                         <td>{{ user.last_name}}</td>
@@ -183,10 +184,7 @@
                         <td>{{member-since user.active_since}}</td>
                         <td>{{user.role}}</td>
                         <td>
-                            <div class="custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" id="customSwitch{{index}}">
-                                <label class="custom-control-label" for="customSwitch{{index}}"></label>
-                            </div>
+                             <a href="#">View Profile</a>
                         </td>
                     </tr>
                     {{/each}}

@@ -28,5 +28,6 @@ Router.map(function () {
   this.route('settings');
   this.route('projects', function () {
     this.route('filter');
+    this.route('show', { path: '/:ward_id' });
   });
 });

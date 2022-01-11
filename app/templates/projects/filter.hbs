@@ -1,34 +1,10 @@
 {{page-title "Filter"}}
 {{outlet}}
 
-<div class="row">
-    <div class="col-md-2 col-lg-2 mb-4">
-        <div class="card bg-green text-light shadow border-0 rounded-0">
-            <div class="card-body text-center">
-                <div class="card-icon">
-                    {{svg-jar "add-report" width='60px'}}
-                    <p class="card-label">ADD REPORT</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-2 col-lg-2 mb-4">
-        <div class="card bg-green text-light shadow border-0 rounded-0">
-            <div class="card-body text-center">
-                <div class="card-icon">
-                    {{svg-jar "edit" width='60px'}}
-                    <p class="card-label">EDIT REPORT</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div>
-    <h4 class="mb-4 text-muted green">{{uppercase "COUNTY PROJECTS ALLOCATION"}}</h4>
+    <h3 class="mb-4 green">{{uppercase "COUNTY PROJECTS ALLOCATION"}}</h3>
     <div class="row">
-
-        <div class="col-md-12">
+        <div class="col">
             <select class="form-select" aria-label="Default select example">
                 <option selected>Choose Department</option>
                 <option value="1">One</option>
@@ -37,10 +13,8 @@
             </select>
         </div>
     </div>
-    <div class="row">
-
-
-        <div class="col-md-12">
+    <div class="row mt-3">
+        <div class="col">
             <select class="form-select" aria-label="Default select example">
                 <option selected>Choose Ward</option>
                 <option value="1">One</option>
@@ -49,33 +23,37 @@
             </select>
         </div>
     </div>
-
-
-    <div class="row">
+    <div class="row mt-5">
         <div class="col-md-4 text-center">
+            <a href="/projects/1">
                 {{svg-jar "school" width='120px' height='120px'}}
-                <p class="card-label">School</p>
+                <p class="card-label green">School</p>
+            </a>
         </div>
-         <div class="col-md-4 text-center">
+        <div class="col-md-4 text-center">
+            <a href="/projects/1">
                 {{svg-jar "water" width='120px' height='120px'}}
-                <p class="card-label">Water Resources</p>
+                <p class="card-label green">Water Resources</p>
+            </a>
         </div>
-         <div class="col-md-4 text-center">
+        <div class="col-md-4 text-center">
+            <a href="/projects/1">
                 {{svg-jar "structures" width='120px' height='120px'}}
-                <p class="card-label">Structures</p>
+                <p class="card-label green">Structures</p>
+            </a>
         </div>
 
         <div class="col-md-4 text-center">
-                {{svg-jar "road" width='120px' height='120px'}}
-                <p class="card-label">Road</p>
+            {{svg-jar "road" width='120px' height='120px'}}
+            <p class="card-label">Road</p>
         </div>
-         <div class="col-md-4 text-center">
-                {{svg-jar "community" width='120px' height='120px'}}
-                <p class="card-label">Community Developments</p>
+        <div class="col-md-4 text-center">
+            {{svg-jar "community" width='120px' height='120px'}}
+            <p class="card-label">Community Developments</p>
         </div>
-         <div class="col-md-4 text-center">
-                {{svg-jar "resource" width='120px' height='120px'}}
-                <p class="card-label">Resource</p>
+        <div class="col-md-4 text-center">
+            {{svg-jar "resource" width='120px' height='120px'}}
+            <p class="card-label">Resource</p>
         </div>
     </div>
 

@@ -1,0 +1,57 @@
+{{page-title "Show"}}
+{{outlet}}
+
+{{!-- {{ log modelData.ward }}
+<div class="row">
+    <div class="col-md-2 col-lg-2 mb-4">
+        <div class="card bg-green text-light shadow border-0 rounded-0">
+            <div class="card-body text-center">
+                <div class="card-icon">
+                    {{svg-jar "add-report" width='60px'}}
+                    <p class="card-label">ADD REPORT</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 col-lg-2 mb-4">
+        <div class="card bg-green text-light shadow border-0 rounded-0">
+            <div class="card-body text-center">
+                <div class="card-icon">
+                    {{svg-jar "edit" width='60px'}}
+                    <p class="card-label">EDIT REPORT</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> --}}
+
+<div class="row">
+    <div class="col-md-12 green">
+        <h1>{{uppercase this.model.ward}}</h1>
+        <h3>{{this.model.implementing_entity}}</h3>
+    </div>
+    <div class="">
+        {{svg-jar "school" width='120px' height='120px'}}
+        <h1>Schools</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 green">
+        <table class="table table-borderless">
+            <tbody>
+                <tr>
+                    <td>Kakuma Primary</td>
+                    <td><a href="ward/kakuma"><button class="btn btn-primary" type="button">View
+                                0</button></a></td>
+                </tr>
+                {{#each this.model as |item| }}
+                <tr>
+                    <td>{{item.project_name}}</td>
+                    <td><a href="ward/{{item.id}}"><button class="btn btn-primary" type="button">View
+                                {{item.id}}</button></a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
