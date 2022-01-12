@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-4 col-lg-3">
             <Common::Card-Config @class="bg-green text-light " @header="Total Amount Allocated" @section="section"
-                @value={{fomartcurrency totalWardAmountSpent}} />
+                @value={{currency-short totalWardAmountSpent}} />
         </div>
         <div class="col-md-4 col-lg-3">
             <Common::Card-Config @class="bg-green text-light" @header="# of Projects in the County" @section="section"
@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="col-md-4 col-lg-3 mb-4 border border-light">
-        <Common::Card-Config @class="text-dark bg-white" @header="Project Amount" @value={{fomartcurrency
+        <Common::Card-Config @class="text-dark bg-white" @header="Project Amount" @value={{currency-short
             totalProjectCosts}} />
     </div>
     <div class="col-md-4 col-lg-3 mb-4">
