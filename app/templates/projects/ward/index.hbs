@@ -1,0 +1,53 @@
+{{page-title "Ward"}}
+{{outlet}}
+
+{{!--
+financial_year: "2014/2015"
+id: "2"
+implementing_entity: "Education, Sports and Social Protection"
+project_cost: "6000000.00"
+project_name: "Lotaka Ecd"
+project_status: "incomplete"
+sub_county: "Turkana West"
+ward: "Kakuma"
+--}}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="green">{{this.model.project_name}}</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2 col-lg-2 mb-4">
+        <div class="card bg-purple text-light shadow border-0 rounded-0">
+            <div class="card-body text-center">
+                <div class="card-icon">
+                    <h2>{{ currencyShort this.model.project_cost}}</h2>
+                    <h3 class="card-label">Budget</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 col-lg-2 mb-4">
+        <div class="card bg-green text-light shadow border-0 rounded-0">
+            <div class="card-body text-center">
+                <div class="card-icon">
+                    <h3>{{this.model.financial_year}}</h3>
+                    <h3 class="card-label">Financial Year</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <p>{{this.model.description}}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        {{svg-jar "pdf" width="100" height="100"}}
+
+    </div>
+</div>

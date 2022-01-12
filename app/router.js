@@ -29,5 +29,9 @@ Router.map(function () {
   this.route('projects', function () {
     this.route('filter');
     this.route('show', { path: '/:ward_id' });
+    this.route('ward', function () {
+      this.route('index', { path: '/:ward_name' });
+    });
   });
+  this.route('ward');
 });
