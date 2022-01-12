@@ -1,0 +1,200 @@
+{{page-title "Index"}}
+{{outlet}}
+
+<div class="row">
+    <div class="col-md-6 col-lg-3 mb-4">
+        <a href="/admin/metrics">
+            <div class="card bg-green text-light shadow border-0 rounded-0">
+                <div class="card-body">
+                    <div class="card-innerBody d-flex align-items-center">
+                        <div class="card-icon">
+                            {{svg-jar "reports"}}
+                        </div>
+                        <div class="ml-auto">
+                            <p class="card-label text-right">Total Reports</p>
+                            <h4 class="card-text text-right ">{{totalUsers}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card bg-green text-light shadow border-0 rounded-0" {{on "click" (fn (mut this.modal1) true)}}>
+            <div class="card-body">
+                <div class="card-innerBody d-flex align-items-center">
+                    <div class="card-icon">
+                        {{svg-jar "add-user"}}
+                    </div>
+                    <div class="ml-auto">
+                        <p class="card-label text-right">Add User</p>
+                    </div>
+                </div>
+            </div>
+            <BsModal @open={{this.modal1}} @onSubmit={{this.createUser }} @onHidden={{action (mut modal1) false}} as
+                |modal|>
+                <modal.header>
+                    <h4 class="modal-title">
+                        Create User
+                        <div class="badge">2</div>
+                    </h4>
+                </modal.header>
+                <modal.body>
+                    {{#with (changeset this.userLoginForm this.LoginValidations) as |newUser|}}
+                    <BsForm @model={{newUser}} @onSubmit={{this.createUser}} as |form|>
+                        <div class="signup-form-fields">
+                            <form.element id="username" class="" @controlType="text" @label="username"
+                                @property="username" as |el|>
+                                <el.control autocomplete="username" placeholder="enter_username">
+                                </el.control>
+                            </form.element>
+                            {{#each newUser.errors as |err| }}
+                            {{#if (eq err.key "username")}}
+                            <BsAlert @type="danger" @fade={{true}}>
+                                {{err.validation}}
+                            </BsAlert>
+                            {{/if}}
+                            {{/each}}
+
+                            <form.element id="email" class="" @controlType="text" @label="email" @property="email" as
+                                |el|>
+                                <el.control autocomplete="email" placeholder="example@mail.com"></el.control>
+                            </form.element>
+                            {{#each newUser.errors as |err| }}
+                            {{#if (eq err.key "email")}}
+                            <BsAlert @type="danger" @fade={{true}}>
+                                {{err.validation}}
+                            </BsAlert>
+                            {{/if}}
+                            {{/each}}
+                            <form.element id="phone" class="" @controlType="tel" @label="phone"
+                                @property="contactNumber" as |el|>
+                                <el.control placeholder='enter_phone'></el.control>
+                            </form.element>
+
+                            <form.element id="password" class="" @controlType="password" @label="password"
+                                @property="password" as |el|>
+                                <el.control autocomplete="new-password" placeholder="enter_password">
+                                </el.control>
+                            </form.element>
+                        </div>
+
+                        {{!--
+                        <BsButton class="btn btn-primary form-control mb-2" @type="submit" @defaultText="Create"
+                            @buttonType="submit" /> --}}
+                    </BsForm>
+                    {{/with}}
+                </modal.body>
+                <modal.footer>
+                    <BsButton @onClick={{action modal.close}}>Cancel</BsButton>
+                    <BsButton @type="success" @onClick={{action modal.submit}}>Save</BsButton>
+                </modal.footer>
+            </BsModal>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card bg-green text-light shadow border-0 rounded-0">
+            <div class="card-body">
+                <div class="card-innerBody d-flex align-items-center">
+                    <div class="card-icon">
+                        {{svg-jar "add-group"}}
+                    </div>
+                    <div class="ml-auto">
+                        <p class="card-label text-right">Create Group</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card bg-green text-light shadow border-0 rounded-0">
+            <div class="card-body">
+                <div class="card-innerBody d-flex align-items-center">
+                    <div class="card-icon">
+                        {{svg-jar "calendar"}}
+                    </div>
+                    <div class="ml-auto">
+                        <p class="card-label text-right">View Calendar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col">
+        <div class="table-responsive table-responsive-md table-responsive-sm">
+            <table class="table table-sm table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Department</th>
+                        <th scope="col">Joined</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Account Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="switch">
+                                <label class="custom-control-label" for="switch"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <img class="img-responsive img-rounded rounded-circle" width="50" src="/images/prof.jpeg"
+                                alt="User picture">
+                        </td>
+                        <td>Jere</td>
+                        <td>Apalia</td>
+                        <td>@mdo</td>
+                        <td>3 months ago</td>
+                        <td>SuperAdmin</td>
+                        <td>
+                            {{!-- <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch">
+                                <label class="custom-control-label" for="customSwitch"></label>
+                            </div> --}}
+                            <a href="#">View Profile</a>
+                        </td>
+                    </tr>
+                    {{#each modelData as |user index|}}
+                    <tr>
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="switch{{index}}">
+                                <label class="custom-control-label" for="switch{{index}}"></label>
+                            </div>
+                        </td>
+                        <td>
+                            {{!-- {{#if user.image}}
+                            <img class="img-responsive img-rounded  rounded-circle" alt="" src={{user.image}}
+                                role="presentation">
+                            {{else}} --}}
+                            <img src="../images/avatar.png" alt="avatar" class="img-fluid rounded-circle" width="50"
+                                role="presentation">
+                            {{!-- {{/if}} --}}
+                        </td>
+                        <td>{{ user.first_name}}</td>
+                        <td>{{ user.last_name}}</td>
+                        <td>{{ user.department}}</td>
+                        <td>{{member-since user.active_since}}</td>
+                        <td>{{user.role}}</td>
+                        <td>
+                            <a href="#">View Profile</a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

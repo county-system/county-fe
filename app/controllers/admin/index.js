@@ -1,7 +1,7 @@
 import Controller from '@ember/controller';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
-import LoginValidations from '../validations/login';
+import LoginValidations from '../../validations/login';
 
 class UserForm {
   @tracked email;
@@ -10,7 +10,7 @@ class UserForm {
   @tracked password;
 }
 
-export default class UsersController extends Controller {
+export default class AdminIndexController extends Controller {
   LoginValidations = LoginValidations;
   @tracked modelData = this.model;
   @tracked modal1 = false;

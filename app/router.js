@@ -34,4 +34,7 @@ Router.map(function () {
     });
   });
   this.route('ward');
+  this.route('admin', function () {
+    this.route('metrics');
+  });
 });
