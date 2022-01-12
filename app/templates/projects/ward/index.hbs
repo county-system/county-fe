@@ -7,7 +7,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-2 col-lg-2 mb-4">
+    <div class="col-md-3 col-lg-2 mb-4">
         <div class="card bg-purple text-light shadow border-0 rounded-0">
             <div class="card-body text-center">
                 <div class="card-icon">
@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-2 col-lg-2 mb-4">
+    <div class="col-md-3 col-lg-2 mb-4">
         <div class="card bg-green text-light shadow border-0 rounded-0">
             <div class="card-body text-center">
                 <div class="card-icon">
@@ -39,14 +39,18 @@
 <div class="row">
     <div class="col">
         {{svg-jar "pdf"}}
-        <a class="btn text-white bg-green b-3" href="#" role="button">Download</a>
+        {{!-- <a class="btn text-white bg-green b-3" href="#" role="button">Download</a> --}}
+        <BsButton @defaultText="Download" @pendingText="Downloading..." @resolvedText="Download complete!"
+            @onClick={{action "download" "pdf" }} class="text-white bg-green"/>
     </div>
     <div class="col">
         {{svg-jar "word"}}
-        <a class="btn text-white bg-green b-3" href="#" role="button">Download</a>
+        <BsButton @defaultText="Download" @pendingText="Downloading..." @resolvedText="Download complete!"
+            @onClick={{action "download" "word"}} class="text-white bg-green"/>
     </div>
     <div class="col">
         {{svg-jar "excel"}}
-        <a class="btn text-white bg-green b-3" href="#" role="button">Download</a>
+        <BsButton @defaultText="Download" @pendingText="Downloading..." @resolvedText="Download complete!"
+            @onClick={{action "download" "excel"}} class="text-white bg-green"/>
     </div>
 </div>
