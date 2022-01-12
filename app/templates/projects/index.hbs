@@ -50,44 +50,7 @@
     <div class="row mt-4">
         <h3 class="mb-4 green">{{ uppercase "Full Report"}}</h3>
         <div class="table-responsive">
-            {{!-- <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">GOVERNANCE_OR_MINISTERIAL</th>
-                        <th scope="col">BUDGET OFFICE</th>
-                        <th scope="col">% BUDGET</th>
-                        <th scope="col">% OVERALL BUDGET </th>
-                        <th scope="col">ACTUAL COST</th>
-                        <th scope="col">% COMPLETED</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>GOVERNANCE</td>
-                        <td>60,000,000</td>
-                        <td>56</td>
-                        <td>42</td>
-                        <td>31,275,000</td>
-                        <td>21</td>
-                    </tr>
-                    <tr>
-                        <td>GOVERNANCE</td>
-                        <td>60,000,000</td>
-                        <td>56</td>
-                        <td>42</td>
-                        <td>31,275,000</td>
-                        <td>21</td>
-                    </tr>
-                    <tr class="bg-green">
-                        <td>{{ uppercase "Total"}}</td>
-                        <td>60,000,000</td>
-                        <td>56</td>
-                        <td>42</td>
-                        <td>31,275,000</td>
-                        <td>21</td>
-                    </tr>
-                </tbody>
-            </table> --}}
+
             <Table />
 
         </div>
@@ -96,37 +59,25 @@
     <div class="row mt-4">
         <h3 class="mb-4 green">{{ uppercase "Budget summary"}}</h3>
         <div class="col-md-12">
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Select Office or County</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+            <select class="form-select" {{on "change" this.dropdownValue }} class="form-select"
+            aria-label="Default select example">
+                <option value="all" selected>Select Office or Ministry</option>
+                {{#each dropdown as |dt|}}
+                <option value={{dt}}>{{dt}}</option>
+                {{/each}}
             </select>
         </div>
+
         <div class="col-md-6 mt-4">
             <div class="table-responsive">
                 <table class="table">
                     <tbody>
+                        {{#each tableData as | info | }}
                         <tr>
-                            <td>Construction of Model ECDE Centre</td>
-                            <td>60,000,000</td>
+                            <td>{{info.project_name}}</td>
+                            <td>{{fomartcurrency info.project_cost}}</td>
                         </tr>
-                        <tr>
-                            <td>Model ECDE Centre Play and Other Materials</td>
-                            <td>31,275,000</td>
-                        </tr>
-                        <tr>
-                            <td>Construction of Model ECDE Centre</td>
-                            <td>60,000,000</td>
-                        </tr>
-                        <tr>
-                            <td>Model ECDE Centre Play and Other Materials</td>
-                            <td>31,275,000</td>
-                        </tr>
-                        <tr>
-                            <td>Construction of Model ECDE Centre</td>
-                            <td>60,000,000</td>
-                        </tr>
+                        {{/each}}
                     </tbody>
                 </table>
             </div>
@@ -152,36 +103,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {{#each tableData as | info | }}
                         <tr>
-                            {{!-- <th scope="row">1</th> --}}
-                            <td>GOVERNANCE</td>
-                            <td>60,000,000</td>
+                            <td>{{info.project_name}}</td>
+                            <td>{{fomartcurrency info.project_cost}}</td>
                         </tr>
-                        <tr>
-                            {{!-- <th scope="row">1</th> --}}
-                            <td>GOVERNANCE</td>
-                            <td>60,000,000</td>
-                        </tr>
-                        <tr>
-                            {{!-- <th scope="row">1</th> --}}
-                            <td>GOVERNANCE</td>
-                            <td>60,000,000</td>
-                        </tr>
-                        <tr>
-                            {{!-- <th scope="row">1</th> --}}
-                            <td>GOVERNANCE</td>
-                            <td>60,000,000</td>
-                        </tr>
-                        <tr>
-                            {{!-- <th scope="row">1</th> --}}
-                            <td>GOVERNANCE</td>
-                            <td>60,000,000</td>
-                        </tr>
-                        <tr>
-                            {{!-- <th scope="row">1</th> --}}
-                            <td>GOVERNANCE</td>
-                            <td>60,000,000</td>
-                        </tr>
+                        {{/each}}
                     </tbody>
                 </table>
             </div>
@@ -220,46 +147,16 @@
                         <tr>
                             <th scope="col">Ward</th>
                             <th scope="col">Budget</th>
-                            <th scope="col">Number of Projects</th>
+                            {{!-- <th scope="col">Number of Projects</th> --}}
                         </tr>
                     </thead>
                     <tbody>
+                        {{#each wardProjects as | info | }}
                         <tr>
-                            {{!-- <th scope="row">1</th> --}}
-                            <td>GOVERNANCE</td>
-                            <td>60,000,000</td>
-                            <td>10</td>
+                            <td>{{info.ward}}</td>
+                            <td>{{fomartcurrency info.project_cost}}</td>
                         </tr>
-                        <tr>
-                            {{!-- <th scope="row">1</th> --}}
-                            <td>GOVERNANCE</td>
-                            <td>60,000,000</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            {{!-- <th scope="row">1</th> --}}
-                            <td>GOVERNANCE</td>
-                            <td>60,000,000</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            {{!-- <th scope="row">1</th> --}}
-                            <td>GOVERNANCE</td>
-                            <td>60,000,000</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            {{!-- <th scope="row">1</th> --}}
-                            <td>GOVERNANCE</td>
-                            <td>60,000,000</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            {{!-- <th scope="row">1</th> --}}
-                            <td>GOVERNANCE</td>
-                            <td>60,000,000</td>
-                            <td>10</td>
-                        </tr>
+                        {{/each}}
                     </tbody>
                 </table>
             </div>

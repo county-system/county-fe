@@ -32,7 +32,6 @@ export default class MapsController extends Controller {
 
   @action
   filterBy(event) {
-    console.log('event', event);
     this.buttonGroupValue = event;
 
     if (event == 'all') {

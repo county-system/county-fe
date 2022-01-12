@@ -9,15 +9,13 @@
 </div>
 
 <div class="input-group mb-3">
-    {{!-- <select {{on "change" this.dropdownValue value="target.value" }} onfocus='this.size=5;' onblur='this.size=1;'
-        class="form-select" aria-label="Default select example"> --}}
-        <select class="form-select" {{on "change" this.dropdownValue value="target.value" }} class="form-select"
-            aria-label="Default select example">
-            <option selected>Choose Department</option>
-            {{#each dropdown as |dt|}}
-            <option value={{dt}}>{{dt}}</option>
-            {{/each}}
-        </select>
+    <select class="form-select" {{on "change" this.dropdownValue value="target.value" }} class="form-select"
+        aria-label="Default select example">
+        <option selected>Choose Department</option>
+        {{#each dropdown as |dt|}}
+        <option value={{dt}}>{{dt}}</option>
+        {{/each}}
+    </select>
 </div>
 
 <div class="row">

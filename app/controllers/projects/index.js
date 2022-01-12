@@ -2,6 +2,7 @@ import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
+import { sumUnic } from '../../utils/sum-unic';
 
 export default class ProjectsController extends Controller {
   @service store;
@@ -9,6 +10,50 @@ export default class ProjectsController extends Controller {
   @tracked modelData = this.model;
   @tracked topData = this.topCardsData();
   @tracked sideProgressData = this.progressData;
+  @tracked dropdown = this.dropdownData();
+  @tracked value;
+  @tracked tableData = sumUnic(
+    this.modelData,
+    'implementing_entity',
+    'project_cost'
+  );
+  @tracked wardProjects = sumUnic(this.modelData, 'ward', 'project_cost');
+
+  @action
+  dropdownValue(event) {
+    this.value = event?.target?.value;
+    if (this.value == 'all') {
+      this.modelData = this.model;
+    } else {
+      this.modelData = this.model.filter((data) => {
+        return data.implementing_entity == this.value;
+      });
+    }
+
+    this.tableData = sumUnic(
+      this.modelData,
+      'implementing_entity',
+      'project_cost'
+    );
+    this.wardProjects = sumUnic(this.modelData, 'ward', 'project_cost');
+    console.log(
+      this.value,
+      this.modelData.length,
+      this.tableData.length,
+      this.wardProjects.length
+    );
+  }
+
+  @action
+  dropdownData() {
+    const dropdown = [];
+    this.model.forEach((item) => {
+      if (!dropdown.includes(item.implementing_entity)) {
+        dropdown.push(item.implementing_entity);
+      }
+    });
+    return dropdown;
+  }
 
   @action
   chartColors(num) {
@@ -143,28 +188,4 @@ export default class ProjectsController extends Controller {
       percentage: '40',
     },
   ];
-  get tableData() {
-    console.log(this.modelData.length);
-    const data = this.modelData;
-    let total = 0;
-    let incomplete = 0;
-    let complete = 0;
-
-    data.forEach((item) => {
-      if (item.implementing_entity === this.value) {
-        total += parseInt(item.project_cost, 10);
-        if (item.project_status === 'incomplete') {
-          incomplete += 1;
-        } else if (item.project_status === 'complete') {
-          complete += 1;
-        }
-      }
-    });
-
-    return {
-      incomplete,
-      complete,
-      total,
-    };
-  }
 }
