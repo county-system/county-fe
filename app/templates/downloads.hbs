@@ -2,76 +2,37 @@
 {{outlet}}
 
 <div class="downloads">
-    <h4 class="mb-4 text-muted">Downloads </h4>
-    <ul class="list-group">
-        <li class="list-group-item mt-1 mb-1">Cras justo odio</li>
-        <li class="list-group-item mt-1 mb-1">Cras justo odio</li>
-        <li class="list-group-item mt-1 mb-1">Cras justo odio</li>
-        <li class="list-group-item mt-1 mb-1">Cras justo odio</li>
-        <li class="list-group-item mt-1 mb-1">Cras justo odio</li>
-    </ul>
-
     <div class="row">
-        <div class="col-md-5 col-lg-3 mb-4">
-            <div class="card bg-green text-light shadow border-0 rounded-0">
-                <div class="card-body text-center">
-                    <h5 class="card-title">County CIDP</h5>
-
-                    <span tabindex="1" class="toggler">{{svg-jar "download_white"}}</span>
-                    <div class="dropdown shadow border-0 rounded-5">
-                        <div class="d-flex flex-row justify-content-center shadow">
-                            <div class="p-2 green bg-light">PDF</div>
-                            <div class="p-2 green bg-light">csv</div>
-                            <div class="p-2 green bg-light">xls</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="col-md-12 bg-gray p-2 mb-2 mt-2 border-1 d-flex justify-content-between">
+            <h4 class="ml-3 mt-3">County CIDP</h4>
+            <span>{{svg-jar "pdf"}}{{svg-jar "word"}}{{svg-jar "excel"}}</span>
         </div>
-        <div class="col-md-5 col-lg-3 mb-4">
-            <div class="card bg-green text-light shadow border-0 rounded-0">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Manuals</h5>
-                    <span tabindex="1" class="toggler">{{svg-jar "download_white"}}</span>
-                    <div class="dropdown shadow border-0 rounded-5">
-                        <div class="d-flex flex-row justify-content-center shadow">
-                            <div class="p-2 green bg-light">PDF</div>
-                            <div class="p-2 green bg-light">csv</div>
-                            <div class="p-2 green bg-light">xls</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="col-md-12 bg-gray p-2 mb-2 mt-2 border-1 d-flex justify-content-between">
+            <h4 class="ml-3 mt-3">Policies</h4>
+            <span>{{svg-jar "pdf"}}{{svg-jar "word"}}{{svg-jar "excel"}}</span>
         </div>
-        <div class="col-md-5 col-lg-3 mb-4">
-            <div class="card bg-green text-light shadow border-0 rounded-0">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Policies</h5>
-                    <span tabindex="1" class="toggler">{{svg-jar "download_white"}}</span>
-                    <div class="dropdown shadow border-0 rounded-5">
-                        <div class="d-flex flex-row justify-content-center shadow">
-                            <div class="p-2 green bg-light">PDF</div>
-                            <div class="p-2 green bg-light">csv</div>
-                            <div class="p-2 green bg-light">xls</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="col-md-12 bg-gray p-2 mb-2 mt-2 border-1 d-flex justify-content-between">
+            <h4 class="ml-3 mt-3">Templates</h4>
+            <span>{{svg-jar "pdf"}}{{svg-jar "word"}}{{svg-jar "excel"}}</span>
         </div>
-        <div class="col-md-5 col-lg-3 mb-4">
-            <div class="card bg-green text-light shadow border-0 rounded-0">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Templates</h5>
-                    <span tabindex="1" class="toggler">{{svg-jar "download_white"}}</span>
-                    <div class="dropdown shadow border-0 rounded-5">
-                        <div class="d-flex flex-row justify-content-center shadow">
-                            <div class="p-2 green bg-light">PDF</div>
-                            <div class="p-2 green bg-light">csv</div>
-                            <div class="p-2 green bg-light">xls</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="col-md-12 bg-gray p-2 mb-2 mt-2 border-1 d-flex justify-content-between">
+            <h4 class="ml-3 mt-3">Manuals</h4>
+            <span>{{svg-jar "pdf"}}{{svg-jar "word"}}{{svg-jar "excel"}}</span>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col">
+            <h4 class="mb-2">Suggest a document we can upload here</h4>
+            <BsForm @formLayout="vertical" @model={{this}} @onSubmit={{action "submit" }} as |form|>
+                <form.element @controlType="text" @property="name" as |el|>
+                    <el.control placeholder="full name" required />
+                </form.element>
+                <form.element @controlType="email" @property="email" as |el|>
+                    <el.control placeholder="Email" required />
+                </form.element>
+                <form.element @controlType="textarea" @property="textarea" />
+                <form.submitButton class="bg-green">Submit</form.submitButton>
+            </BsForm>
         </div>
     </div>
 </div>

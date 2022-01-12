@@ -1,12 +1,9 @@
 import Controller from '@ember/controller';
-import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import RSVP from 'rsvp';
 import { later } from '@ember/runloop';
 
-export default class ProjectsWardIndexController extends Controller {
-  @tracked modelData = this.model;
-
+export default class DownloadsController extends Controller {
   /**
    *
    * @param {*} format Document format
@@ -18,5 +15,10 @@ export default class ProjectsWardIndexController extends Controller {
     return new RSVP.Promise(function (resolve) {
       later(resolve, 3000);
     });
+  }
+
+  @action
+  submit() {
+    window.alert('Successfully submitted form data!');
   }
 }
