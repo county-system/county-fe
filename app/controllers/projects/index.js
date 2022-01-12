@@ -9,7 +9,11 @@ export default class ProjectsController extends Controller {
 
   @tracked modelData = this.model;
   @tracked topData = this.topCardsData();
-  @tracked sideProgressData = this.progressData;
+  @tracked sideProgressData = sumUnic(
+    this.modelData,
+    'implementing_entity',
+    'project_cost'
+  );
   @tracked dropdown = this.dropdownData();
   @tracked value;
   @tracked tableData = sumUnic(
@@ -126,66 +130,4 @@ export default class ProjectsController extends Controller {
     },
   };
 
-  progressData = [
-    {
-      title: 'Infrastructure, Transport and Public Works',
-      value: '0.27bn',
-      percentage: '99',
-    },
-    {
-      title: 'Education, Sports and Social Protection',
-      value: '0.226bn',
-      percentage: '50',
-    },
-    {
-      title: 'Lands, Energy, Housing and Urban Areas Management',
-      value: '0.226bn',
-      percentage: '40',
-    },
-    {
-      title: 'Public Service, Administration and Disaster Management',
-      value: '0.226bn',
-      percentage: '70',
-    },
-    {
-      title: 'Health and Sanitation Services',
-      value: '0.226bn',
-      percentage: '20',
-    },
-    {
-      title: 'Finance and Economic Planning',
-      value: '0.226bn',
-      percentage: '40',
-    },
-    {
-      title: 'Water, Environment & Mineral Resources',
-      value: '0.226bn',
-      percentage: '40',
-    },
-    {
-      title: 'Trade, Gender and Youth Affairs',
-      value: '0.226bn',
-      percentage: '40',
-    },
-    {
-      title: 'Agriculture, Pastoral Economy and Fisheries',
-      value: '0.226bn',
-      percentage: '40',
-    },
-    {
-      title: 'Tourism, Culture and Natural Resources',
-      value: '0.226bn',
-      percentage: '40',
-    },
-    {
-      title: 'County Assembly',
-      value: '0.226bn',
-      percentage: '40',
-    },
-    {
-      title: 'Office of the Governor',
-      value: '0.226bn',
-      percentage: '40',
-    },
-  ];
 }

@@ -31,14 +31,14 @@
             <div class="row">
                 {{#each sideProgressData as |pg|}}
                 <div class="col-md-6 col-lg-6">
-                    <p class="prog-text text-white" style="font-size:12px;">{{pg.title}}</p>
+                    <p class="prog-text text-white" style="font-size:12px;">{{pg.implementing_entity}}</p>
                 </div>
                 <div class="col-md-6 col-lg-6">
                     <div class="progress"
                         style="font-weight:600; height: 16px; background-color: inherit;border-radius: unset;">
                         <div class="progress-bar green" role="progressbar"
-                            style="background-color: #F7931E;width: {{pg.percentage}}%"
-                            aria-valuenow="{{pg.percentage}}" aria-valuemin="0" aria-valuemax="100">{{pg.value}}
+                            style="background-color: #F7931E;width: 24%"
+                            aria-valuenow="{{pg.percentage}}" aria-valuemin="0" aria-valuemax="100">{{currency-short pg.project_cost}}
                         </div>
                     </div>
                 </div>
