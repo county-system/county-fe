@@ -22,8 +22,8 @@ export default class KpiController extends Controller {
   dropdownData() {
     const dropdown = [];
     this.modelData.forEach((item) => {
-      if (!dropdown.includes(item.implementing_entity)) {
-        dropdown.push(item.implementing_entity);
+      if (!dropdown.includes(item.department)) {
+        dropdown.push(item.department);
       }
     });
     return dropdown;

@@ -2,39 +2,19 @@
 
 <table class="table">
     <thead>
-        <tr>
-            <th scope="col">GOVERNANCE_OR_MINISTERIAL</th>
-            <th scope="col">BUDGET OFFICE</th>
-            <th scope="col">% BUDGET</th>
-            <th scope="col">% OVERALL BUDGET </th>
-            <th scope="col">ACTUAL COST</th>
-            <th scope="col">% COMPLETED</th>
+        <tr class="bg-green">
+            {{#each-in @model.[0] as |k|}}
+            <th>{{uppercase k}}</th>
+            {{/each-in}}
         </tr>
     </thead>
     <tbody>
+        {{#each @model as |row|}}
         <tr>
-            <td>GOVERNANCE</td>
-            <td>60,000,000</td>
-            <td>56</td>
-            <td>42</td>
-            <td>31,275,000</td>
-            <td>21</td>
+            {{#each-in row as |k v|}}
+            <td>{{v}}</td>
+            {{/each-in}}
         </tr>
-        <tr>
-            <td>GOVERNANCE</td>
-            <td>60,000,000</td>
-            <td>56</td>
-            <td>42</td>
-            <td>31,275,000</td>
-            <td>21</td>
-        </tr>
-        <tr class="bg-green">
-            <td>{{ uppercase "Total"}}</td>
-            <td>60,000,000</td>
-            <td>56</td>
-            <td>42</td>
-            <td>31,275,000</td>
-            <td>21</td>
-        </tr>
+        {{/each}}
     </tbody>
 </table>

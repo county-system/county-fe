@@ -3,12 +3,12 @@
 
 <div class="row">
     <div class="col-md-12">
-        {{svg-jar "kpi"}}
+        {{svg-jar "kpi" width="120"}}
         <h2 class="green">KPI's</h2>
     </div>
 </div>
 
-<div class="input-group mb-3">
+<div class="input-group">
     <select class="form-select" {{on "change" this.dropdownValue value="target.value" }} class="form-select"
         aria-label="Default select example">
         <option selected>Choose Department</option>
@@ -20,7 +20,8 @@
 
 <div class="row">
     <div class="col-md-12">
-        <Table />
+
+        <Table @tableHeaders={{dropdown}} @model={{this.modelData}} />
     </div>
 </div>
 
