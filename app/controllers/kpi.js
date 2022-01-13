@@ -31,6 +31,14 @@ export default class KpiController extends Controller {
   @action
   dropdownValue(event) {
     this.value = event.target.value;
+    this.value = event?.target?.value;
+    if (this.value == 'all') {
+      this.modelData = this.model;
+    } else {
+      this.modelData = this.model.filter((data) => {
+        return data.department == this.value;
+      });
+    }
   }
 
   /**
