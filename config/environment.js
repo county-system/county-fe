@@ -28,7 +28,7 @@ module.exports = function (environment) {
 
     backend: {
       BACKEND_API: process.env.BACKEND_API,
-      BACKEND_API_VERSION: process.env.BACKEND_API_VERSION,
+      BACKEND_API_VERSION: process.env.BACKEND_API,
     },
 
     flashMessageDefaults: {
@@ -46,10 +46,9 @@ module.exports = function (environment) {
     },
     'ember-simple-auth-token': {
       refreshTokenPropertyName: 'refresh',
-      tokenPropertyName: 'access',
-      serverTokenEndpoint: process.env.BACKEND_API + '/api/token-auth/',
-      serverTokenRefreshEndpoint:
-        process.env.BACKEND_API + '/api/token/refresh/',
+      tokenPropertyName: 'token',
+      serverTokenEndpoint: process.env.BACKEND_API + '/api/v2/auth/login',
+      serverTokenRefreshEndpoint: process.env.BACKEND_API + '/api/v2/refresh',
       refreshAccessTokens: true,
       refreshLeeway: 300, // refresh 5 minutes (300 seconds) before expiration
     },

@@ -1,14 +1,12 @@
 {{yield}}
 <div class="d-flex justify-content-center align-items-center">
     <div class="login-form">
-        <BsForm class="login-form" @formLayout="vertical" @model={{@registeredUser}} @onSubmit={{this.login}} as |form|>
-            {{#each @registeredUser.errors as |err| }}
-            {{#if (eq err.key "errors")}}
-            <BsAlert @type="danger" @fade={{true}}>
-                {{err.validation}}
+        <BsForm class="login-form" @formLayout="vertical" @model={{@registeredUser}} @onSubmit={{this.login}} @onChange={{fn this.flashMessage loginErrors.error_message}} as |form|>
+            {{#if (eq loginErrors.key "errors")}}
+            <BsAlert @visible={{true}} @fade={{true}} @type="danger" @dismissible={{true}}>
+                {{loginErrors.error_message}}
             </BsAlert>
             {{/if}}
-            {{/each}}
 
             <div class="login-form-fields">
                 <form.element id="username" @controlType="text" @label="username" @property="username" as |el|>

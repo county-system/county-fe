@@ -1,7 +1,7 @@
 import Service, { inject as service } from '@ember/service';
+import { getOwner } from '@ember/application';
 import { tracked } from '@glimmer/tracking';
 import fetch from 'fetch';
-import JWT from 'ember-simple-auth-token/authenticators/jwt';
 
 export default class MeService extends Service {
   @service session;
@@ -13,28 +13,20 @@ export default class MeService extends Service {
   }
 
   async load() {
-    // const authenticator = getOwner(this).lookup('authenticator:jwt');
+    const authenticator = getOwner(this).lookup('authenticator:jwt');
     const session = this.session.data.authenticated;
 
-    if (this.session.isAuthenticated) {
-      // const tokenData = authenticator.getTokenData(session.access);
-      const tokenData = this.getUserIdFromToken(session.access);
-      console.log('tokenData', tokenData);
-      this.user = await this.store.findRecord('user', tokenData);
-      console.log('this.user', this.user);
-      // try {
-      //   this.user = await this.store.findRecord('user', tokenData.user_id);
-      // } catch (e) {
-      //   return this.session.invalidate();
-      // }
+    let tokenData;
+    if (session && session.token) {
+      tokenData = authenticator.getTokenData(session.token);
+      try {
+        this.user = await this.store.findRecord('user', tokenData.data.id);
+      } catch (e) {
+        return this.session.invalidate();
+      }
     }
-    return Promise.resolve();
-  }
 
-  getUserIdFromToken(token) {
-    const jwt = new JWT();
-    const tokenData = jwt.getTokenData(token);
-    return tokenData['user_id'];
+    return Promise.resolve();
   }
 
   async register(fields) {
@@ -52,25 +44,10 @@ export default class MeService extends Service {
     throw await res.json();
   }
 
-  // async authenticate(username, password) {
-  //   let credentials = { username, password };
-  //   const res = await fetch('http://127.0.0.1:8000/api/token/', {
-  //     method: 'POST',
-  //     body: JSON.stringify(credentials),
-  //     headers: { 'Content-type': 'application/json' },
-  //   });
-  //   const { refresh, acess } = await res.json();
-  //   console.log(refresh, acess);
-  //   if (res.ok) {
-  //     return;
-  //   }
-  //   throw await res.json();
-  // }
-
   authenticate(username, password) {
     let credentials = { username, password };
     return this.session
-      .authenticate('authenticator:token', credentials)
+      .authenticate('authenticator:jwt', credentials)
       .then(() => {
         return this.load();
       });
@@ -102,6 +79,14 @@ export default class MeService extends Service {
     }
   }
 
+  get isEmailVerified() {
+    if (this.user) {
+      return this.user.emailVerified;
+    }
+
+    return null;
+  }
+
   get id() {
     if (this.user) {
       return this.user.id;
@@ -114,7 +99,14 @@ export default class MeService extends Service {
     if (this.user) {
       return this.user.role;
     }
-
     return null;
+  }
+
+  get isAdmin() {
+    if (this.user && this.user.role) {
+      return this.user.role.toLowerCase() === 'admin';
+    }
+
+    return false;
   }
 }
