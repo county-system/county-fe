@@ -37,8 +37,8 @@ html {
 @import 'users';
 @import 'settings';
 
-
 html {
+    scroll-behavior: smooth;
     font-size: 0.9rem;
 }
 
