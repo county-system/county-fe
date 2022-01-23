@@ -114,6 +114,7 @@
             </div>
         </div>
         <div class="col-md-6 p-4 border">
+            TODO: Calculate based on value of money allocated to each project
             <BsButtonGroup @value={{buttonGroupValue}} @type="radio" @onChange={{action (mut buttonGroupValue)}} as
                 |bg|>
                 <bg.button @value="5" class="green bg-green bg-green-hover">{{uppercase "top 5"}}</bg.button>
@@ -138,6 +139,7 @@
             </ul>
         </div>
     </div>
+    TODO: Calculate No. of Projects for each ward
     <div class="row mt-4 p-2 border">
         <h3 class="mb-4 green">{{ uppercase "Turkana County Ward Projects"}}</h3>
         <div class="col-md-12">
@@ -147,6 +149,7 @@
                         <tr>
                             <th scope="col">Ward</th>
                             <th scope="col">Budget</th>
+                            <th scope="col">No. of Projects</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -154,6 +157,7 @@
                         <tr>
                             <td>{{info.ward}}</td>
                             <td>{{fomartcurrency info.project_cost}}</td>
+                            <td>59</td>
                         </tr>
                         {{/each}}
                     </tbody>
