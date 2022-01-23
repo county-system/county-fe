@@ -10,6 +10,8 @@
   {{/each}}
 </div>
 
+TODO: Maps linked via navigation tabs at the top(for now 2 links)
+
 <div class="row" style='{{if maps this.myStyle}}'>
   <div class="col-md-9 col-lg-9">
 
@@ -23,9 +25,6 @@
         this.mapTooltipOpen) false}} @content="<i>Simple text tooltip</i>" />
 
       <g.marker @lat={{location.lat}} @lng={{location.lng}} @onClick={{fn this.flashMessage location.name}} as |m|>
-        {{!-- @onClick={{fn this.flashMessage location.name}}
-        @onClick={{toggle "markerTooltipOpen" this}} --}}
-
         <m.infoWindow @isOpen={{this.markerTooltipOpen}} @onCloseclick={{fn (mut this.markerTooltipOpen) false}}>
           <div class="text-center">
             <div>Name: {{location.name}} </div>
