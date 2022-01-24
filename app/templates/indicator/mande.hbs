@@ -1,0 +1,50 @@
+{{page-title "Mande"}}
+{{outlet}}
+<div class="row mt-4">
+    <div class="col-md-4 col-lg-2">
+        <div class="card text-center p-2 shadow border-0 rounded-0 bg-purple text-light">
+            <div class="card-body">
+                <h4 class="card-title" style="font-size:15px;">{{uppercase "key performance Indicators"}}</h4>
+                <a href="/indicator/kpi" class="btn btn-primary">view</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h3 class="green">M&#38;E OUTCOME INDICATORS</h3>
+        {{svg-jar "table"}}
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        {{svg-jar "pdf"}}
+        <BsButton @defaultText="Download" @pendingText="Downloading..." @resolvedText="Download complete!"
+            @onClick={{action "download" "pdf" }} class="text-white bg-green" />
+    </div>
+    <div class="col">
+        {{svg-jar "word"}}
+        <BsButton @defaultText="Download" @pendingText="Downloading..." @resolvedText="Download complete!"
+            @onClick={{action "download" "word" }} class="text-white bg-green" />
+    </div>
+    <div class="col">
+        {{svg-jar "excel"}}
+        <BsButton @defaultText="Download" @pendingText="Downloading..." @resolvedText="Download complete!"
+            @onClick={{action "download" "excel" }} class="text-white bg-green" />
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <div class="fixed-bottom d-flex flex-row-reverse">
+            <a href="/dash" class="mr-5 mb-5"> {{svg-jar "back_button"}}</a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <div class="fixed-bottom d-flex flex-row-reverse">
+            <a href="/dash" class="mr-5 mb-5"> {{svg-jar "back_button"}}</a>
+        </div>
+    </div>
+</div>

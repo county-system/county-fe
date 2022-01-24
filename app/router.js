@@ -37,4 +37,9 @@ Router.map(function () {
   this.route('admin', function () {
     this.route('metrics');
   });
+
+  this.route('indicator', function () {
+    this.route('kpi');
+    this.route('mande');
+  });
 });
