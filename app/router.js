@@ -18,7 +18,6 @@ Router.map(function () {
   this.route('users');
   this.route('dashboard');
   this.route('maps');
-  this.route('kpi');
   this.route('login');
   this.route('dash');
   this.route('reports');
