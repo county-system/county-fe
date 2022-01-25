@@ -19,22 +19,35 @@ TODO: View map under search map filter by ward and data type(population, educati
 <div class="row" style='{{if maps this.myStyle}}'>
   <div class="col-md-9 col-lg-9">
 
-    <GMap @lat={{london.lat}} @lng={{london.lng}} @zoom={{8}} @styles={{this.myStyle}} class="ember-google-map-cover"
-      @scrollwheel={{false}} @panControl={{false}} @streetViewControl={{false}} @gestureHandling="greedy"
-      @disableDefaultUI={{true}} @zoomControl={{false}} @fullscreenControl={{true}} as |g|>
+    <GMap @lat={{london.lat}}
+      @lng={{london.lng}} @zoom={{8}}
+      @styles={{this.myStyle}}
+      class="ember-google-map-cover"
+      @scrollwheel={{false}}
+      @panControl={{false}}
+      @streetViewControl={{false}}
+      @gestureHandling="greedy"
+      @disableDefaultUI={{true}}
+      @zoomControl={{false}}
+      @fullscreenControl={{true}} as |g|>
 
       {{#each this.filteredLocation key="id" as |location id |}}
 
-      <g.infoWindow @lat={{location.lat}} @lng={{location.lng}} @isOpen={{this.mapTooltipOpen}} @onCloseclick={{fn (mut
-        this.mapTooltipOpen) false}} @content="<i>Simple text tooltip</i>" />
-
-      <g.marker @lat={{location.lat}} @lng={{location.lng}} @onClick={{fn this.flashMessage location.name}} as |m|>
-        <m.infoWindow @isOpen={{this.markerTooltipOpen}} @onCloseclick={{fn (mut this.markerTooltipOpen) false}}>
-          <div class="text-center">
-            <div>Name: {{location.name}} </div>
-            <div>Name: {{location.lat}} </div>
-          </div>
-        </m.infoWindow>
+      <g.marker
+        @lat={{location.lat}}
+        @lng={{location.lng}}
+        {{!-- @onClick={{toggle "markerTooltipOpen" this}} --}}
+        @onClick={{fn this.handleOnClick location}}
+        as |m|>
+          <m.infoWindow
+            @isOpen={{location.active}}
+            @onCloseclick={{fn (mut location.active) false}}>
+            {{log location.active}}
+            <div id= {{id}} class="text-center">
+              <div>Name: {{location.name}} </div>
+              <div>Name: {{location.lat}} </div>
+            </div>
+          </m.infoWindow>
 
       </g.marker>
       {{/each}}

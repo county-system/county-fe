@@ -18,7 +18,7 @@
         "id": 1,
         "type": "FINANCE AND PLANNING",
         "name": "Construction of Kakuma Slaughter House",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -41,7 +41,7 @@
         "id": 2,
         "type": "FINANCE AND PLANNING",
         "name": "Installation and Fabrication of Cess Barriers 2013/2014",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -64,7 +64,7 @@
         "id": 3,
         "type": "Water Irrigation and Agriculture",
         "name": "Nanam Waterpan",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -87,7 +87,7 @@
         "id": 4,
         "type": "Water Irrigation and Agriculture",
         "name": "Lookulan Waterpan",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -110,7 +110,7 @@
         "id": 5,
         "type": "Water Irrigation and Agriculture",
         "name": "Atiir Borehole",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -133,7 +133,7 @@
         "id": 6,
         "type": "Water Irrigation and Agriculture",
         "name": "Namon (Kanakuring) Waterpan",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -156,7 +156,7 @@
         "id": 7,
         "type": "Water Irrigation and Agriculture",
         "name": "Letea Waterpan",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -179,7 +179,7 @@
         "id": 8,
         "type": "Water Irrigation and Agriculture",
         "name": "Lomukur Waterpan",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -202,7 +202,7 @@
         "id": 9,
         "type": "Water Irrigation and Agriculture",
         "name": "Loita Sonyok Borehole",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -225,7 +225,7 @@
         "id": 10,
         "type": "Water Irrigation and Agriculture",
         "name": "Nakitongo Borehole",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -248,7 +248,7 @@
         "id": 11,
         "type": "Water Irrigation and Agriculture",
         "name": "Lokichogio W/S Kakuma W/S Oropoi, Lomidat, Lopiding,Kalobeyei",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -271,7 +271,7 @@
         "id": 12,
         "type": "Water Irrigation and Agriculture",
         "name": "Komunyaate Borehole",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -294,7 +294,7 @@
         "id": 13,
         "type": "Water Irrigation and Agriculture",
         "name": "Kakuma Water Supply",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -317,7 +317,7 @@
         "id": 14,
         "type": "Water Irrigation and Agriculture",
         "name": "Lokichogio Water Pan",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -340,7 +340,7 @@
         "id": 15,
         "type": "Water Irrigation and Agriculture",
         "name": "Nataparelim Waterpan",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -363,7 +363,7 @@
         "id": 16,
         "type": "Water Irrigation and Agriculture",
         "name": "Kakuma Water Pan",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -386,7 +386,7 @@
         "id": 17,
         "type": "Water Irrigation and Agriculture",
         "name": "Lopur Waterpan",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -409,7 +409,7 @@
         "id": 18,
         "type": "Water Irrigation and Agriculture",
         "name": "Lomosingekori Waterpan",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -432,7 +432,7 @@
         "id": 19,
         "type": "Water Irrigation and Agriculture",
         "name": "Nataparelim Waterpan",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -455,7 +455,7 @@
         "id": 20,
         "type": "Water Irrigation and Agriculture",
         "name": "Nariemeto Waterpan",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -478,7 +478,7 @@
         "id": 21,
         "type": "Water Irrigation and Agriculture",
         "name": "Kapetadie Water Supply",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -501,7 +501,7 @@
         "id": 22,
         "type": "Water Irrigation and Agriculture",
         "name": "Arengoit Borehole",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -524,7 +524,7 @@
         "id": 23,
         "type": "Water Irrigation and Agriculture",
         "name": "Naiperkar Borehole",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -547,7 +547,7 @@
         "id": 24,
         "type": "Water Irrigation and Agriculture",
         "name": "Natir-Lokangae Borehole",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -570,7 +570,7 @@
         "id": 25,
         "type": "Water Irrigation and Agriculture",
         "name": "Lokabuk Borehole",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -593,7 +593,7 @@
         "id": 26,
         "type": "Water Irrigation and Agriculture",
         "name": "Lopuski Borehole",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -616,7 +616,7 @@
         "id": 27,
         "type": "Water Irrigation and Agriculture",
         "name": "Nakoyo Borehole",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -639,7 +639,7 @@
         "id": 28,
         "type": "Water Irrigation and Agriculture",
         "name": "Nakiteng,O Borehole",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -662,7 +662,7 @@
         "id": 29,
         "type": "Water Irrigation and Agriculture",
         "name": "Loitasonyok Borehole",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -685,7 +685,7 @@
         "id": 30,
         "type": "Water Irrigation and Agriculture",
         "name": "Natiir Nadung,A Borehole",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -708,7 +708,7 @@
         "id": 31,
         "type": "Water Irrigation and Agriculture",
         "name": "Natiir Asekon Borehole",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -731,7 +731,7 @@
         "id": 32,
         "type": "Water Irrigation and Agriculture",
         "name": "Kalobeyei Borehole",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -754,7 +754,7 @@
         "id": 33,
         "type": "Water Irrigation and Agriculture",
         "name": "Letea Borehole",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -777,7 +777,7 @@
         "id": 34,
         "type": "Water Irrigation and Agriculture",
         "name": "Kipeto Borehole",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -800,7 +800,7 @@
         "id": 35,
         "type": "Water Irrigation and Agriculture",
         "name": "Mogilla Borehole",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -823,7 +823,7 @@
         "id": 36,
         "type": "Water Irrigation and Agriculture",
         "name": "Lopur (Komunyaate) Borehole",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -846,7 +846,7 @@
         "id": 37,
         "type": "Water Irrigation and Agriculture",
         "name": "Naporoto Sand Dam",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -869,7 +869,7 @@
         "id": 38,
         "type": "Water Irrigation and Agriculture",
         "name": "Kochomin Rock Catchment",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -892,7 +892,7 @@
         "id": 39,
         "type": "Water Irrigation and Agriculture",
         "name": "Lomidat Rock Catchment",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -915,7 +915,7 @@
         "id": 40,
         "type": "Water Irrigation and Agriculture",
         "name": "Improvement Of Kalobeyei Water Supply",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -938,7 +938,7 @@
         "id": 41,
         "type": "Water Irrigation and Agriculture",
         "name": "Construction Of Napeikar Water Supply",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -961,7 +961,7 @@
         "id": 42,
         "type": "Water Irrigation and Agriculture",
         "name": "Ngeu Borehole Fy 2013/14",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -984,7 +984,7 @@
         "id": 43,
         "type": "Water Irrigation and Agriculture",
         "name": "Site No. 1 Fy 2013/14",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1007,7 +1007,7 @@
         "id": 44,
         "type": "Water Irrigation and Agriculture",
         "name": "Kamuge Borehole Fy 2013/14",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1030,7 +1030,7 @@
         "id": 45,
         "type": "Water Irrigation and Agriculture",
         "name": "Kakitei Borehole Fy 2013/14",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1053,7 +1053,7 @@
         "id": 46,
         "type": "Water Irrigation and Agriculture",
         "name": "Lomelo/Napeitom Water Pan Fy 2014/15",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1076,7 +1076,7 @@
         "id": 47,
         "type": "Water Irrigation and Agriculture",
         "name": "Equiping Of AIC Mission Compound Borehole FY 2015/16",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1099,7 +1099,7 @@
         "id": 48,
         "type": "Water Irrigation and Agriculture",
         "name": "Flushing And Testing Of Lomelo And Napeitom Boreholes FY 2015/16",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1122,7 +1122,7 @@
         "id": 49,
         "type": "Water Irrigation and Agriculture",
         "name": "Supply Of Water Tanks At Lomelo FY 2015/16",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1145,7 +1145,7 @@
         "id": 50,
         "type": "Water Irrigation and Agriculture",
         "name": "Drilling Of Boreholes FY 2015/16",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1168,7 +1168,7 @@
         "id": 51,
         "type": "Water Irrigation and Agriculture",
         "name": "Drilling And Equiping Of Napeitom Borehole.",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1191,7 +1191,7 @@
         "id": 52,
         "type": "Water Irrigation and Agriculture",
         "name": "Equiping Of Morulem Secondary Borehole With Solar Pump.",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1214,7 +1214,7 @@
         "id": 53,
         "type": "Water Irrigation and Agriculture",
         "name": "Drilling And Equiping Of Kamuge Borehole",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1237,7 +1237,7 @@
         "id": 54,
         "type": "Water Irrigation and Agriculture",
         "name": "Drilling And Equiping Of Nadoto Borehole",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1260,7 +1260,7 @@
         "id": 55,
         "type": "Water Irrigation and Agriculture",
         "name": "Construction Of Losajait Water Pan",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1283,7 +1283,7 @@
         "id": 56,
         "type": "Water Irrigation and Agriculture",
         "name": "Construction Of Kanakurudio Water Pan",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1306,7 +1306,7 @@
         "id": 57,
         "type": "Water Irrigation and Agriculture",
         "name": "Kalochanapus Water Pan",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1329,7 +1329,7 @@
         "id": 58,
         "type": "Water Irrigation and Agriculture",
         "name": "Flushing Of 2 No.Boreholes And Test Pumping Kariobok Borehole",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1352,7 +1352,7 @@
         "id": 59,
         "type": "Water Irrigation and Agriculture",
         "name": "Equiping Of Locherengan Borehole With Submersible",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1375,7 +1375,7 @@
         "id": 60,
         "type": "Water Irrigation and Agriculture",
         "name": "Iprovement Of Kataboi Water Supply",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1398,7 +1398,7 @@
         "id": 61,
         "type": "Water Irrigation and Agriculture",
         "name": "Improvement Of Lokitaung Water Supply",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1421,7 +1421,7 @@
         "id": 62,
         "type": "Water Irrigation and Agriculture",
         "name": "Improvement Of Kibish Water Supply",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1444,7 +1444,7 @@
         "id": 63,
         "type": "Water Irrigation and Agriculture",
         "name": "Improvement Of Nachukui Water Supply",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1467,7 +1467,7 @@
         "id": 64,
         "type": "Water Irrigation and Agriculture",
         "name": "Improvement Of Loarengak Water Supply",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1490,7 +1490,7 @@
         "id": 65,
         "type": "Water Irrigation and Agriculture",
         "name": "Kaaleng Waterpan",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1513,7 +1513,7 @@
         "id": 66,
         "type": "HEALTH AND SANITATION",
         "name": "Loreng Dispensary 2014/2015",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1536,7 +1536,7 @@
         "id": 67,
         "type": "HEALTH AND SANITATION",
         "name": "Kaameyan Dispensary 2014/2015",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1559,7 +1559,7 @@
         "id": 68,
         "type": "HEALTH AND SANITATION",
         "name": "Lomelo Dispensary FY 2013/14",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1582,7 +1582,7 @@
         "id": 69,
         "type": "HEALTH AND SANITATION",
         "name": "Napeitom Dispensary FY 2014/15",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1605,7 +1605,7 @@
         "id": 70,
         "type": "HEALTH AND SANITATION",
         "name": "Nakatongwa Dispensary",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1628,7 +1628,7 @@
         "id": 71,
         "type": "HEALTH AND SANITATION",
         "name": "Kikeunae Dispensary",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1651,7 +1651,7 @@
         "id": 72,
         "type": "HEALTH AND SANITATION",
         "name": "Lomunyan Akwaan Dispensary",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1674,7 +1674,7 @@
         "id": 73,
         "type": "HEALTH AND SANITATION",
         "name": "Kokuro dispensary 2013/2014",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1697,7 +1697,7 @@
         "id": 74,
         "type": "HEALTH AND SANITATION",
         "name": "Lopur Dispensary 2014/2015",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1720,7 +1720,7 @@
         "id": 75,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "LORENG ECD 13/14",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1743,7 +1743,7 @@
         "id": 76,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "LOKIPOTO ECD 14/15",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1766,7 +1766,7 @@
         "id": 77,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "TULABALANY ECD 13/14",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1789,7 +1789,7 @@
         "id": 78,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Akoros Loritit ECD 13/14",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1812,7 +1812,7 @@
         "id": 79,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Musug ECD 2014/2015",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1835,7 +1835,7 @@
         "id": 80,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Construction of Napeitom ECD FY 2013/14",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1858,7 +1858,7 @@
         "id": 81,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Construction of Kapedo ECD FY 2013/14",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1881,7 +1881,7 @@
         "id": 82,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Construction of Lokidongoi ECD FY 2014/15",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1904,7 +1904,7 @@
         "id": 83,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Construction of Silale ECD FY 2014/15",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1927,7 +1927,7 @@
         "id": 84,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Nakitongo Lokipoto- Nawotom",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1950,7 +1950,7 @@
         "id": 85,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Lopwarin Drift",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1973,7 +1973,7 @@
         "id": 86,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "A1 nadal village- moruangibuin road",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -1996,7 +1996,7 @@
         "id": 87,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Lotudae-Kaesamalit Road",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -2019,7 +2019,7 @@
         "id": 88,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Kamuge Drift",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -2042,7 +2042,7 @@
         "id": 89,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Kamuge - Baragoi FY 2013/14",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -2065,7 +2065,7 @@
         "id": 90,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Lokori - Paragati FY 2013/14",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -2088,7 +2088,7 @@
         "id": 91,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Lomelo - Kamuge FY 2013/14",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -2111,7 +2111,7 @@
         "id": 92,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Kamuge - Baragoi FY 2014/15",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -2134,7 +2134,7 @@
         "id": 93,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Lokamarinyang - Soya road 2014/2015",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -2157,7 +2157,7 @@
         "id": 94,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "nakalale-nabuskaal-kairima road 2014/2015",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -2180,7 +2180,7 @@
         "id": 95,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Koyasa-Natelo-Natapar 2013/2014",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -2203,7 +2203,7 @@
         "id": 96,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Kataboi-Lopur 2013/2014",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -2226,7 +2226,7 @@
         "id": 97,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Kaimothia-kibish 2013/2014",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -2249,7 +2249,7 @@
         "id": 98,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Kaikor-Lokiyoto-Loruth Road",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -2272,7 +2272,7 @@
         "id": 99,
         "type": "PASTORAL ECONOMY AND FISHERIES",
         "name": "Kaaleng Animal Feed Reserve Store",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -2295,7 +2295,7 @@
         "id": 100,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Letea Primary School Solar Installation Project",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -2318,7 +2318,7 @@
         "id": 101,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Teremkus Tree Nursery",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -2341,7 +2341,7 @@
         "id": 102,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Letea Tree Nursery",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -2364,7 +2364,7 @@
         "id": 103,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Nanam Ward Tree Nursery",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -2387,7 +2387,7 @@
         "id": 104,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Lokichogio Ward Tree Nursery",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -2410,7 +2410,7 @@
         "id": 105,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Solar Installation-Naduat Primary School 2014/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
@@ -2431,7 +2431,7 @@
         "id": 106,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "losajait-naurugori road",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
@@ -2452,7 +2452,7 @@
         "id": 107,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "lokichar-loruth road",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
@@ -2473,7 +2473,7 @@
         "id": 108,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Solar Installation -Makutano Health Center",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
@@ -2494,7 +2494,7 @@
         "id": 109,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Spot improvement Makutano-Lokitaung road A",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
@@ -2515,7 +2515,7 @@
         "id": 110,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Solar Installation -Losajait Primary School",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
@@ -2536,7 +2536,7 @@
         "id": 111,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Losajait Tree Nursery",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
@@ -2557,7 +2557,7 @@
         "id": 112,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "nakapelekuruk-nadunga road 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -2578,7 +2578,7 @@
         "id": 113,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "kataboi youth polytechnic 2014/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -2599,7 +2599,7 @@
         "id": 114,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Lokitoe angabeur ecd 2013/14",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -2620,7 +2620,7 @@
         "id": 115,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Kalosep ecd 2014/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -2641,7 +2641,7 @@
         "id": 116,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Construction of new ECD at Ngaurenderia 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
@@ -2662,7 +2662,7 @@
         "id": 117,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Solar Installation -Nadunga Primary School",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
@@ -2683,7 +2683,7 @@
         "id": 118,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "nadunga-lochor atesiro road 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
@@ -2704,7 +2704,7 @@
         "id": 119,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Solar Installation -Kaeris Girls Secondary School",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
@@ -2725,7 +2725,7 @@
         "id": 120,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Kaeris Tree Nursery",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -2746,7 +2746,7 @@
         "id": 121,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Construction of ECD at Kangakipur",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
@@ -2767,7 +2767,7 @@
         "id": 122,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "nachukui-narikiotome-lokapetamoe road 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
@@ -2788,7 +2788,7 @@
         "id": 123,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "riokomor-narengewoi road 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
@@ -2809,7 +2809,7 @@
         "id": 124,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Solar Installation - Riokomor Primary",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -2830,7 +2830,7 @@
         "id": 125,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Mlima tatu ecd 2013/2014",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -2851,7 +2851,7 @@
         "id": 126,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "namorotot ecd 2013/14",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
@@ -2872,7 +2872,7 @@
         "id": 127,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Spot improvement Makutano-Lokitaung road A 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
@@ -2893,7 +2893,7 @@
         "id": 128,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Lokitaung Tree Nursery",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
@@ -2914,7 +2914,7 @@
         "id": 129,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "lakezone tree nursery",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -2935,7 +2935,7 @@
         "id": 130,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Nabeletakoit ecd 2014/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -2956,7 +2956,7 @@
         "id": 131,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Nakapelewoi 2013/14",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
@@ -2977,7 +2977,7 @@
         "id": 132,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "routine kachoda-riokomor road 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
@@ -2998,7 +2998,7 @@
         "id": 133,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "routine maintenance of C47-Kaaleng road 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
@@ -3019,7 +3019,7 @@
         "id": 134,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "kaaleng-kamothia-kibish road 2013/2014",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -3040,7 +3040,7 @@
         "id": 135,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "kaaleng polytechnic 2014/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
@@ -3061,7 +3061,7 @@
         "id": 136,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "kaeris- kalopeta road 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
@@ -3082,7 +3082,7 @@
         "id": 137,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "kaaleng-nakapelewoi road 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -3103,7 +3103,7 @@
         "id": 138,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Lochwarengan ecd 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -3124,7 +3124,7 @@
         "id": 139,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Lokidongo ecd 2014/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
@@ -3145,7 +3145,7 @@
         "id": 140,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Solar Installation -Loruth Mixed Primary",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -3166,7 +3166,7 @@
         "id": 141,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Kaarubangorok ecd",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
@@ -3187,7 +3187,7 @@
         "id": 142,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "kaikor-kangikala-lobur road",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
@@ -3208,7 +3208,7 @@
         "id": 143,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Kaaleng/Kaikor Tree Nursery",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
@@ -3229,7 +3229,7 @@
         "id": 144,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "routine maintenance of sasame-kabulokok-karioreng 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -3250,7 +3250,7 @@
         "id": 145,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Nabulkok ecd",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -3271,7 +3271,7 @@
         "id": 146,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Longelemwar ecd",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
@@ -3292,7 +3292,7 @@
         "id": 147,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Solar Installation-Kokuro Dispensary",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
@@ -3313,7 +3313,7 @@
         "id": 148,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Solar Installation-Kokuro Primary",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
@@ -3334,7 +3334,7 @@
         "id": 149,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "kokuro-lobur road",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -3355,7 +3355,7 @@
         "id": 150,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Liwan ecd 2014/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
@@ -3376,7 +3376,7 @@
         "id": 151,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Solar Installation-Lomekwi Primary",
-        "active": "false"
+        "active": false
     },
     {
         "department": "Water Irrigation and Agriculture",
@@ -3397,7 +3397,7 @@
         "id": 152,
         "type": "Water Irrigation and Agriculture",
         "name": "Lokori Aic Borehole Fy 2013/14",
-        "active": "false",
+        "active": false,
         "lat": 2.1055555555555556,
         "lng": 36.284444444444446
     },
@@ -3420,7 +3420,7 @@
         "id": 153,
         "type": "TRADE, TOURISM AND INDUSTRIALIZATION",
         "name": "Lokori Market Stalls",
-        "active": "false",
+        "active": false,
         "lat": 1.9641666666666666,
         "lng": 35.24722222222222
     },
@@ -3443,7 +3443,7 @@
         "id": 154,
         "type": "Water Irrigation and Agriculture",
         "name": "Rehabilitation Of Lokori Borehole",
-        "active": "false",
+        "active": false,
         "lat": 1.968611111111111,
         "lng": 36.18361111111111
     },
@@ -3466,7 +3466,7 @@
         "id": 155,
         "type": "HEALTH AND SANITATION",
         "name": "Construction of Lopeduru Dispensary FY 2013/14",
-        "active": "false",
+        "active": false,
         "lat": 1.9794444444444443,
         "lng": 36.16388888888889
     },
@@ -3489,7 +3489,7 @@
         "id": 156,
         "type": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
         "name": "Lokori Ward Administrator's Office",
-        "active": "false",
+        "active": false,
         "lat": 1.9794444444444443,
         "lng": 36.16388888888889
     },
@@ -3512,7 +3512,7 @@
         "id": 157,
         "type": "FINANCE AND PLANNING",
         "name": "Lokori Slaughter House",
-        "active": "false",
+        "active": false,
         "lat": 1.98,
         "lng": 35.16277777777778
     },
@@ -3535,7 +3535,7 @@
         "id": 158,
         "type": "Water Irrigation and Agriculture",
         "name": "Rehabilitation Of Lokri Main Borehole",
-        "active": "false",
+        "active": false,
         "lat": 2.0680555555555555,
         "lng": 36.23361111111111
     },
@@ -3558,7 +3558,7 @@
         "id": 159,
         "type": "Water Irrigation and Agriculture",
         "name": "Lokori/Kochodin Borehole Fy 2014/15",
-        "active": "false",
+        "active": false,
         "lat": 1.9955555555555557,
         "lng": 36.12916666666667
     },
@@ -3581,7 +3581,7 @@
         "id": 160,
         "type": "Water Irrigation and Agriculture",
         "name": "Lokori Borehole",
-        "active": "false",
+        "active": false,
         "lat": 2.0808333333333335,
         "lng": 36.14138888888889
     },
@@ -3604,7 +3604,7 @@
         "id": 161,
         "type": "HEALTH AND SANITATION",
         "name": "Construction of Lokwii Dispensary FY 2013/14",
-        "active": "false",
+        "active": false,
         "lat": 2.1436111111111114,
         "lng": 36.19083333333334
     },
@@ -3627,7 +3627,7 @@
         "id": 162,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Construction of Lokwamosing ECD FY 2014/15",
-        "active": "false",
+        "active": false,
         "lat": 2.1344444444444446,
         "lng": 35.99305555555555
     },
@@ -3650,7 +3650,7 @@
         "id": 163,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Routine maintenance of Lokwamosing/Kakongu Road",
-        "active": "false",
+        "active": false,
         "lat": 2.1744444444444446,
         "lng": 35.998888888888885
     },
@@ -3673,7 +3673,7 @@
         "id": 164,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Construction of Morulem ECD FY 2014/15",
-        "active": "false",
+        "active": false,
         "lat": 2.056388888888889,
         "lng": 36.34277777777778
     },
@@ -3696,7 +3696,7 @@
         "id": 165,
         "type": "HEALTH AND SANITATION",
         "name": "Lotubae Dispensary FY 2014/15",
-        "active": "false",
+        "active": false,
         "lat": 2.1594444444444445,
         "lng": 36.26694444444445
     },
@@ -3719,7 +3719,7 @@
         "id": 166,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Construction of Nayanae Katon ECD FY 2013/14",
-        "active": "false",
+        "active": false,
         "lat": 2.053611111111111,
         "lng": 36.346944444444446
     },
@@ -3742,7 +3742,7 @@
         "id": 167,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Routine maintenance of Lopii - Kaaruko - Lokori Road FY 2014/15",
-        "active": "false",
+        "active": false,
         "lat": 2.2777777777777777,
         "lng": 35.98361111111111
     },
@@ -3765,7 +3765,7 @@
         "id": 168,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "",
-        "active": "false",
+        "active": false,
         "lat": 2.3094444444444444,
         "lng": 35.727222222222224
     },
@@ -3788,7 +3788,7 @@
         "id": 169,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Construction of Elelea Drift FY 2014/15",
-        "active": "false",
+        "active": false,
         "lat": 2.120277777777778,
         "lng": 36.19138888888889
     },
@@ -3811,7 +3811,7 @@
         "id": 170,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Construction of Elelea ECD FY 2013/14",
-        "active": "false",
+        "active": false,
         "lat": 2.218611111111111,
         "lng": 36.37083333333333
     },
@@ -3834,7 +3834,7 @@
         "id": 171,
         "type": "Water Irrigation and Agriculture",
         "name": "Equiping Of Elelea Borehole",
-        "active": "false",
+        "active": false,
         "lat": 2.283055555555556,
         "lng": 36.42055555555555
     },
@@ -3857,7 +3857,7 @@
         "id": 172,
         "type": "HEALTH AND SANITATION",
         "name": "Construction of staff quarters at Elelea Sub County Hospital FY 2014/15",
-        "active": "false",
+        "active": false,
         "lat": 2.346388888888889,
         "lng": 36.1975
     },
@@ -3880,7 +3880,7 @@
         "id": 173,
         "type": "HEALTH AND SANITATION",
         "name": "Elelea Sub County Hospital FY 2013/14",
-        "active": "false",
+        "active": false,
         "lat": 2.3508333333333336,
         "lng": 36.18083333333333
     },
@@ -3903,7 +3903,7 @@
         "id": 174,
         "type": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
         "name": "Katilia Ward Administrator's Office",
-        "active": "false",
+        "active": false,
         "lat": 2.2355555555555555,
         "lng": 36.244166666666665
     },
@@ -3926,7 +3926,7 @@
         "id": 175,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Construction of Elelea - Katilia Road FY 2014/15",
-        "active": "false",
+        "active": false,
         "lat": 2.3475,
         "lng": 36.12777777777778
     },
@@ -3949,7 +3949,7 @@
         "id": 176,
         "type": "Water Irrigation and Agriculture",
         "name": "Lokori/Kochodin Water Pan Fy 2014/15",
-        "active": "false",
+        "active": false,
         "lat": 2.203888888888889,
         "lng": 35.96527777777778
     },
@@ -3972,7 +3972,7 @@
         "id": 177,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Construction of Katilia ECD FY 2013/14",
-        "active": "false",
+        "active": false,
         "lat": 2.2516666666666665,
         "lng": 36.20666666666667
     },
@@ -3995,7 +3995,7 @@
         "id": 178,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Construction of Lokorkor ECD FY 2014/15",
-        "active": "false",
+        "active": false,
         "lat": 2.3775,
         "lng": 36.278333333333336
     },
@@ -4018,7 +4018,7 @@
         "id": 179,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Construction of Lopeduru ECD FY 2014/15",
-        "active": "false",
+        "active": false,
         "lat": 2.3777777777777778,
         "lng": 36.279444444444444
     },
@@ -4041,7 +4041,7 @@
         "id": 180,
         "type": "Water Irrigation and Agriculture",
         "name": "Katilia Ward Water Pan",
-        "active": "false",
+        "active": false,
         "lat": 2.32,
         "lng": 36.37416666666667
     },
@@ -4064,7 +4064,7 @@
         "id": 181,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Lokore ecd 2013/14",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -4085,7 +4085,7 @@
         "id": 182,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Construction of new ECD at Losajait 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "Water Irrigation and Agriculture",
@@ -4106,7 +4106,7 @@
         "id": 183,
         "type": "Water Irrigation and Agriculture",
         "name": "Naduat Borehole",
-        "active": "false",
+        "active": false,
         "lat": 3.6880555555555556,
         "lng": 35.24083333333333
     },
@@ -4129,7 +4129,7 @@
         "id": 184,
         "type": "Water Irrigation and Agriculture",
         "name": "Equiping Of Naduat Borehole With A Handpump",
-        "active": "false",
+        "active": false,
         "lat": 3.6880555555555556,
         "lng": 35.24083333333333
     },
@@ -4152,7 +4152,7 @@
         "id": 185,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Construction of new ECD at Naduat 2014/2015",
-        "active": "false",
+        "active": false,
         "lat": 3.7086111111111113,
         "lng": 35.44833333333333
     },
@@ -4175,7 +4175,7 @@
         "id": 186,
         "type": "HEALTH AND SANITATION",
         "name": "Naduat dispensary 2014/2015",
-        "active": "false",
+        "active": false,
         "lat": 3.7375,
         "lng": 35.201388888888886
     },
@@ -4198,7 +4198,7 @@
         "id": 187,
         "type": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
         "name": "Nakalale ward admin office 2014/2015",
-        "active": "false",
+        "active": false,
         "lat": 3.7494444444444444,
         "lng": 35.36361111111111
     },
@@ -4221,7 +4221,7 @@
         "id": 188,
         "type": "HEALTH AND SANITATION",
         "name": "Lolupe dispensary 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "HEALTH AND SANITATION",
@@ -4242,7 +4242,7 @@
         "id": 189,
         "type": "HEALTH AND SANITATION",
         "name": "Losajait dispensary 2013/2014",
-        "active": "false"
+        "active": false
     },
     {
         "department": "TRADE, TOURISM AND INDUSTRIALIZATION",
@@ -4263,7 +4263,7 @@
         "id": 190,
         "type": "TRADE, TOURISM AND INDUSTRIALIZATION",
         "name": "Kataboi Eco Lodge",
-        "active": "false"
+        "active": false
     },
     {
         "department": "Water Irrigation and Agriculture",
@@ -4284,7 +4284,7 @@
         "id": 191,
         "type": "Water Irrigation and Agriculture",
         "name": "Kataboi Water Storage Tank",
-        "active": "false"
+        "active": false
     },
     {
         "department": "Water Irrigation and Agriculture",
@@ -4305,7 +4305,7 @@
         "id": 192,
         "type": "Water Irrigation and Agriculture",
         "name": "Kaeris Borehole",
-        "active": "false",
+        "active": false,
         "lat": 4.1883333333333335,
         "lng": 35.704166666666666
     },
@@ -4328,7 +4328,7 @@
         "id": 193,
         "type": "HEALTH AND SANITATION",
         "name": "Kaeris dispensary 2014/2015",
-        "active": "false",
+        "active": false,
         "lat": 4.1883333333333335,
         "lng": 35.704166666666666
     },
@@ -4351,7 +4351,7 @@
         "id": 194,
         "type": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
         "name": "Kaeris ward admin office 2013/2014",
-        "active": "false",
+        "active": false,
         "lat": 4.1305555555555555,
         "lng": 35.67277777777778
     },
@@ -4374,7 +4374,7 @@
         "id": 195,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Lorengesinyen drift",
-        "active": "false"
+        "active": false
     },
     {
         "department": "Water Irrigation and Agriculture",
@@ -4395,7 +4395,7 @@
         "id": 196,
         "type": "Water Irrigation and Agriculture",
         "name": "Letea Borehole",
-        "active": "false"
+        "active": false
     },
     {
         "department": "HEALTH AND SANITATION",
@@ -4416,7 +4416,7 @@
         "id": 197,
         "type": "HEALTH AND SANITATION",
         "name": "Letea OPD Block 13/14",
-        "active": "false"
+        "active": false
     },
     {
         "department": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
@@ -4437,7 +4437,7 @@
         "id": 198,
         "type": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
         "name": "Letea Ward Admin Office",
-        "active": "false"
+        "active": false
     },
     {
         "department": "HEALTH AND SANITATION",
@@ -4458,7 +4458,7 @@
         "id": 199,
         "type": "HEALTH AND SANITATION",
         "name": "Pokotom Heath Centre 2013/2014",
-        "active": "false"
+        "active": false
     },
     {
         "department": "TRADE, TOURISM AND INDUSTRIALIZATION",
@@ -4479,7 +4479,7 @@
         "id": 200,
         "type": "TRADE, TOURISM AND INDUSTRIALIZATION",
         "name": "Turkana West Market Renovation",
-        "active": "false",
+        "active": false,
         "lat": 3.8266666666666667,
         "lng": 35.05388888888889
     },
@@ -4502,7 +4502,7 @@
         "id": 201,
         "type": "HEALTH AND SANITATION",
         "name": "Lonyuduk Dispensary 14/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
@@ -4523,7 +4523,7 @@
         "id": 202,
         "type": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
         "name": "Kakuma Ward Admin Office",
-        "active": "false"
+        "active": false
     },
     {
         "department": "HEALTH AND SANITATION",
@@ -4544,7 +4544,7 @@
         "id": 203,
         "type": "HEALTH AND SANITATION",
         "name": "Nakoyo Dispensary 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -4565,7 +4565,7 @@
         "id": 204,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Komudei ECD 14/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
@@ -4586,7 +4586,7 @@
         "id": 205,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Kakuma Tree Nursery",
-        "active": "false"
+        "active": false
     },
     {
         "department": "HEALTH AND SANITATION",
@@ -4607,7 +4607,7 @@
         "id": 206,
         "type": "HEALTH AND SANITATION",
         "name": "Komudei Dispensary 14/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
@@ -4628,7 +4628,7 @@
         "id": 207,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Pokotom Primary School Solar Project",
-        "active": "false",
+        "active": false,
         "lat": 3.980277777777778,
         "lng": 34.89833333333333
     },
@@ -4651,7 +4651,7 @@
         "id": 208,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Nakoyo - ayanae elelea road",
-        "active": "false"
+        "active": false
     },
     {
         "department": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
@@ -4672,7 +4672,7 @@
         "id": 209,
         "type": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
         "name": "Kalobeyei Ward Admin Office",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
@@ -4693,7 +4693,7 @@
         "id": 210,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Kalobeyei Tree Nursery",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -4714,7 +4714,7 @@
         "id": 211,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Kalobeyei ECD 13/14",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -4735,7 +4735,7 @@
         "id": 212,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "LOMUNYANAKIRIONOK/ NGIJAWOI ECD 13/14",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -4756,7 +4756,7 @@
         "id": 213,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "LOTAKA ECD 14/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -4777,7 +4777,7 @@
         "id": 214,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Nawotom ECD 13/14",
-        "active": "false"
+        "active": false
     },
     {
         "department": "HEALTH AND SANITATION",
@@ -4798,7 +4798,7 @@
         "id": 215,
         "type": "HEALTH AND SANITATION",
         "name": "Nalapatui Dispensary 14/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -4819,7 +4819,7 @@
         "id": 216,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Oropoi ECD 14/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
@@ -4840,7 +4840,7 @@
         "id": 217,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "A1 junc- Oropoi- NB uganda Road",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
@@ -4861,7 +4861,7 @@
         "id": 218,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Lopur Tree Nursery",
-        "active": "false"
+        "active": false
     },
     {
         "department": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
@@ -4882,7 +4882,7 @@
         "id": 219,
         "type": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
         "name": "Lopur Ward admin",
-        "active": "false"
+        "active": false
     },
     {
         "department": "HEALTH AND SANITATION",
@@ -4903,7 +4903,7 @@
         "id": 220,
         "type": "HEALTH AND SANITATION",
         "name": "Lopusike Dispensary 13/14",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
@@ -4924,7 +4924,7 @@
         "id": 221,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Kangitesuroi- Kanakuring Road",
-        "active": "false",
+        "active": false,
         "lat": 3.9383333333333335,
         "lng": 34.962222222222216
     },
@@ -4947,7 +4947,7 @@
         "id": 222,
         "type": "HEALTH AND SANITATION",
         "name": "Kangitesroi Dispensary 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -4968,7 +4968,7 @@
         "id": 223,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "KANGITESROI ECD 13/14",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
@@ -4989,7 +4989,7 @@
         "id": 224,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Natiira Primary School Solar Project",
-        "active": "false",
+        "active": false,
         "lat": 3.923888888888889,
         "lng": 34.73416666666667
     },
@@ -5012,7 +5012,7 @@
         "id": 225,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Natiira ECD 14/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
@@ -5033,7 +5033,7 @@
         "id": 226,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Natiira-Nameitak- Namaanik road",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -5054,7 +5054,7 @@
         "id": 227,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Nakururum ECD 14/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "HEALTH AND SANITATION",
@@ -5075,7 +5075,7 @@
         "id": 228,
         "type": "HEALTH AND SANITATION",
         "name": "Nakururum OPD block 13/14",
-        "active": "false"
+        "active": false
     },
     {
         "department": "Water Irrigation and Agriculture",
@@ -5096,7 +5096,7 @@
         "id": 229,
         "type": "Water Irrigation and Agriculture",
         "name": "Nariokotome Borehole",
-        "active": "false",
+        "active": false,
         "lat": 4.157222222222223,
         "lng": 35.9725
     },
@@ -5119,7 +5119,7 @@
         "id": 230,
         "type": "Water Irrigation and Agriculture",
         "name": "Kaikor Borehole",
-        "active": "false",
+        "active": false,
         "lat": 4.655277777777778,
         "lng": 35.67527777777777
     },
@@ -5142,7 +5142,7 @@
         "id": 231,
         "type": "HEALTH AND SANITATION",
         "name": "Narengewoi health center 2013/2014",
-        "active": "false"
+        "active": false
     },
     {
         "department": "Water Irrigation and Agriculture",
@@ -5163,7 +5163,7 @@
         "id": 232,
         "type": "Water Irrigation and Agriculture",
         "name": "Kaloyara Borehole",
-        "active": "false"
+        "active": false
     },
     {
         "department": "HEALTH AND SANITATION",
@@ -5184,7 +5184,7 @@
         "id": 233,
         "type": "HEALTH AND SANITATION",
         "name": "Riokomor dispensary 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "HEALTH AND SANITATION",
@@ -5205,7 +5205,7 @@
         "id": 234,
         "type": "HEALTH AND SANITATION",
         "name": "Nakitoe-kakumon dispensary 2014/2015",
-        "active": "false",
+        "active": false,
         "lat": 4.263333333333334,
         "lng": 35.52055555555555
     },
@@ -5228,7 +5228,7 @@
         "id": 235,
         "type": "HEALTH AND SANITATION",
         "name": "Lokitaung sub county hospital pharmacy store and kitchen",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -5249,7 +5249,7 @@
         "id": 236,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Lochoredome ecd 2013/14",
-        "active": "false"
+        "active": false
     },
     {
         "department": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
@@ -5270,7 +5270,7 @@
         "id": 237,
         "type": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
         "name": "Lakezone ward admin office 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
@@ -5291,7 +5291,7 @@
         "id": 238,
         "type": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
         "name": "Lapur ward admin office 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "TRADE, TOURISM AND INDUSTRIALIZATION",
@@ -5312,7 +5312,7 @@
         "id": 239,
         "type": "TRADE, TOURISM AND INDUSTRIALIZATION",
         "name": "Loarengak Market Stalls 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "HEALTH AND SANITATION",
@@ -5333,7 +5333,7 @@
         "id": 240,
         "type": "HEALTH AND SANITATION",
         "name": "Nakapelewoi dispensary",
-        "active": "false"
+        "active": false
     },
     {
         "department": "Water Irrigation and Agriculture",
@@ -5354,7 +5354,7 @@
         "id": 241,
         "type": "Water Irrigation and Agriculture",
         "name": "Lokalale Akwaan Borehole",
-        "active": "false"
+        "active": false
     },
     {
         "department": "HEALTH AND SANITATION",
@@ -5375,7 +5375,7 @@
         "id": 242,
         "type": "HEALTH AND SANITATION",
         "name": "Kaaleng dispensary 2013/2014",
-        "active": "false"
+        "active": false
     },
     {
         "department": "HEALTH AND SANITATION",
@@ -5396,7 +5396,7 @@
         "id": 243,
         "type": "HEALTH AND SANITATION",
         "name": "Karebur dispensary 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "Water Irrigation and Agriculture",
@@ -5417,7 +5417,7 @@
         "id": 244,
         "type": "Water Irrigation and Agriculture",
         "name": "Lokumai II Borehole",
-        "active": "false"
+        "active": false
     },
     {
         "department": "Water Irrigation and Agriculture",
@@ -5438,7 +5438,7 @@
         "id": 245,
         "type": "Water Irrigation and Agriculture",
         "name": "Todonyang Waterpan",
-        "active": "false"
+        "active": false
     },
     {
         "department": "HEALTH AND SANITATION",
@@ -5459,7 +5459,7 @@
         "id": 246,
         "type": "HEALTH AND SANITATION",
         "name": "Ekicheles dispensary 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "Water Irrigation and Agriculture",
@@ -5480,7 +5480,7 @@
         "id": 247,
         "type": "Water Irrigation and Agriculture",
         "name": "Nabulkok Borehole",
-        "active": "false"
+        "active": false
     },
     {
         "department": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
@@ -5501,7 +5501,7 @@
         "id": 248,
         "type": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
         "name": "Kaaleng/Kaikor ward admin office",
-        "active": "false"
+        "active": false
     },
     {
         "department": "HEALTH AND SANITATION",
@@ -5522,7 +5522,7 @@
         "id": 249,
         "type": "HEALTH AND SANITATION",
         "name": "Napeikar dispensary 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "Water Irrigation and Agriculture",
@@ -5543,7 +5543,7 @@
         "id": 250,
         "type": "Water Irrigation and Agriculture",
         "name": "Liwan Waperpan",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -5564,7 +5564,7 @@
         "id": 251,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "NAMON ECD 14/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "HEALTH AND SANITATION",
@@ -5585,7 +5585,7 @@
         "id": 252,
         "type": "HEALTH AND SANITATION",
         "name": "Namon Dispensary 13/14",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -5606,7 +5606,7 @@
         "id": 253,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Lokudule ECD14/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "Water Irrigation and Agriculture",
@@ -5627,7 +5627,7 @@
         "id": 254,
         "type": "Water Irrigation and Agriculture",
         "name": "Songot Borehole",
-        "active": "false",
+        "active": false,
         "lat": 4.024444444444445,
         "lng": 34.72416666666666
     },
@@ -5650,7 +5650,7 @@
         "id": 255,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Aposta- lokangae road",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
@@ -5671,7 +5671,7 @@
         "id": 256,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Aposta-Naremeto-Teremkus Road",
-        "active": "false"
+        "active": false
     },
     {
         "department": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
@@ -5692,7 +5692,7 @@
         "id": 257,
         "type": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
         "name": "Songot Ward Admin Office",
-        "active": "false"
+        "active": false
     },
     {
         "department": "HEALTH AND SANITATION",
@@ -5713,7 +5713,7 @@
         "id": 258,
         "type": "HEALTH AND SANITATION",
         "name": "Atiir OPD block 13/14",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -5734,7 +5734,7 @@
         "id": 259,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Naremeto ECD 13/14",
-        "active": "false",
+        "active": false,
         "lat": 4.234722222222222,
         "lng": null
     },
@@ -5757,7 +5757,7 @@
         "id": 260,
         "type": "HEALTH AND SANITATION",
         "name": "Teremkus Dispensary14/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -5778,7 +5778,7 @@
         "id": 261,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Teremkus ECD 14/15",
-        "active": "false",
+        "active": false,
         "lat": 4.195555555555555,
         "lng": null
     },
@@ -5801,7 +5801,7 @@
         "id": 262,
         "type": "HEALTH AND SANITATION",
         "name": "Lokangae Dispensary 13/14",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
@@ -5822,7 +5822,7 @@
         "id": 263,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Lomidat -Ekaburu Road",
-        "active": "false",
+        "active": false,
         "lat": 4.173611111111112,
         "lng": 34.660555555555554
     },
@@ -5845,7 +5845,7 @@
         "id": 264,
         "type": "HEALTH AND SANITATION",
         "name": "Aposta Dispensary 14/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
@@ -5866,7 +5866,7 @@
         "id": 265,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "St. Patricks Primary School Solar Installation",
-        "active": "false",
+        "active": false,
         "lat": 4.261111111111111,
         "lng": 34.670833333333334
     },
@@ -5889,7 +5889,7 @@
         "id": 266,
         "type": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
         "name": "Lokichogio ward admin office",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -5910,7 +5910,7 @@
         "id": 267,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "St Cosmas Napopongoit ECD 2013/2014",
-        "active": "false",
+        "active": false,
         "lat": 4.375,
         "lng": null
     },
@@ -5933,7 +5933,7 @@
         "id": 268,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "St. Cosmas Primary School Solar Installation Project",
-        "active": "false",
+        "active": false,
         "lat": 4.38,
         "lng": 34.62444444444444
     },
@@ -5956,7 +5956,7 @@
         "id": 269,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "St. Mathews Primary School Solar Project",
-        "active": "false",
+        "active": false,
         "lat": 4.405,
         "lng": 34.465833333333336
     },
@@ -5979,7 +5979,7 @@
         "id": 270,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "St Mathews Nadome ECD 14/15",
-        "active": "false",
+        "active": false,
         "lat": 4.4094444444444445,
         "lng": null
     },
@@ -6002,7 +6002,7 @@
         "id": 271,
         "type": "HEALTH AND SANITATION",
         "name": "AIC Lopiding Subcounty Hospital Renovation FY 2013/2014",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -6023,7 +6023,7 @@
         "id": 272,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "AIC Lopiding ECD 14/15",
-        "active": "false",
+        "active": false,
         "lat": 4.25,
         "lng": null
     },
@@ -6046,7 +6046,7 @@
         "id": 273,
         "type": "HEALTH AND SANITATION",
         "name": "Loteteleit Dispensary 14/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
@@ -6067,7 +6067,7 @@
         "id": 274,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Lokichogio - Lochor Ekope Road",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -6088,7 +6088,7 @@
         "id": 275,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "AIC Lokichoggio ECD 13/14",
-        "active": "false",
+        "active": false,
         "lat": 4.320833333333334,
         "lng": null
     },
@@ -6111,7 +6111,7 @@
         "id": 276,
         "type": "FINANCE AND PLANNING",
         "name": "Renovation of UN camp Lokichogio2013-2014",
-        "active": "false"
+        "active": false
     },
     {
         "department": "FINANCE AND PLANNING",
@@ -6132,7 +6132,7 @@
         "id": 277,
         "type": "FINANCE AND PLANNING",
         "name": "Renovation- 4 blocks of 2 units each 2014/2015",
-        "active": "false"
+        "active": false
     },
     {
         "department": "Water Irrigation and Agriculture",
@@ -6153,7 +6153,7 @@
         "id": 278,
         "type": "Water Irrigation and Agriculture",
         "name": "Nanam Borehole",
-        "active": "false"
+        "active": false
     },
     {
         "department": "HEALTH AND SANITATION",
@@ -6174,7 +6174,7 @@
         "id": 279,
         "type": "HEALTH AND SANITATION",
         "name": "Nanam Matternity Ward FY 2013/14",
-        "active": "false"
+        "active": false
     },
     {
         "department": "HEALTH AND SANITATION",
@@ -6195,7 +6195,7 @@
         "id": 280,
         "type": "HEALTH AND SANITATION",
         "name": "Nanam Dispensary FY 2014/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "Water Irrigation and Agriculture",
@@ -6216,7 +6216,7 @@
         "id": 281,
         "type": "Water Irrigation and Agriculture",
         "name": "Nanam Borehole",
-        "active": "false"
+        "active": false
     },
     {
         "department": "Water Irrigation and Agriculture",
@@ -6237,7 +6237,7 @@
         "id": 282,
         "type": "Water Irrigation and Agriculture",
         "name": "Songot Waterpan",
-        "active": "false"
+        "active": false
     },
     {
         "department": "FINANCE AND PLANNING",
@@ -6258,7 +6258,7 @@
         "id": 283,
         "type": "FINANCE AND PLANNING",
         "name": "Construction of Lokichogio Slaughter House",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -6279,7 +6279,7 @@
         "id": 284,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Nanam ECD 2014/2015",
-        "active": "false",
+        "active": false,
         "lat": 4.383611111111112,
         "lng": null
     },
@@ -6302,7 +6302,7 @@
         "id": 285,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Nanam- Nakaleso road",
-        "active": "false"
+        "active": false
     },
     {
         "department": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
@@ -6323,7 +6323,7 @@
         "id": 286,
         "type": "PUBLIC SERVICE, DECENTRALIZED ADMINISTRATION AND DISASTER MANAGEMENT",
         "name": "Nanam ward admin office",
-        "active": "false"
+        "active": false
     },
     {
         "department": "HEALTH AND SANITATION",
@@ -6344,7 +6344,7 @@
         "id": 287,
         "type": "HEALTH AND SANITATION",
         "name": "Nasinyono Dispensary 14/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "EDUCATION, CULTURE AND SOCIAL SERVICES",
@@ -6365,7 +6365,7 @@
         "id": 288,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "LOPUR ECD 14/15",
-        "active": "false"
+        "active": false
     },
     {
         "department": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
@@ -6386,7 +6386,7 @@
         "id": 289,
         "type": "ENERGY, ENVIRONMENT AND NATURAL RESOURCES",
         "name": "Lokwanya Primary School Solar Project",
-        "active": "false",
+        "active": false,
         "lat": 5.055277777777778,
         "lng": 34.75333333333333
     },
@@ -6409,7 +6409,7 @@
         "id": 290,
         "type": "EDUCATION, CULTURE AND SOCIAL SERVICES",
         "name": "Nabune ECD 13/14",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -6432,7 +6432,7 @@
         "id": 291,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Loki junc- Lopiding_Trackmack Road",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -6455,7 +6455,7 @@
         "id": 292,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "A1 Junc- DRA-HO Zion Hosp_AP Line Kiwanja Ndege water kiosk road",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     },
@@ -6478,7 +6478,7 @@
         "id": 293,
         "type": "ROADS, PUBLIC WORKS, ICT AND TRANSPORT",
         "name": "Lopiding-Naritae Road",
-        "active": "false",
+        "active": false,
         "lat": 0,
         "lng": 0
     }

@@ -3,8 +3,8 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { throttle } from '@ember/runloop';
 import { inject as service } from '@ember/service';
-import { load } from '../helpers/load';
-import config from 'county-fe/config/environment';
+// import { load } from '../helpers/load';
+// import config from 'county-fe/config/environment';
 
 export default class MapsController extends Controller {
   @service flashMessages;
@@ -13,7 +13,6 @@ export default class MapsController extends Controller {
   @tracked maps = true;
   @tracked mapData = this.model;
   @tracked buttonGroupValue;
-  @tracked mapTooltipOpen = false;
   @tracked markerTooltipOpen = false;
   @tracked mapBounds;
   @tracked mapZoom;
@@ -25,14 +24,20 @@ export default class MapsController extends Controller {
     this.searchQuery = evt;
   }
 
+  // @action
+  // clickTooltip() {
+  //   this.setState({ markerTooltipOpen: !this.state.markerTooltipOpen });
+  // }
+
+  // @action
+  // closeWindow() {
+  //   this.setState({ markerTooltipOpen: false });
+  // }
+
   get filterFunction() {
     // let url = `${config.backend.BACKEND_API}/api/v2/search/chapter?q=${this.searchQuery}`;
     // return load(fetch(url).then((data) => data.json()));
     // const results = this.model.filter(this.searchQuery);
-    // return this.model.filter((data) => {
-    //   console.log(data.type);
-    //   return data.type.toLowerCase() == this.searchQuery;
-    // });
     return this.model.filter((x) =>
       x.type.toLowerCase().includes(this.searchQuery.toLowerCase())
     );
@@ -68,15 +73,10 @@ export default class MapsController extends Controller {
   }
 
   @action
-  scrollToListing(listing) {
-    let id = `rental-${listing.id}`;
-    let el = document.getElementById(id);
-
-    console.log(el);
-
-    // if (el) {
-    //   el.scrollIntoView({ behavior: 'smooth' });
-    // }
+  handleOnClick(location) {
+    location.active = !location.active;
+    console.log(location.id, location.active);
+    return location.active;
   }
 
   // @action
