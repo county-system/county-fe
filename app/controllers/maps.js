@@ -3,7 +3,13 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { throttle } from '@ember/runloop';
 import { inject as service } from '@ember/service';
+import { load } from '../helpers/load';
+import config from 'county-fe/config/environment';
+
 export default class MapsController extends Controller {
+  @service flashMessages;
+  @service googleMapsApi;
+
   @tracked maps = true;
   @tracked mapData = this.model;
   @tracked buttonGroupValue;
@@ -11,8 +17,26 @@ export default class MapsController extends Controller {
   @tracked markerTooltipOpen = false;
   @tracked mapBounds;
   @tracked mapZoom;
-  @service flashMessages;
-  @service googleMapsApi;
+  @tracked searchLoading = false;
+  @tracked searchQuery = '';
+
+  @action
+  async change(evt) {
+    this.searchQuery = evt;
+  }
+
+  get filterFunction() {
+    // let url = `${config.backend.BACKEND_API}/api/v2/search/chapter?q=${this.searchQuery}`;
+    // return load(fetch(url).then((data) => data.json()));
+    // const results = this.model.filter(this.searchQuery);
+    // return this.model.filter((data) => {
+    //   console.log(data.type);
+    //   return data.type.toLowerCase() == this.searchQuery;
+    // });
+    return this.model.filter((x) =>
+      x.type.toLowerCase().includes(this.searchQuery.toLowerCase())
+    );
+  }
 
   @action
   flashMessage(message) {

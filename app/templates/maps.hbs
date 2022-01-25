@@ -2,8 +2,9 @@
 {{outlet}}
 
 {{!--
-<iframe src="https://www.google.com/maps/d/embed?mid=190sjggB_7ADukXxy8fytp0Bqut77secD&ehbc=2E312F" width="1600" height="990"></iframe>
- --}}
+<iframe src="https://www.google.com/maps/d/embed?mid=190sjggB_7ADukXxy8fytp0Bqut77secD&ehbc=2E312F" width="1600"
+  height="990"></iframe>
+--}}
 <div class="alerts-container">
   {{#each this.flashMessages.queue as |flash|}}
   <FlashMessage @flash={{flash}} />
@@ -37,13 +38,35 @@ TODO: View map under search map filter by ward and data type(population, educati
 
       </g.marker>
       {{/each}}
-
     </GMap>
   </div>
 
   <div class="col-md-3 col-lg-3">
-    <BsButtonGroup @class="btn-group-vertical" @value={{buttonGroupValue}} @type="radio" @onChange={{this.filterBy}}
-      as |bg|>
+    <div id="myDropdown" class="dropdown">
+      <div class="dropdown-content">
+        <Input placeholder='Search' id="dropdownMenuButton" class="form-control search-input dropdown-toggle"
+          autocomplete="on" @click="searchLoading=false" @key-up={{action "change" }} @insert-newline="enter"
+          @bubbles="false" type="text" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" />
+        {{#if this.filterFunction.isLoaded}}
+        {{#each this.filterFunction as |obj|}}
+        <li>
+          <hr class="dropdown-divider" />
+        </li>
+        <div class="dropdown-item">
+          {{!-- <LinkTo @route="kpi" @model={{obj.id}} class="chapter-title"> --}}
+            <div class="search chapter-title">
+              {{obj}}
+            </div>
+            {{!--
+          </LinkTo> --}}
+        </div>
+        {{/each}}
+        {{/if}}
+      </div>
+      {{!-- {{log this.filterFunction}} --}}
+    </div>
+    <BsButtonGroup @class="btn-group-vertical" @value={{buttonGroupValue}} @type="radio" @onChange={{this.filterBy}} as
+      |bg|>
       <div class="list-group">
         <bg.button class="green bg-green-hover list-group-item list-group-item-action" @value="all">SHOW ALL</bg.button>
         {{#each this.filterOptions as |option|}}
