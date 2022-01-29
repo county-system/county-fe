@@ -58,8 +58,8 @@ TODO: View map under search map filter by ward and data type(population, educati
     <div id="myDropdown" class="dropdown">
       <div class="dropdown-content">
         <Input placeholder='Search' id="dropdownMenuButton" class="form-control search-input dropdown-toggle"
-          autocomplete="on" @click="searchLoading=false" @key-up={{action "change" }} @insert-newline="enter"
-          @bubbles="false" type="text" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" />
+          autocomplete="on" @click="searchLoading=false" @insert-newline="enter"
+          @bubbles="false" type="text" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" {{on "keyup" (action "change")}} />
         {{#if this.filterFunction.isLoaded}}
         {{#each this.filterFunction as |obj|}}
         <li>

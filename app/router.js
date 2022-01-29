@@ -31,6 +31,7 @@ Router.map(function () {
     this.route('ward', function () {
       this.route('index', { path: '/:ward_name' });
     });
+    this.route('summary');
   });
   this.route('ward');
   this.route('admin', function () {
