@@ -3,30 +3,30 @@
 <div>
     <h4 class="mb-4 text-muted">System Navigation </h4>
     <div class="row">
-        <div class="col-md-3 col-lg-2 mb-4 align-middle">
-            <span>{{ svg-jar "projects" width="70"}}</span>
-            <p class="mt-4 text-muted">PROJECTS</p>
+        <div class="col-md-3 col-lg-2 align-middle">
+            <span>{{ svg-jar "projects" height="110" width="90"}}</span>
+            <p class="text-muted">PROJECTS</p>
             <LinkTo @route="projects">
                 <a href="#" class="bg-green btn btn-lg">view</a>
             </LinkTo>
         </div>
-        <div class="col-md-3 col-lg-2 mb-4 align-middle">
-            <span>{{ svg-jar "kpis" width="80"}}</span>
-            <p class="mt-2 text-muted">KPI'S</p>
+        <div class="col-md-3 col-lg-2 align-middle">
+            <span>{{ svg-jar "kpis" height="110" width="80"}}</span>
+            <p class="text-muted">KPI'S</p>
             <LinkTo @route="indicator.kpi">
                 <a href="#" class="bg-green btn btn-lg">view</a>
             </LinkTo>
         </div>
-        <div class="col-md-3 col-lg-2 mb-4">
-            <span>{{ svg-jar "county_health" width="70"}}</span>
-            <p class="text-muted">COUNTY SYSTEMS HEALTH CHECK</p>
+        <div class="col-md-3 col-lg-2">
+            <span>{{ svg-jar "county_health" height="110" width="90"}}</span>
+            <p class="text-muted">SYSTEMS HEALTH</p>
             <LinkTo @route="systems" @disabled={{true}}>
                 <a href="#" class="bg-green btn btn-lg">view</a>
             </LinkTo>
         </div>
-        <div class="col-md-3 col-lg-2 mb-4">
-            <span>{{ svg-jar "mon_and_eval" width="90"}}</span>
-            <p class="mt-5 text-muted">COUNTY M&#38;E UPDATE</p>
+        <div class="col-md-3 col-lg-2">
+            <span>{{ svg-jar "mon_and_eval" height="110" width="100"}}</span>
+            <p class="text-muted">COUNTY M&#38;E UPDATE</p>
             <LinkTo @route="indicator.mande">
                 <a href="#" class="bg-green btn btn-lg">view</a>
             </LinkTo>
