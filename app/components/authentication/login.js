@@ -28,13 +28,12 @@ export default class AuthenticationLoginComponent extends Component {
       .authenticate(model.get('username'), model.get('password'))
       .then(() => {
         console.log('logging in user', this.me.user);
-        console.log(this.args.authenticationSuccessful());
         this.args.authenticationSuccessful();
       })
       .catch((err) => {
         this.loading = false;
         if (err) {
-          console.log('Logging errors.......');
+          console.log('Logging errors.......: ', err);
           const constraint = 'errors';
           const error_message = 'Wrong username or password';
           // model.addError(constraint, error_message);

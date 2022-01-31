@@ -7,12 +7,11 @@
   <navbar.content>
   </navbar.content>
   {{#if this.session.isAuthenticated}}
-    <Common::Profile-Icon @icon={{svg-jar "account_circle_white" }} @link="login" @class="rounded-pill" @text="logout" />
-    {{#if this.currentUser.user}}
-      <p>Signed in as {{this.currentUser.user.name}}</p>
-    <Common::Profile-Icon @icon={{svg-jar "account_circle_white" }} @link="login" @class="rounded-pill" @text="Signed in as {{this.currentUser.user.name}}" />
-    {{/if}}
+  <div class="d-flex justify-content-end">
+    <h4 class="green mr-3 mt-2">{{capital me.user.name}}</h4>
+    <Common::Profile-Icon @icon={{svg-jar "account_circle_white" }} @link="login" @class="rounded-pill" />
+  </div>
   {{else}}
-    <Common::Profile-Icon @icon={{svg-jar "account_circle_white" }} @link="login" @class="rounded-pill" @text="login" />
+  <Common::Profile-Icon @icon={{svg-jar "account_circle_white" }} @link="login" @class="rounded-pill" @text="login" />
   {{/if}}
 </BsNavbar>

@@ -5,7 +5,7 @@ import { action } from '@ember/object';
 
 export default class HeaderTopNavComponent extends Component {
   @service session;
-  @service currentUser;
+  @service me;
 
   @tracked isSidebarPinned = false;
   @tracked isSidebarToggeled = false;

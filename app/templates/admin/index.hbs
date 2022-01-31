@@ -159,14 +159,10 @@
                         <td>3 months ago</td>
                         <td>SuperAdmin</td>
                         <td>
-                            {{!-- <div class="custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" id="customSwitch">
-                                <label class="custom-control-label" for="customSwitch"></label>
-                            </div> --}}
                             <a href="#">View Profile</a>
                         </td>
                     </tr>
-                    {{#each modelData as |user index|}}
+                    {{#each users as |user index|}}
                     <tr>
                         <td>
                             <div class="custom-control custom-checkbox">
@@ -175,18 +171,18 @@
                             </div>
                         </td>
                         <td>
-                            {{!-- {{#if user.image}}
+                            {{#if user.image}}
                             <img class="img-responsive img-rounded  rounded-circle" alt="" src={{user.image}}
                                 role="presentation">
-                            {{else}} --}}
+                            {{else}}
                             <img src="../images/avatar.png" alt="avatar" class="img-fluid rounded-circle" width="50"
                                 role="presentation">
-                            {{!-- {{/if}} --}}
+                            {{/if}}
                         </td>
-                        <td>{{ user.first_name}}</td>
-                        <td>{{ user.last_name}}</td>
+                        <td>{{ user.name}}</td>
+                        <td>{{ user.email}}</td>
                         <td>{{ user.department}}</td>
-                        <td>{{member-since user.active_since}}</td>
+                        <td>{{member-since user.createdAt}}</td>
                         <td>{{user.role}}</td>
                         <td>
                             <a href="#">View Profile</a>

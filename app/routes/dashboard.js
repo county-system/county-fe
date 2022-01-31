@@ -3,6 +3,12 @@ import { inject as service } from '@ember/service';
 
 export default class DashboardRoute extends Route {
   @service store;
+  @service me;
+  @service session;
+
+  async beforeModel(transition) {
+    this.session.requireAuthentication(transition, 'login');
+  }
 
   model() {
     return [

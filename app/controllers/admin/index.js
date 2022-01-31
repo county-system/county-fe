@@ -14,7 +14,16 @@ export default class AdminIndexController extends Controller {
   LoginValidations = LoginValidations;
   @tracked modelData = this.model;
   @tracked modal1 = false;
-  @tracked totalUsers = this.modelData.length;
+  // @tracked totalUsers = this.modelData.users.length;
+  @tracked totalUsers = 100;
+
+  get allUsers() {
+    return this.model.filter((user) => user.id);
+  }
+
+  get users() {
+    return this.modelData;
+  }
 
   constructor() {
     super(...arguments);
