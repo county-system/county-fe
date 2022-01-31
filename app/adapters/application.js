@@ -9,9 +9,15 @@ export default class ApplicationAdapter extends RESTAdapter {
   host = config.backend.BACKEND_API;
 
   get headers() {
-    console.log(this.session?.data?.authenticated?.token);
     return {
       Authorization: `Bearer ${this.session?.data?.authenticated?.token}`,
     };
   }
+
+  // handleResponse(status) {
+  //   if (status === 401 && this.session.isAuthenticated) {
+  //     this.session.invalidate();
+  //   }
+  //   return super.handleResponse(...arguments);
+  // }
 }

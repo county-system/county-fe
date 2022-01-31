@@ -1,11 +1,15 @@
 {{page-title "Index"}}
 {{outlet}}
-<div class="landing bg-image">
-    <div class="row green">
-        <div class="col text-center mt-5 pt-5 text-uppercase">
-            <h1 class="text-home">Monitoring Data</h1>
-            <h2 class="title-home mb-5 pb-5">{{uppercase "The easy way"}}</h2>
-            <Common::Profile-Icon @class="login rounded" @link="login" @text="login" />
-        </div>
+<div class="landing bg-image row green">
+    <div class="col text-center mt-5 pt-5 text-uppercase">
+    {{!-- <div class="d-flex justify-content-center"> --}}
+        {{svg-jar "turkana_main" }}
+        <h3 class="mt-3">TURUKANA COUNTY M&#38;E</h3>
+        <br/>
+    {{!-- </div> --}}
+        <h1 class="text-home">Monitoring Data</h1>
+        {{!-- {{svg-jar "main_text" }} --}}
+        <h2 class="title-home mb-5 pb-5">{{uppercase "The easy way"}}</h2>
+        <Common::Profile-Icon @class="login rounded" @link="login" @text="login" />
     </div>
 </div>

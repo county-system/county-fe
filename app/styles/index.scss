@@ -1,15 +1,15 @@
 .bg-image {
     // min-height: 93% !important;
-    background-image: url(../images/landing.jpeg);
+    // background-image: url(../images/landing.jpeg);
+    background-image: url(../images/icons/main_bg_image.svg);
     background-repeat: no-repeat;
     background-size: 100%;
-    padding: 100px;
     position: fixed;
     left: 0;
-    top: 66px;
+    top: 55px;
     right: 0;
     bottom: 0;
-    padding-left: 0 !important;
+    height: 100%;
 }
 .content-home{
     min-height: 0 !important;

@@ -5,6 +5,7 @@ export default class LoginRoute extends Route {
   @inject me;
 
   beforeModel() {
+    console.log(this.me.user);
     if (this.me.user) {
       this.transitionTo('dash');
     }

@@ -43,8 +43,10 @@ module.exports = function (environment) {
     'ember-simple-auth-token': {
       refreshTokenPropertyName: 'refresh',
       tokenPropertyName: 'token',
+      authorizationPrefix: 'Bearer ',
       serverTokenEndpoint: process.env.BACKEND_API + '/api/v2/auth/login',
-      serverTokenRefreshEndpoint: process.env.BACKEND_API + '/api/v2/refresh',
+      serverTokenRefreshEndpoint:
+        process.env.BACKEND_API + '/api/v2/auth/refresh',
       refreshAccessTokens: true,
       refreshLeeway: 300, // refresh 5 minutes (300 seconds) before expiration
     },

@@ -27,6 +27,8 @@ export default class AuthenticationLoginComponent extends Component {
     this.me
       .authenticate(model.get('username'), model.get('password'))
       .then(() => {
+        console.log('logging in user', this.me.user);
+        console.log(this.args.authenticationSuccessful());
         this.args.authenticationSuccessful();
       })
       .catch((err) => {
