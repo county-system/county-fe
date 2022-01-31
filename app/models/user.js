@@ -17,6 +17,7 @@ export default class UserModel extends Model {
   @attr() emailVerified;
   @attr() location;
   @attr() contactNumber;
+  @attr() department;
   @attr() gender;
   @attr() userRoles;
 
