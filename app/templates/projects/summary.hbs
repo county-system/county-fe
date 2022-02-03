@@ -89,7 +89,6 @@
     </div>
 </div>
 <div class="row mt-4  shadow p-3">
-    {{!-- TODO: Calculate based on value of money allocated to each project --}}
     <div class="col-md-12">
         <BsButtonGroup @value={{buttonGroupValue}} @type="radio" @onChange={{this.filterByAmount}} as |bg|>
             {{#each-in totalSpending as |value key|}}
