@@ -98,8 +98,7 @@ export default class ProjectsSummaryController extends Controller {
 
   @action
   chartColors(num) {
-    // eslint-disable-next-line no-unused-vars
-    const result = [...Array(num)].map((_) => {
+    const result = [...Array(num)].map(() => {
       return `rgb(${Math.round(Math.random() * 255)}, ${Math.round(
         Math.random() * 255
       )}, ${Math.round(Math.random() * 255)})`;
