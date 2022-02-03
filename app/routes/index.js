@@ -8,7 +8,7 @@ export default class IndexRoute extends Route {
 
   beforeModel() {
     if (this.me.user) {
-      this.transition('dash');
+      this.transitionTo('dash');
     }
   }
 }

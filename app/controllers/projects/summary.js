@@ -8,13 +8,16 @@ export default class ProjectsSummaryController extends Controller {
   @service store;
 
   @tracked modelData = this.model;
+  @tracked buttonGroupValue;
   @tracked topData = this.topCardsData();
-  @tracked sideProgressData = sumUnic(
+  @tracked sideProgressData = this.sideProgressDataCal();
+  @tracked dropdown = this.dropdownData();
+  @tracked percentFilter = sumUnic(
     this.modelData,
     'implementing_entity',
     'project_cost'
   );
-  @tracked dropdown = this.dropdownData();
+  @tracked totalSpending = this.totalSpendingData();
   @tracked value;
   @tracked tableData = sumUnic(
     this.modelData,
@@ -40,12 +43,46 @@ export default class ProjectsSummaryController extends Controller {
       'project_cost'
     );
     this.wardProjects = sumUnic(this.modelData, 'ward', 'project_cost');
-    console.log(
-      this.value,
-      this.modelData.length,
-      this.tableData.length,
-      this.wardProjects.length
-    );
+  }
+
+  @action
+  filterByAmount(value) {
+    this.percentFilter = this.percentFilter.map((data) => {
+      if (data.project_cost <= value) {
+        return { ...data, color: 'green' };
+      }
+      return { ...data, color: 'purple' };
+    });
+  }
+
+  @action
+  sideProgressDataCal() {
+    const progress = sumUnic(this.model, 'implementing_entity', 'project_cost');
+    let total = 0;
+    this.model.forEach((data) => {
+      total += parseFloat(data.project_cost);
+    });
+    return progress.map((d) => {
+      return {
+        ...d,
+        percent: parseInt((d.project_cost / total) * 100 * 10),
+      };
+    });
+  }
+
+  @action
+  totalSpendingData() {
+    let percentFilters = {};
+    let total = 0;
+    this.model.forEach((data) => {
+      total += parseFloat(data.project_cost);
+    });
+    const percent = [5, 10, 50, 100];
+    percent.forEach((element) => {
+      percentFilters[`top ${element}`] = total * (element / 100);
+    });
+
+    return percentFilters;
   }
 
   @action
