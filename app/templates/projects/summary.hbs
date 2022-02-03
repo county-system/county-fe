@@ -29,7 +29,6 @@
         <h4 class="mb-3 text-white">Ministerial Budget Allocations</h4>
         <div class="row">
             {{#each sideProgressData as |pg|}}
-            {{log pg.percent}}
             <div class="col-md-6 col-lg-6">
                 <p class="prog-text text-white" style="font-size:12px;">{{pg.implementing_entity}}</p>
             </div>
@@ -97,8 +96,6 @@
             <bg.button @value={{key}} class="green bg-green bg-green-hover">{{uppercase value}}</bg.button>
             {{/each-in}}
         </BsButtonGroup>
-        <p>You selected: {{buttonGroupValue}}</p>
-        {{!-- {{log totalSpending}} --}}
     </div>
     <div class="col-md-6 p-4 border">
         <h3 class="mb-4 green">{{ uppercase "Turkana County Projects Allocations"}}</h3>
