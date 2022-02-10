@@ -3,6 +3,7 @@ import { set } from '@ember/object';
 import colorLib from '@kurkle/color';
 import { tracked } from '@glimmer/tracking';
 
+
 export default class DashboardController extends Controller {
   @tracked totalReports = 0;
   @tracked totalUsers = 0;
@@ -11,6 +12,43 @@ export default class DashboardController extends Controller {
   @tracked totalApproved = 0;
   @tracked totalRejected = 0;
   @tracked type = 'line';
+
+  $primary = '#5A8DEE';
+  $success = '#39DA8A';
+  $danger = '#FF5B5C';
+  $warning = '#FDAC41';
+  $info = '#00CFDD';
+  $label_color = '#475F7B';
+  grid_line_color = '#dae1e7';
+  scatter_grid_color = '#f3f3f3';
+  $scatter_point_light = '#E6EAEE';
+  $scatter_point_dark = '#5A8DEE';
+  $white = '#fff';
+  $black = '#000';
+
+  themeColors = [this.$primary, this.$warning];
+  // var themeColors = [ '#5A8DEE, '#FDAC41', $danger, $success, $info, $label_color];
+
+
+  doughnutchartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    responsiveAnimationDuration: 500,
+    title: {
+      display: true,
+      text: 'County Reports',
+    },
+  };
+  doughnutchartData = {
+    labels: ['Governance', 'Ministerial'],
+    datasets: [
+      {
+        label: 'My First dataset',
+        data: [2478, 5267],
+        backgroundColor: this.themeColors,
+      },
+    ],
+  };
 
   reports = [
     {

@@ -146,22 +146,82 @@ export default class ProjectsSummaryController extends Controller {
   chartData = {
     type: 'doughnut',
     data: {
-      labels: ['GOVERNANCE', 'MINISTERIAL'],
+      labels: ['Governance', 'Ministerial'],
       datasets: [
         {
-          label: 'My First Dataset',
-          data: [36, 64],
-          backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)'],
-          hoverOffset: 4,
+          label: 'My First dataset',
+          data: [2478, 5267],
+          backgroundColor: this.chartColors(2),
         },
       ],
     },
     options: {
       responsive: true,
-      plugins: {
-        legend: {
-          position: 'bottom',
+      maintainAspectRatio: false,
+      responsiveAnimationDuration: 500,
+      title: {
+        display: false,
+        text: 'County Reports',
+      },
+    },
+  };
+
+  barData = {
+    type: 'bar',
+    data: {
+      labels: ['Africa', 'Asia', 'Europe', 'Latin America', 'North America'],
+      datasets: [
+        {
+          label: 'Population (millions)',
+          data: [2478, 5267, 734, 784, 433],
+          backgroundColor: this.chartColors(5),
+          borderColor: 'transparent',
         },
+      ],
+    },
+    options: {
+      // Elements options apply to all of the options unless overridden in a dataset
+      // In this case, we are setting the border of each bar to be 2px wide
+      elements: {
+        rectangle: {
+          borderWidth: 2,
+          borderSkipped: 'left',
+        },
+      },
+      responsive: true,
+      maintainAspectRatio: false,
+      responsiveAnimationDuration: 500,
+      legend: { display: false },
+      scales: {
+        xAxes: [
+          {
+            display: true,
+            gridLines: {
+              color: '#dae1e7',
+            },
+            scaleLabel: {
+              display: true,
+            },
+          },
+        ],
+        yAxes: [
+          {
+            display: true,
+            gridLines: {
+              color: '#dae1e7',
+            },
+            scaleLabel: {
+              display: true,
+            },
+            ticks: {
+              stepSize: 1000,
+            },
+          },
+        ],
+      },
+      title: {
+        display: true,
+        text: 'Predicted world population (millions) in 2050',
       },
     },
   };

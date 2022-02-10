@@ -3,172 +3,201 @@
 
 <h4 class="mb-4 text-muted green">Turkana County Projects Allocations</h4>
 <div class="row">
-    {{#each topData as |dt|}}
-    <div class="col-md-4 col-lg-2">
-        <div class="card text-center p-2 mb-3 shadow border-0 rounded-0 bg-{{dt.color}} text-light">
-            <div class="card-body">
-                <h2 class="mb-2" style="font-size:20px;">{{dt.value}}</h2>
-                <h4 class="card-title" style="font-size:15px;">{{dt.title}}</h4>
-            </div>
-        </div>
+  {{#each topData as |dt|}}
+  <div class="col-md-4 col-lg-2">
+    <div class="card text-center p-2 mb-3 shadow border-0 rounded-0 bg-{{dt.color}} text-light">
+      <div class="card-body">
+        <h2 class="mb-2" style="font-size:20px;">{{dt.value}}</h2>
+        <h4 class="card-title" style="font-size:15px;">{{dt.title}}</h4>
+      </div>
     </div>
-    {{/each}}
+  </div>
+  {{/each}}
 </div>
 <div class="row bg-dark p-4">
-    <div class="col-md-4 col-lg-4 text-white">
-        <h4 class="mb-3 text-white">SHARE OF THE BUDGET</h4>
-        {{ember-chart
-        type=this.chartData.type
-        data=this.chartData.data
-        width=200
-        height=200
-        options=this.chartData.options
-        }}
+  <div class="col-md-4 col-lg-4 text-white">
+    <h4 class="mb-3 text-white">SHARE OF THE BUDGET</h4>
+    <div style="height : 500px !important;">
+      {{ember-chart
+      type=this.chartData.type
+      data=this.chartData.data
+      options=this.chartData.options
+      }}
     </div>
-    <div class="col-md-8 col-lg-8 p-3 bg-green">
-        <h4 class="mb-3 text-white">Ministerial Budget Allocations</h4>
-        <div class="row">
-            {{#each sideProgressData as |pg|}}
-            <div class="col-md-6 col-lg-6">
-                <p class="prog-text text-white" style="font-size:12px;">{{pg.implementing_entity}}</p>
-            </div>
-            <div class="col-md-6 col-lg-6">
-                <div class="progress"
-                    style="font-weight:600; height: 16px; background-color: inherit;border-radius: unset;">
-                    <div class="progress-bar green" role="progressbar" style="background-color: #F7931E;width: {{pg.percent}}%"
-                        aria-valuenow={{pg.percent}} aria-valuemin="0" aria-valuemax="100">{{currency-short
-                        pg.project_cost}}
-                    </div>
-                </div>
-            </div>
-            {{/each}}
+  </div>
+  <div class="col-md-8 col-lg-8 p-3 bg-green">
+    <h4 class="mb-3 text-white">Ministerial Budget Allocations</h4>
+    <div class="row">
+      {{#each sideProgressData as |pg|}}
+      <div class="col-md-6 col-lg-6">
+        <p class="prog-text text-white" style="font-size:12px;">{{pg.implementing_entity}}</p>
+      </div>
+      <div class="col-md-6 col-lg-6">
+        <div class="progress" style="font-weight:600; height: 16px; background-color: inherit;border-radius: unset;">
+          <div class="progress-bar green" role="progressbar" style="background-color: #F7931E;width: {{pg.percent}}%"
+            aria-valuenow={{pg.percent}} aria-valuemin="0" aria-valuemax="100">{{currency-short
+            pg.project_cost}}
+          </div>
         </div>
+      </div>
+      {{/each}}
     </div>
+  </div>
 </div>
 
 {{!-- <div class="row mt-4 shadow p-3">
-    <h3 class="mb-4 green">{{ uppercase "Full Report"}}</h3>
-    <div class="table-responsive">
-        <Table />
-    </div>
+  <h3 class="mb-4 green">{{ uppercase "Full Report"}}</h3>
+  <div class="table-responsive">
+    <Table />
+  </div>
 </div> --}}
 
 <div class="row mt-4 shadow p-3">
-    <h3 class="mb-4 green">{{ uppercase "Budget summary"}}</h3>
-    <div class="col-md-12">
-        <select class="form-select" {{on "change" this.dropdownValue }} class="form-select"
-            aria-label="Default select example">
-            <option value="all" selected>Select Office or Ministry</option>
-            {{#each dropdown as |dt|}}
-            <option value={{dt}}>{{dt}}</option>
-            {{/each}}
-        </select>
-    </div>
-
-    <div class="col-md-6 mt-4">
-        <div class="table-responsive">
-            <table class="table">
-                <tbody>
-                    {{#each tableData as | info | }}
-                    <tr>
-                        <td>{{info.project_name}}</td>
-                        <td>{{fomartcurrency info.project_cost}}</td>
-                    </tr>
-                    {{/each}}
-                </tbody>
-            </table>
+  <h3 class="mb-4 green">{{ uppercase "Budget summary"}}</h3>
+  <div class="col-md-12 mb-4">
+    <select class="form-select" {{on "change" this.dropdownValue }} class="form-select"
+      aria-label="Default select example">
+      <option value="all" selected>Select Office or Ministry</option>
+      {{#each dropdown as |dt|}}
+      <option value={{dt}}>{{dt}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="col-md-6">
+    <div class="table-responsive">
+      <div class="card">
+        <h5 class="card-header bg-white">Project Allocations</h5>
+        <div class="table-responsive text-nowrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Project Name</th>
+                <th>Cost</th>
+              </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+              {{#each tableData as | info | }}
+              <tr>
+                <td class="text-truncate table-text-width" style="max-width: 400px;">{{info.project_name}}</td>
+                {{!-- <td><strong>{{fomartcurrency info.project_cost}}</strong></td> --}}
+                <td><strong>{{currency-short info.project_cost}}</strong></td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
         </div>
+      </div>
+    </div>
+    <!--/ Basic Bootstrap Table -->
+  </div>
 
+  <div class="col-md-6">
+    <div class="card">
+      <h5 class="card-header bg-white">
+        Bar Chart
+      </h5>
+      <div class="card-body pl-0">
+        <div style="height : 500px !important;">
+          {{ember-chart
+          type=this.barData.type
+          data=this.barData.data
+          options=this.barData.options
+          }}
+        </div>
+      </div>
     </div>
-    <div class="col-md-6">
-        {{ember-chart
-        type="bar"
-        data=this.chartData.data
-        options=this.chartData.options
-        }}
-    </div>
+  </div>
 </div>
-<div class="row mt-4  shadow p-3">
-    <div class="col-md-12">
-        <BsButtonGroup @value={{buttonGroupValue}} @type="radio" @onChange={{this.filterByAmount}} as |bg|>
-            {{#each-in totalSpending as |value key|}}
-            <bg.button @value={{key}} class="green bg-green bg-green-hover">{{uppercase value}}</bg.button>
-            {{/each-in}}
-        </BsButtonGroup>
-    </div>
-    <div class="col-md-6 p-4 border">
-        <h3 class="mb-4 green">{{ uppercase "Turkana County Projects Allocations"}}</h3>
-        <div class="table-responsive">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">PROJECT NAME</th>
-                        <th scope="col">PROJECT BUDGET</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each tableData as | info | }}
-                    <tr>
-                        <td>{{info.project_name}}</td>
-                        <td>{{fomartcurrency info.project_cost}}</td>
-                    </tr>
-                    {{/each}}
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="col-md-6 p-4 border">
-        <ul class="list-unstyled">
-            {{#each percentFilter key="implementing_entity" as |md|}}
-            <li class="mt-1 {{md.color}}">{{md.implementing_entity}}</li>
+<div class="row mt-4 shadow">
+  <div class="col-md-6">
+
+    <div class="card">
+      <h5 class="card-header green bg-white">{{ uppercase "Turkana County Projects Allocations"}}</h5>
+      <div class="table-responsive text-nowrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">PROJECT NAME</th>
+              <th scope="col">PROJECT BUDGET</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each tableData as | info | }}
+            <tr>
+              <td><span class="d-inline-block text-truncate" style="max-width: 400px;">{{info.project_name}}</span></td>
+              {{!--
+              <td><strong>{{fomartcurrency info.project_cost}}</strong></td> --}}
+              <td><strong>{{currency-short info.project_cost}}</strong></td>
+            </tr>
             {{/each}}
-        </ul>
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header bg-white">
+        <BsButtonGroup @value={{buttonGroupValue}} @type="radio" @onChange={{this.filterByAmount}} as |bg|>
+          {{#each-in totalSpending as |value key|}}
+          <bg.button @value={{key}} class="green bg-green bg-green-hover">{{uppercase value}}</bg.button>
+          {{/each-in}}
+        </BsButtonGroup>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled">
+          {{#each percentFilter key="implementing_entity" as |md|}}
+          <li class="mt-2 {{md.color}}">{{md.implementing_entity}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="row mt-4 p-2 border shadow p-3">
-    <h3 class="mb-4 green">{{ uppercase "Turkana County Ward Projects"}}</h3>
-    <div class="col-md-12">
-        <div class="table-responsive">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Ward</th>
-                        <th scope="col">Budget</th>
-                        <th scope="col">No. of Projects</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each wardProjects as | info | }}
-                    <tr>
-                        <td>{{info.ward}}</td>
-                        <td>{{fomartcurrency info.project_cost}}</td>
-                        <td>59</td>
-                    </tr>
-                    {{/each}}
-                </tbody>
-            </table>
-        </div>
+  <h3 class="mb-4 green">{{ uppercase "Turkana County Ward Projects"}}</h3>
+  <div class="col-md-12">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Ward</th>
+            <th scope="col">Budget</th>
+            <th scope="col">No. of Projects</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each wardProjects as | info | }}
+          <tr>
+            <td>{{info.ward}}</td>
+            <td>{{fomartcurrency info.project_cost}}</td>
+            <td>59</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
     </div>
+  </div>
 </div>
 {{!-- <div class="row mt-4">
-    <div class="col-md-2 col-lg-2 mb-4">
-        <div class="card bg-green text-light shadow border-0 rounded-0">
-            <div class="card-body text-center">
-                <div class="card-icon">
-                    {{svg-jar "add-report" width='60px'}}
-                    <p class="card-label">ADD REPORT</p>
-                </div>
-            </div>
+  <div class="col-md-2 col-lg-2 mb-4">
+    <div class="card bg-green text-light shadow border-0 rounded-0">
+      <div class="card-body text-center">
+        <div class="card-icon">
+          {{svg-jar "add-report" width='60px'}}
+          <p class="card-label">ADD REPORT</p>
         </div>
+      </div>
     </div>
-    <div class="col-md-2 col-lg-2 mb-4">
-        <div class="card bg-green text-light shadow border-0 rounded-0">
-            <div class="card-body text-center">
-                <div class="card-icon">
-                    {{svg-jar "edit" width='60px'}}
-                    <p class="card-label">EDIT REPORT</p>
-                </div>
-            </div>
+  </div>
+  <div class="col-md-2 col-lg-2 mb-4">
+    <div class="card bg-green text-light shadow border-0 rounded-0">
+      <div class="card-body text-center">
+        <div class="card-icon">
+          {{svg-jar "edit" width='60px'}}
+          <p class="card-label">EDIT REPORT</p>
         </div>
+      </div>
     </div>
+  </div>
 </div> --}}
