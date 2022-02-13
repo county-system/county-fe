@@ -115,12 +115,12 @@ export default class ProjectsSummaryController extends Controller {
         color: 'purple',
       },
       {
-        title: 'Total Projects Cost',
+        title: 'Total Cost',
         value: '278M',
         color: 'green',
       },
       {
-        title: 'Total Projects Incomplete',
+        title: 'Incomplete',
         value: '15%',
         color: 'blue',
       },
@@ -130,14 +130,14 @@ export default class ProjectsSummaryController extends Controller {
         color: 'yellow',
       },
       {
-        title: 'Outstanding Amount',
-        value: '(Blank)',
-        color: 'red',
-      },
-      {
         title: '% Completed',
         value: '(Blank)',
         color: 'brown',
+      },
+      {
+        title: 'Outstanding Amount',
+        value: '(Blank)',
+        color: 'red',
       },
     ];
     return data;
