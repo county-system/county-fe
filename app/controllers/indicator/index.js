@@ -5,7 +5,7 @@ import { inject as service } from '@ember/service';
 import RSVP from 'rsvp';
 import { later } from '@ember/runloop';
 
-export default class IndicatorKpiController extends Controller {
+export default class IndicatorIndexController extends Controller {
   @service store;
   @tracked modelData = this.model;
   @tracked dropdown = this.dropdownData();

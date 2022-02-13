@@ -20,10 +20,12 @@
 
       </div>
       <div class="user-info">
-        <span class="user-name">Jere
-          <strong>Apalia</strong>
+        {{log me.user}}
+        <span class="user-name">{{me.user.firstName}}
+          <strong>{{me.user.lastName}}</strong>
         </span>
-        <span class="user-role">Administrator</span>
+        {{!-- <span class="user-role">Administrator</span> --}}
+        <span class="user-role">{{me.user.role}}</span>
         <span class="user-status">
           <i class="fa fa-circle"></i>
           <span>Online</span>

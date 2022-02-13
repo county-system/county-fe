@@ -38,8 +38,5 @@ Router.map(function () {
     this.route('metrics');
   });
 
-  this.route('indicator', function () {
-    this.route('kpi');
-    this.route('mande');
-  });
+  this.route('indicator', function () {});
 });

@@ -1,68 +1,148 @@
-<div class="row">
-    <div class="col-xl-2 col-md-4 col-sm-6">
-        <div class="card text-center">
-            <div class="card-body">
-                <div class="badge-circle badge-circle-lg badge-circle-light-info mx-auto my-1">
-                    <i class="bx bx-edit-alt font-medium-5"></i>
-                </div>
-                <p class="text-muted mb-0 line-ellipsis">New Posts</p>
-                <h2 class="mb-0">48</h2>
-            </div>
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">
+            <h4>Basic Tab</h4>
+            <p>Table containing Key Performance and M&#38;E Outcome Indicators </p>
         </div>
     </div>
-    <div class="col-xl-2 col-md-4 col-sm-6">
-        <div class="card text-center">
-            <div class="card-body">
-                <div class="badge-circle badge-circle-lg badge-circle-light-warning mx-auto my-1">
-                    <i class="bx bx-file font-medium-5"></i>
+    <div class="card-body">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="kpi-tab" data-toggle="tab" href="#kpi" aria-controls="kpi" role="tab"
+                    aria-selected="true">
+                    <i class="bx bx-kpi align-middle"></i>
+                    <span class="align-middle">{{uppercase "kpi"}}</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="mande-tab" data-toggle="tab" href="#mande" aria-controls="mande" role="tab"
+                    aria-selected="false">
+                    <i class="bx bx-kpi align-middle"></i>
+                    <span class="align-middle">M&#38;E</span>
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="kpi" aria-labelledby="kpi-tab" role="tabpanel">
+                <div>
+                    <p class="green">{{uppercase "key performance Indicators"}}</p>
+                    <div class="input-group mb-2">
+                        <select class="form-select" {{on "change" this.dropdownValue value="target.value" }}
+                            class="form-select" aria-label="Default select example">
+                            <option selected>Choose Department</option>
+                            {{#each dropdown as |dt|}}
+                            <option value={{dt}}>{{dt}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <Table @model={{this.modelData}} />
+                        </div>
+                    </div>
+
                 </div>
-                <p class="text-muted mb-0 line-ellipsis">Attached Files</p>
-                <h2 class="mb-0">17</h2>
             </div>
-        </div>
-    </div>
-    <div class="col-xl-2 col-md-4 col-sm-6">
-        <div class="card text-center">
-            <div class="card-body">
-                <div class="badge-circle badge-circle-lg badge-circle-light-danger mx-auto my-1">
-                    <i class="bx bx-message font-medium-5"></i>
+            <div class="tab-pane" id="mande" aria-labelledby="mande-tab" role="tabpanel">
+                <div>
+                    <p class="green">M&#38;E OUTCOME INDICATORS</p>
+                    {{svg-jar "table"}}
+                    {{svg-jar "pdf"}}
+                    {{!--
+                    <BsButton @defaultText="Download" @pendingText="Downloading..." @resolvedText="Download complete!"
+                        @onClick={{action "download" "pdf" }} class="text-white bg-green" />
+                    {{svg-jar "word"}}
+                    <BsButton @defaultText="Download" @pendingText="Downloading..." @resolvedText="Download complete!"
+                        @onClick={{action "download" "word" }} class="text-white bg-green" />
+                    {{svg-jar "excel"}}
+                    <BsButton @defaultText="Download" @pendingText="Downloading..." @resolvedText="Download complete!"
+                        @onClick={{action "download" "excel" }} class="text-white bg-green" /> --}}
                 </div>
-                <p class="text-muted mb-0 line-ellipsis">Comments</p>
-                <h2 class="mb-0">29</h2>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-2 col-md-4 col-sm-6">
-        <div class="card text-center">
-            <div class="card-body">
-                <div class="badge-circle badge-circle-lg badge-circle-light-primary mx-auto my-1">
-                    <i class="bx bx-money font-medium-5"></i>
-                </div>
-                <p class="text-muted mb-0 line-ellipsis">Sales</p>
-                <h2 class="mb-0">72</h2>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-2 col-md-4 col-sm-6">
-        <div class="card text-center">
-            <div class="card-body">
-                <div class="badge-circle badge-circle-lg badge-circle-light-success mx-auto my-1">
-                    <i class="bx bx-purchase-tag font-medium-5"></i>
-                </div>
-                <p class="text-muted mb-0 line-ellipsis">Purchase</p>
-                <h2 class="mb-0">65</h2>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-2 col-md-4 col-sm-6">
-        <div class="card text-center">
-            <div class="card-body">
-                <div class="badge-circle badge-circle-lg badge-circle-light-danger mx-auto my-1">
-                    <i class="bx bx-shopping-bag font-medium-5"></i>
-                </div>
-                <p class="text-muted mb-0 line-ellipsis">Order</p>
-                <h2 class="mb-0">40</h2>
             </div>
         </div>
     </div>
 </div>
+<script>
+    $('#myTab a').on('click', function (e) {
+        e.preventDefault()
+        $(this).tab('show active')
+    })
+</script>
+
+<style>
+    .page-wrapper .page-content>div {
+        padding: 10px 20px;
+    }
+
+    .card .card-header {
+        position: relative;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    .card-header:first-child {
+        border-radius: calc(0.267rem - 0px) calc(0.267rem - 0px) 0 0;
+    }
+
+    .card-header {
+        padding: 1.4rem 1.7rem;
+        margin-bottom: 0;
+        background-color: transparent;
+        border-bottom: 0 solid #DFE3E7;
+    }
+
+    .nav.nav-tabs {
+        margin-bottom: 1rem;
+        border-bottom-color: #EDEDED;
+    }
+
+    .nav.nav-tabs .nav-item {
+        padding-bottom: 0.8rem;
+        position: relative;
+    }
+
+    .nav.nav-tabs .nav-item,
+    .nav.nav-pills .nav-item {
+        margin-right: 0.8rem;
+    }
+
+    .nav.nav-tabs .nav-item .nav-link.active,
+    .nav.nav-pills .nav-item .nav-link.active {
+        box-shadow: 0 2px 4px 0 rgb(90 141 238 / 50%);
+    }
+
+    .nav.nav-tabs .nav-item .nav-link,
+    .nav.nav-pills .nav-item .nav-link {
+        border-radius: 0.267rem;
+    }
+
+    .nav-tabs .nav-link,
+    .nav-pills .nav-link {
+        background-color: #F2F4F4;
+        color: #475F7B;
+    }
+
+    .nav-tabs .nav-link,
+    .nav-pills .nav-link {
+        background-color: #F2F4F4;
+        color: #475F7B;
+    }
+
+    .nav.nav-tabs .nav-item .nav-link i,
+    .nav.nav-pills .nav-item .nav-link i {
+        margin-right: 0.2rem;
+    }
+</style>

@@ -3,7 +3,6 @@ import { set } from '@ember/object';
 import colorLib from '@kurkle/color';
 import { tracked } from '@glimmer/tracking';
 
-
 export default class DashboardController extends Controller {
   @tracked totalReports = 0;
   @tracked totalUsers = 0;
@@ -28,7 +27,6 @@ export default class DashboardController extends Controller {
 
   themeColors = [this.$primary, this.$warning];
   // var themeColors = [ '#5A8DEE, '#FDAC41', $danger, $success, $info, $label_color];
-
 
   doughnutchartOptions = {
     responsive: true,
