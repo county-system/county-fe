@@ -1,89 +1,67 @@
 {{page-title "Maps"}}
 {{outlet}}
 
-{{!--
-<iframe src="https://www.google.com/maps/d/embed?mid=190sjggB_7ADukXxy8fytp0Bqut77secD&ehbc=2E312F" width="1600"
-  height="990"></iframe>
---}}
+
 <div class="alerts-container">
   {{#each this.flashMessages.queue as |flash|}}
   <FlashMessage @flash={{flash}} />
   {{/each}}
 </div>
-{{!--
-TODO: Maps linked via navigation tabs at the top(for now 2 links)
-TODO: Search map(filter by Ward)
-TODO: View map under search map filter by ward and data type(population, education, ) --}}
-
-
-<div class="row" style='{{if maps this.myStyle}}'>
+<div class="row">
   <div class="col-md-9 col-lg-9">
+    <div class="card">
 
-    <GMap @lat={{london.lat}}
-      @lng={{london.lng}} @zoom={{8}}
-      @styles={{this.myStyle}}
-      class="ember-google-map-cover"
-      @scrollwheel={{false}}
-      @panControl={{false}}
-      @streetViewControl={{false}}
-      @gestureHandling="greedy"
-      @disableDefaultUI={{true}}
-      @zoomControl={{false}}
-      @fullscreenControl={{true}} as |g|>
+      <GMap @lat={{london.lat}} @lng={{london.lng}} @zoom={{8}} @styles={{this.myStyle}} class="ember-google-map-cover"
+        @scrollwheel={{false}} @panControl={{false}} @streetViewControl={{false}} @gestureHandling="greedy"
+        @disableDefaultUI={{true}} @zoomControl={{false}} @fullscreenControl={{true}} as |g|>
 
-      {{#each this.filteredLocation key="id" as |location id |}}
+        {{#each this.filteredLocation key="id" as |location id |}}
 
-      <g.marker
-        @lat={{location.lat}}
-        @lng={{location.lng}}
-        {{!-- @onClick={{toggle "markerTooltipOpen" this}} --}}
-        @onClick={{fn this.handleOnClick location}}
-        as |m|>
-          <m.infoWindow
-            @isOpen={{location.active}}
-            @onCloseclick={{fn (mut location.active) false}}>
+        <g.marker @lat={{location.lat}} @lng={{location.lng}} {{!-- @onClick={{toggle "markerTooltipOpen" this}} --}}
+          @onClick={{fn this.handleOnClick location}} as |m|>
+          <m.infoWindow @isOpen={{location.active}} @onCloseclick={{fn (mut location.active) false}}>
             {{log location.active}}
-            <div id= {{id}} class="text-center">
+            <div id={{id}} class="text-center">
               <div>Name: {{location.name}} </div>
               <div>Name: {{location.lat}} </div>
             </div>
           </m.infoWindow>
 
-      </g.marker>
-      {{/each}}
-    </GMap>
+        </g.marker>
+        {{/each}}
+      </GMap>
+    </div>
   </div>
 
   <div class="col-md-3 col-lg-3">
-    <div id="myDropdown" class="dropdown">
+    {{!-- <div id="myDropdown" class="dropdown">
       <div class="dropdown-content">
         <Input placeholder='Search' id="dropdownMenuButton" class="form-control search-input dropdown-toggle"
-          autocomplete="on" @click="searchLoading=false" @insert-newline="enter"
-          @bubbles="false" type="text" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" {{on "keyup" (action "change")}} />
+          autocomplete="on" @click="searchLoading=false" @insert-newline="enter" @bubbles="false" type="text"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" {{on "keyup" (action "change" )}} />
         {{#if this.filterFunction.isLoaded}}
         {{#each this.filterFunction as |obj|}}
         <li>
           <hr class="dropdown-divider" />
         </li>
         <div class="dropdown-item">
-          {{!-- <LinkTo @route="kpi" @model={{obj.id}} class="chapter-title"> --}}
-            <div class="search chapter-title">
-              {{obj}}
-            </div>
-            {{!--
-          </LinkTo> --}}
+          <div class="search chapter-title">
+            {{obj}}
+          </div>
         </div>
         {{/each}}
         {{/if}}
       </div>
-      {{!-- {{log this.filterFunction}} --}}
-    </div>
+    </div> --}}
     <BsButtonGroup @class="btn-group-vertical" @value={{buttonGroupValue}} @type="radio" @onChange={{this.filterBy}} as
       |bg|>
       <div class="list-group">
-        <bg.button class="green bg-green-hover list-group-item list-group-item-action" @value="all">SHOW ALL</bg.button>
+        <bg.button class="green bg-green-hover list-group-item list-group-item-action" @value="all">SHOW ALL
+        </bg.button>
         {{#each this.filterOptions as |option|}}
-        <bg.button class="green bg-green-hover list-group-item list-group-item-action" @value={{option}}>{{option}}
+        <div class="dropdown-divider mb-0"></div>
+        <bg.button class="green bg-green-hover text-wrap list-group-item list-group-item-action" @value={{option}}>
+          {{option}}
         </bg.button>
         {{/each}}
       </div>

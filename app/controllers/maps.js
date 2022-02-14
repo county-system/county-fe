@@ -50,10 +50,6 @@ export default class MapsController extends Controller {
     this.flashMessages.info(message);
   }
 
-  get myStyle() {
-    return 'padding: 0 !important;margin-right: 1px;';
-  }
-
   london = {
     lat: 3.278959,
     lng: 35.4661995,
