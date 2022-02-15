@@ -29,13 +29,15 @@
       {{/if}}
     </a>
     <div class="dropdown-menu dropdown-menu-right pb-0">
+      {{#if this.session.isAuthenticated}}
       {{#link-to "admin" class="dropdown-item"}}<i class="bx bx-power-off mr-50"></i> Admin{{/link-to}}
       {{#link-to "maps" class="dropdown-item"}}<i class="bx bx-power-off mr-50"></i> Maps{{/link-to}}
       {{#link-to "projects" class="dropdown-item"}}<i class="bx bx-power-off mr-50"></i> Projects{{/link-to}}
-
-
       <div class="dropdown-divider mb-0"></div>
-      {{#link-to "login" class="dropdown-item"}}<i class="bx bx-power-off mr-50"></i> Logout{{/link-to}}
+      <span {{on "click" me.logout }}><i class="bx bx-power-off mr-50"></i> Logout</span>
+      {{else}}
+      {{#link-to "login" class="dropdown-item"}}<i class="bx bx-power-off mr-50"></i> Login{{/link-to}}
+      {{/if}}
 
     </div>
   </li>
