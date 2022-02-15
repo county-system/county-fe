@@ -1,0 +1,179 @@
+/* card without shadow*/
+.no-card-shadow .card {
+    box-shadow: none;
+}
+
+/*    card css    */
+/*---------------*/
+.card {
+    margin-bottom: 2.2rem;
+    box-shadow: -8px 12px 18px 0 rgba(25, 42, 70, 0.13);
+    -webkit-transition: all 0.3s ease-in-out, background 0s, color 0s, border-color 0s;
+    transition: all 0.3s ease-in-out, background 0s, color 0s, border-color 0s;
+}
+
+.card .table-responsive .table-bordered {
+    /* bootstrap table bordered css override inside card */
+    border: 1px solid #DFE3E7;
+}
+
+.card .text-ellipsis {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card .card {
+    box-shadow: none !important;
+}
+
+.card .card-subtitle {
+    color: #828D99;
+    font-weight: 400;
+}
+
+.card .card-title {
+    font-weight: normal;
+    letter-spacing: 0.05rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    text-transform: capitalize;
+}
+
+.card .card-bordered {
+    border: 0 solid #DFE3E7;
+}
+
+.card .card-img {
+    border-radius: 0.267rem;
+}
+
+.card.card-fullscreen {
+    display: block;
+    z-index: 9999;
+    position: fixed;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    overflow: auto;
+}
+
+.card .card-img-overlay {
+    border-radius: 0.267rem;
+    text-overflow: ellipsis;
+}
+
+.card .card-img-overlay.bg-overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.card .card-img-overlay p,
+.card .card-img-overlay .card-text,
+.card .card-img-overlay .card-title {
+    color: #FFFFFF;
+}
+
+.card .card-header {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: 0;
+    border: solid 1px #DFE3E7;
+    padding: 1rem 1.7rem;
+    border-radius: 0.267rem !important;
+    font-size: 1.2rem;
+    font-family: 'Rubik', Helvetica, Arial, serif;
+    cursor: pointer;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-bottom: 1px solid #DFE3E7 !important;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.card .card-header .card-title {
+    margin-bottom: 0;
+}
+
+.card .card-header+.card-content>.card-body:first-of-type,
+.card .card-header+.card-body {
+    padding-top: 0;
+}
+
+.card .heading-elements li:not(:first-child) a,
+.card .heading-elements-toggle li:not(:first-child) a {
+    margin-left: 8px;
+}
+
+.card .heading-elements a.btn,
+.card .heading-elements-toggle a.btn {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.card .heading-elements a[data-action='collapse'] i,
+.card .heading-elements-toggle a[data-action='collapse'] i {
+    -webkit-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+    display: inline-block;
+}
+
+.card .heading-elements a[data-action='collapse'].rotate i,
+.card .heading-elements-toggle a[data-action='collapse'].rotate i {
+    -webkit-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+
+.card .card-footer {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: #475F7B;
+    padding: 1rem 1.9rem;
+    font-family: 'Rubik', Helvetica, Arial, serif;
+}
+
+
+
+/*   Collapse and Accordion  */
+/*--------------------------*/
+.card {
+    margin-bottom: 0.71rem;
+    box-shadow: none;
+    border-radius: 0.267rem !important;
+}
+
+
+
+.card-header i {
+    margin-right: 1rem;
+}
+
+.card.open {
+    /* open class for shadow and border-radius of card */
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1) !important;
+    border-radius: 0.267rem !important;
+}

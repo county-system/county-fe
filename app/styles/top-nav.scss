@@ -23,3 +23,30 @@ button .btn {
     z-index: 1 !important;
     top: -30px !important;
 }
+
+li>a.nav-link {
+    color: #727E8C;
+  }
+
+  .user-nav {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    float: left;
+  }
+
+  .user-name {
+    display: inline-block;
+    line-height: 1.2;
+    font-size: smaller;
+  }
