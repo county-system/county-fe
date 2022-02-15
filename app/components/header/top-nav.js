@@ -18,4 +18,8 @@ export default class HeaderTopNavComponent extends Component {
   toggleSidebarPin() {
     this.isSidebarPinned = !this.isSidebarPinned;
   }
+  @action
+  logout() {
+    this.me.logout();
+  }
 }

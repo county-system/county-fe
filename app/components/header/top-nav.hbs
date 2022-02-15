@@ -34,7 +34,7 @@
       {{#link-to "maps" class="dropdown-item"}}<i class="bx bx-power-off mr-50"></i> Maps{{/link-to}}
       {{#link-to "projects" class="dropdown-item"}}<i class="bx bx-power-off mr-50"></i> Projects{{/link-to}}
       <div class="dropdown-divider mb-0"></div>
-      <span {{on "click" me.logout }}><i class="bx bx-power-off mr-50"></i> Logout</span>
+      <a href="" class="dropdown-item" {{on "click" logout }}><i class="bx bx-power-off mr-50"></i> Logout</a>
       {{else}}
       {{#link-to "login" class="dropdown-item"}}<i class="bx bx-power-off mr-50"></i> Login{{/link-to}}
       {{/if}}

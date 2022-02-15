@@ -6,9 +6,11 @@ export default class IndexRoute extends Route {
   @inject router;
   @inject session;
 
-  beforeModel() {
+  async beforeModel(transition) {
     if (this.me.user) {
       this.transitionTo('dash');
+    } else {
+      this.session.requireAuthentication(transition, 'login');
     }
   }
 }

@@ -4,8 +4,7 @@ import { inject } from '@ember/service';
 export default class LoginRoute extends Route {
   @inject me;
 
-  beforeModel() {
-    console.log(this.me.user);
+  async beforeModel() {
     if (this.me.user) {
       this.transitionTo('dash');
     }
