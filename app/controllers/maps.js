@@ -24,16 +24,6 @@ export default class MapsController extends Controller {
     this.searchQuery = evt;
   }
 
-  // @action
-  // clickTooltip() {
-  //   this.setState({ markerTooltipOpen: !this.state.markerTooltipOpen });
-  // }
-
-  // @action
-  // closeWindow() {
-  //   this.setState({ markerTooltipOpen: false });
-  // }
-
   get filterFunction() {
     // let url = `${config.backend.BACKEND_API}/api/v2/search/chapter?q=${this.searchQuery}`;
     // return load(fetch(url).then((data) => data.json()));
@@ -69,16 +59,13 @@ export default class MapsController extends Controller {
   }
 
   @action
-  handleOnClick(location) {
-    location.active = !location.active;
-    console.log(location.id, location.active);
-    return location.active;
+  handleOnClick(id) {
+    return this.mapData.forEach((data) => {
+      if (data.id == id) {
+        data.active = true;
+      }
+    });
   }
-
-  // @action
-  // flashMessageThrottle(message) {
-  //   throttle(this, 'send', 'flashMessage', message, 300, true);
-  // }
 
   get filterOptions() {
     const dropdown = [];
