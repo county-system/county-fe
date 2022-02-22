@@ -1,65 +1,67 @@
 {{page-title "Filter"}}
 {{outlet}}
 
-{{bread-crumbs tagName="ol" outputStyle="bootstrap" linkable=true crumbClass="breadcrumb-item" linkClass="breadcrumb-link"}}
+{{bread-crumbs tagName="ol" outputStyle="bootstrap" linkable=true crumbClass="breadcrumb-item"
+linkClass="breadcrumb-link"}}
+<h3 class="green">{{uppercase "COUNTY PROJECTS ALLOCATION"}}</h3>
+<div class="row pt-3 pb-3">
 
-<div>
-    <h3 class="mb-4 green">{{uppercase "COUNTY PROJECTS ALLOCATION"}}</h3>
-    <div class="row">
-        <div class="col">
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Choose Department</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
-        </div>
+    <div class="col-md-12">
+        <select class="form-select" {{on "change" this.dropdownValueDepartment }} class="form-select"
+            aria-label="Default select example">
+            <option value="all" selected>Choose Department</option>
+            {{#each departmentDropdown as |dt|}}
+            <option value={{dt}}>{{dt}}</option>
+            {{/each}}
+        </select>
     </div>
-    <div class="row mt-3">
-        <div class="col">
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Choose Ward</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
-        </div>
+    {{ log modelData }}
+    {{#if secondOption}}
+    <div class="col-md-12 mt-4">
+        <select class="form-select" {{on "change" this.dropdownValueWard }} class="form-select"
+            aria-label="Default select example">
+            <option value="all" selected>Choose Ward</option>
+            {{#each wardDropdown as |dt|}}
+            <option value={{dt}}>{{dt}}</option>
+            {{/each}}
+        </select>
     </div>
-    <div class="row mt-5">
-        <div class="col-md-4 text-center">
-            <a href="/projects/1">
-                {{svg-jar "school" width='120px' height='120px'}}
-                <p class="card-label green">School</p>
-            </a>
-        </div>
-        <div class="col-md-4 text-center">
-            <a href="/projects/1">
-                {{svg-jar "water" width='120px' height='120px'}}
-                <p class="card-label green">Water Resources</p>
-            </a>
-        </div>
-        <div class="col-md-4 text-center">
-            <a href="/projects/1">
-                {{svg-jar "structures" width='120px' height='120px'}}
-                <p class="card-label green">Structures</p>
-            </a>
-        </div>
-
-        <div class="col-md-4 text-center">
-            {{svg-jar "road" width='120px' height='120px'}}
-            <p class="card-label">Road</p>
-        </div>
-        <div class="col-md-4 text-center">
-            {{svg-jar "community" width='120px' height='120px'}}
-            <p class="card-label">Community Developments</p>
-        </div>
-        <div class="col-md-4 text-center">
-            {{svg-jar "resource" width='120px' height='120px'}}
-            <p class="card-label">Resource</p>
-        </div>
+    {{/if}}
+</div>
+<div class="row mt-5">
+    <div class="col-md-4 text-center">
+        <a href="/projects/1">
+            {{svg-jar "school" width='120px' height='120px'}}
+            <p class="card-label green">School</p>
+        </a>
+    </div>
+    <div class="col-md-4 text-center">
+        <a href="/projects/1">
+            {{svg-jar "water" width='120px' height='120px'}}
+            <p class="card-label green">Water Resources</p>
+        </a>
+    </div>
+    <div class="col-md-4 text-center">
+        <a href="/projects/1">
+            {{svg-jar "structures" width='120px' height='120px'}}
+            <p class="card-label green">Structures</p>
+        </a>
     </div>
 
-    <div class="fixed-bottom d-flex flex-row-reverse">
-        <a href="/projects" class="mr-5 mb-5"> {{svg-jar "back_button"}}</a>
+    <div class="col-md-4 text-center">
+        {{svg-jar "road" width='120px' height='120px'}}
+        <p class="card-label">Road</p>
     </div>
+    <div class="col-md-4 text-center">
+        {{svg-jar "community" width='120px' height='120px'}}
+        <p class="card-label">Community Developments</p>
+    </div>
+    <div class="col-md-4 text-center">
+        {{svg-jar "resource" width='120px' height='120px'}}
+        <p class="card-label">Resource</p>
+    </div>
+</div>
+
+<div class="fixed-bottom d-flex flex-row-reverse">
+    <a href="/projects" class="mr-5 mb-5"> {{svg-jar "back_button"}}</a>
 </div>

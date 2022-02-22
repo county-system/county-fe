@@ -2,7 +2,7 @@
 {{outlet}}
 
 <div class="row border-1">
-    <div class="col-md-9 col-lg-9 col-sm-12 col-xl-12">
+    <div class="col-xl-9 col-md-12 col-lg-8">
         <div class="card">
             <div class="card-body">
                 <div class="height-800" style="height: 300px;">
@@ -15,7 +15,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-3 col-lg-3 col-sm-6 col-xl-6">
+    <div class="col-xl-3 col-md-12 col-lg-4">
         <div class="card">
             <div class="card-header bg-white">
                 <h4 class="card-title">Reports Status</h4>
@@ -51,6 +51,20 @@
                         </div>
                     </div>
                 </div>
+                <div class="d-flex mb-75">
+                    <div class="avatar bg-rgba-danger m-0 mr-75">
+                        <div class="avatar-content">
+                            <i class="bx bx-check text-danger"></i>
+                        </div>
+                    </div>
+                    <div class="activity-progress flex-grow-1">
+                        <small class="text-muted d-inline-block mb-50">Water and Sanitation</small>
+                        <small class="float-right">$8,125</small>
+                        <div class="progress progress-bar-primary progress-sm">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="44" style="width:44%"></div>
+                        </div>
+                    </div>
+                </div>
                 <div class="d-flex activity-content">
                     <div class="avatar bg-rgba-warning m-0 mr-75">
                         <div class="avatar-content">
@@ -76,6 +90,36 @@
                         <small class="text-muted d-inline-block mb-50">Water and Sanitation</small>
                         <small class="float-right">$8,125</small>
                         <div class="progress progress-bar-primary progress-sm">
+                            <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="44" style="width:44%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex mb-75">
+                    <div class="avatar bg-rgba-danger m-0 mr-75">
+                        <div class="avatar-content">
+                            <i class="bx bx-check text-danger"></i>
+                        </div>
+                    </div>
+                    <div class="activity-progress flex-grow-1">
+                        <small class="text-muted d-inline-block mb-50">Water and Sanitation</small>
+                        <small class="float-right">$8,125</small>
+                        <div class="progress progress-bar-primary progress-sm">
+                            <div class="progress-bar bg-brown" role="progressbar" aria-valuenow="44" style="width:44%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex mb-75">
+                    <div class="avatar bg-rgba-danger m-0 mr-75">
+                        <div class="avatar-content">
+                            <i class="bx bx-check text-danger"></i>
+                        </div>
+                    </div>
+                    <div class="activity-progress flex-grow-1">
+                        <small class="text-muted d-inline-block mb-50">Water and Sanitation</small>
+                        <small class="float-right">$8,125</small>
+                        <div class="progress progress-bar-primary progress-sm">
                             <div class="progress-bar" role="progressbar" aria-valuenow="44" style="width:44%"></div>
                         </div>
                     </div>
@@ -84,55 +128,41 @@
         </div>
     </div>
 </div>
-<div class="row mb-4 mt-2">
-    <div class="col-md-9 col-lg-9">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card text-center shadow bg-white rounded">
-                    <div class="card-body">
-                        <h5 class="card-title ">Total Submitted Reports</h5>
-                        <h1 class="card-text green">
-                            72
-                        </h1>
-                    </div>
+<div class="row">
+    <div class="col-xl-9 col-md-12 col-lg-8">
+        <div class="card-columns">
+            <div class="card position-static bg-lighten-1 text-center">
+                <div class="card-body">
+                    <h4 class="card-title">Total Submitted Reports</h4>
+                    <p class="card-text green">72</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card text-center shadow bg-white rounded">
-                    <div class="card-body">
-                        <h5 class="card-title">Pending Reports</h5>
-                        <h1 class="card-text green">
-                            5
-                        </h1>
-                    </div>
+            <div class="card position-static bg-lighten-1 text-center">
+                <div class="card-body">
+                    <h4 class="card-title text-dark">Total Submitted Reports</h4>
+                    <p class="card-text green">9</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card text-center shadow bg-white rounded">
-                    <div class="card-body">
-                        <h5 class="card-title">Awaiting Approval</h5>
-                        <h1 class="card-text green">
-                            6
-                        </h1>
-                    </div>
+            <div class="card position-static bg-lighten-1 text-center">
+                <div class="card-body">
+                    <h4 class="card-title text-dark">Awaiting Approval</h4>
+                    <p class="card-text green">7</p>
                 </div>
             </div>
-            <div class="col-md-12">
-                <div class="card text-center shadow bg-white rounded">
-                    <div class="card-body">
-                        <div class="height-800" style="height: 300px;">
-                            {{ember-chart
-                            type="line"
-                            data=this.lineChartData
-                            options=this.lineChartOptions
-                            }}
-                        </div>
-                    </div>
+        </div>
+        <div class="card position-static text-center  bg-lighten-1 text-center">
+            <div class="card-body">
+                <div class="height-800" style="height: 275px;">
+                    {{ember-chart
+                    type="line"
+                    data=this.lineChartData
+                    options=this.lineChartOptions
+                    }}
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-md-3 col-lg-3 col-xl-3 mb-4">
+    <div class="col-xl-3 col-md-12 col-lg-4">
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center mb-3">
                 <h5 class="card-title mb-0">Latest Update</h5>
