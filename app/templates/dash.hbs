@@ -1,35 +1,188 @@
 {{page-title "Dash"}}
 {{outlet}}
-<div>
-    <h4 class="mb-4 text-muted">System Navigation </h4>
-    <div class="row">
-        <div class="col-md-3 col-lg-2 align-middle">
-            <span>{{ svg-jar "projects" height="110" width="90"}}</span>
-            <p class="text-muted">PROJECTS</p>
-            <LinkTo @route="projects">
-                <a href="#" class="bg-green btn btn-lg">view</a>
-            </LinkTo>
-        </div>
-        <div class="col-md-3 col-lg-2 align-middle">
-            <span>{{ svg-jar "kpis" height="110" width="80"}}</span>
-            <p class="text-muted">KPI'S</p>
-            <LinkTo @route="indicator">
-                <a href="#" class="bg-green btn btn-lg">view</a>
-            </LinkTo>
-        </div>
-        <div class="col-md-3 col-lg-2">
-            <span>{{ svg-jar "county_health" height="110" width="90"}}</span>
-            <p class="text-muted">SYSTEMS HEALTH</p>
-            <LinkTo @route="systems" @disabled={{true}}>
-                <a href="#" class="bg-green btn btn-lg">view</a>
-            </LinkTo>
-        </div>
-        <div class="col-md-3 col-lg-2">
-            <span>{{ svg-jar "mon_and_eval" height="110" width="100"}}</span>
-            <p class="text-muted">M&#38;E UPDATE</p>
-            <LinkTo @route="indicator">
-                <a href="#" class="bg-green btn btn-lg">view</a>
-            </LinkTo>
+<h4 class="mb-4 text-muted">System Navigation </h4>
+<div class="row">
+    <div class="col">
+        <div class="card" style="height: 200px;">
+            <div class="card-body d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <div class="avatar bg-rgba-primary m-0 p-25 mr-75 mr-xl-2">
+                        <div class="avatar-content">
+                            <i class="bx bx-user text-primary font-medium-2"></i>
+                        </div>
+                    </div>
+                    <div class="total-amount">
+                        <h5 class="mb-0">$38,566</h5>
+                        <p class="text-muted">Projects Completion Status</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <div class="card-columns">
+        <div class="col">
+            <div class="card">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <div class="avatar bg-rgba-primary m-0 p-25 mr-75 mr-xl-2">
+                            <div class="avatar-content">
+                                <i class="bx bx-user text-primary font-medium-2"></i>
+                            </div>
+                        </div>
+                        <div class="total-amount">
+                            <h5 class="mb-0">$38,566</h5>
+                            <p class="text-muted">Projects Completion Status</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <div class="avatar bg-rgba-primary m-0 p-25 mr-75 mr-xl-2">
+                            <div class="avatar-content">
+                                <i class="bx bx-user text-primary font-medium-2"></i>
+                            </div>
+                        </div>
+                        <div class="total-amount">
+                            <h5 class="mb-0">$38,566</h5>
+                            <p class="text-muted">Projects Completion Status</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <div class="avatar bg-rgba-primary m-0 p-25 mr-75 mr-xl-2">
+                            <div class="avatar-content">
+                                <i class="bx bx-user text-primary font-medium-2"></i>
+                            </div>
+                        </div>
+                        <div class="total-amount">
+                            <h5 class="mb-0">$38,566</h5>
+                            <p class="text-muted">Projects Completion Status</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <div class="avatar bg-rgba-primary m-0 p-25 mr-75 mr-xl-2">
+                            <div class="avatar-content">
+                                <i class="bx bx-user text-primary font-medium-2"></i>
+                            </div>
+                        </div>
+                        <div class="total-amount">
+                            <h5 class="mb-0">$38,566</h5>
+                            <p class="text-muted">Projects Completion Status</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <div class="avatar bg-rgba-primary m-0 p-25 mr-75 mr-xl-2">
+                            <div class="avatar-content">
+                                <i class="bx bx-user text-primary font-medium-2"></i>
+                            </div>
+                        </div>
+                        <div class="total-amount">
+                            <h5 class="mb-0">$38,566</h5>
+                            <p class="text-muted">Projects Completion Status</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <div class="avatar bg-rgba-warning m-0 p-25 mr-75 mr-xl-2">
+                            <div class="avatar-content">
+                                <i class="bx bx-dollar text-warning font-medium-2"></i>
+                            </div>
+                        </div>
+                        <div class="total-amount">
+                            <h5 class="mb-0">$53,659</h5>
+                            <p class="text-muted">Projects Completion Status</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Horizontal Chart -->
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body pl-0">
+                <div class="height-300">
+                    {{ember-chart
+                    type="horizontalBar"
+                    data=this.horizontalChartData
+                    options=this.horizontalChartOptions
+                    }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Vertical Chart -->
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body pl-0">
+                <div class="height-300">
+                    {{ember-chart
+                    type="bar"
+                    data=this.horizontalChartData
+                    options=this.horizontalChartOptions
+                    }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3 col-lg-3 align-items-center">
+        <span>{{ svg-jar "projects" height="110" width="90"}}</span>
+        <p class="text-muted">PROJECTS</p>
+        <LinkTo @route="projects">
+            <a href="#" class="bg-green btn btn-lg">view</a>
+        </LinkTo>
+    </div>
+    <div class="col-md-3 col-lg-3 align-middle">
+        <span>{{ svg-jar "kpis" height="110" width="80"}}</span>
+        <p class="text-muted">KPI'S</p>
+        <LinkTo @route="indicator">
+            <a href="#" class="bg-green btn btn-lg">view</a>
+        </LinkTo>
+    </div>
+    <div class="col-md-3 col-lg-3">
+        <span>{{ svg-jar "county_health" height="110" width="90"}}</span>
+        <p class="text-muted">SYSTEMS HEALTH</p>
+        <LinkTo @route="systems" @disabled={{true}}>
+            <a href="#" class="bg-green btn btn-lg">view</a>
+        </LinkTo>
+    </div>
+    <div class="col-md-3 col-lg-3">
+        <span>{{ svg-jar "mon_and_eval" height="110" width="100"}}</span>
+        <p class="text-muted">M&#38;E UPDATE</p>
+        <LinkTo @route="indicator">
+            <a href="#" class="bg-green btn btn-lg">view</a>
+        </LinkTo>
+    </div>
+
 </div>

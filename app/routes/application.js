@@ -5,7 +5,7 @@ export default class ApplicationRoute extends Route {
   @service session;
   @service me;
   @service router;
-  
+
   async beforeModel(transition) {
     this.session.requireAuthentication(transition, 'login');
   }
