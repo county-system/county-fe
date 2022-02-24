@@ -79,10 +79,6 @@
                                 </el.control>
                             </form.element>
                         </div>
-
-                        {{!--
-                        <BsButton class="btn btn-primary form-control mb-2" @type="submit" @defaultText="Create"
-                            @buttonType="submit" /> --}}
                     </BsForm>
                     {{/with}}
                 </modal.body>
@@ -122,9 +118,13 @@
             </div>
         </div>
     </div>
-
 </div>
-
+<div class="row mb-4">
+    <div class="col">
+        <Input placeholder='Search by email' class="form-control mr-sm-2 search-input" @autocomplete="on"
+            @click="searchLoading=false" @key-up="handleChange" @insert-newline="enter" @bubbles="false" type="text" />
+    </div>
+</div>
 <div class="row">
     <div class="col">
         <div class="table-responsive table-responsive-md table-responsive-sm">
@@ -132,44 +132,17 @@
                 <thead>
                     <tr>
                         <th scope="col"></th>
-                        <th scope="col"></th>
                         <th scope="col">Name</th>
                         <th scope="col">Email</th>
                         <th scope="col">Department</th>
                         <th scope="col">Joined</th>
                         <th scope="col">Role</th>
-                        <th scope="col">Account Status</th>
+                        {{!-- <th scope="col">Account Status</th> --}}
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="switch">
-                                <label class="custom-control-label" for="switch"></label>
-                            </div>
-                        </td>
-                        <td>
-                            <img class="img-responsive img-rounded rounded-circle" width="50" src="/images/prof.jpeg"
-                                alt="User picture">
-                        </td>
-                        <td>Jere</td>
-                        <td>Apalia</td>
-                        <td>@mdo</td>
-                        <td>3 months ago</td>
-                        <td>SuperAdmin</td>
-                        <td>
-                            <a href="#">View Profile</a>
-                        </td>
-                    </tr>
                     {{#each users as |user index|}}
                     <tr>
-                        <td>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="switch{{index}}">
-                                <label class="custom-control-label" for="switch{{index}}"></label>
-                            </div>
-                        </td>
                         <td>
                             {{#if user.image}}
                             <img class="img-responsive img-rounded  rounded-circle" alt="" src={{user.image}}
@@ -179,14 +152,14 @@
                                 role="presentation">
                             {{/if}}
                         </td>
-                        <td>{{ user.name}}</td>
+                        <td>{{ user.firstName}} {{ user.lastName}}</td>
                         <td>{{ user.email}}</td>
                         <td>{{ user.department}}</td>
                         <td>{{member-since user.createdAt}}</td>
                         <td>{{user.role}}</td>
-                        <td>
-                            <a href="#">View Profile</a>
-                        </td>
+                        {{!-- <td>
+                            <LinkTo @route="admin.edit" type="button" class="btn bg-green">View Profile</LinkTo>
+                        </td> --}}
                     </tr>
                     {{/each}}
                 </tbody>

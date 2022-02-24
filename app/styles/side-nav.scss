@@ -230,12 +230,12 @@ body {
 .sidebar-wrapper .sidebar a:active,
 .sidebar-wrapper .sidebar a:hover,
 .sidebar-wrapper .sidebar a i:active,
-.sidebar-wrapper .sidebar a i:hover {
+.sidebar-wrapper .sidebar a i:hover,
+.sidebar-wrapper .sidebar .active,
+.sidebar-wrapper .sidebar a .active {
   background-color: #56983F;
   color: white !important;
 }
-
-
 
 .sidebar-wrapper .sidebar-menu .header-menu span {
   font-weight: bold;

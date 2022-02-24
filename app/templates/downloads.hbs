@@ -20,17 +20,17 @@
             <span>{{svg-jar "pdf"}}{{svg-jar "word"}}{{svg-jar "excel"}}</span>
         </div>
     </div>
-    <div class="row mt-5">
-        <div class="col">
+    <div class="row mt-2 shadow">
+        <div class="col m-4">
             <h4 class="mb-2">Suggest a document we can upload here</h4>
-            <BsForm @formLayout="vertical" @model={{this}} @onSubmit={{action "submit" }} as |form|>
+            <BsForm @formLayout="vertical" @model={{this.model}} @onSubmit={{action "submit" }} as |form|>
                 <form.element @controlType="text" @property="name" as |el|>
-                    <el.control placeholder="full name" required />
+                    <el.control placeholder={{me.user.name}} readonly="readonly" />
                 </form.element>
                 <form.element @controlType="email" @property="email" as |el|>
-                    <el.control placeholder="Email" required />
+                    <el.control placeholder={{me.user.email}} readonly="readonly" />
                 </form.element>
-                <form.element @controlType="textarea" @property="textarea" />
+                <form.element @controlType="textarea" @property="textarea" required="true"/>
                 <form.submitButton class="bg-green">Submit</form.submitButton>
             </BsForm>
         </div>

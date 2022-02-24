@@ -1,0 +1,9 @@
+{{page-title "Edit"}}
+{{outlet}}
+
+<BsForm @model={{this.model}} @onSubmit={{this.submit}} as |form|>
+    <form.element @controlType="email" @property="email" as |el|>
+        <el.control placeholder={{me.user.email}} required="true" />
+    </form.element>
+    <form.submitButton>Submit</form.submitButton>
+</BsForm>

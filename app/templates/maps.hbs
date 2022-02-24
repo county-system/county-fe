@@ -20,7 +20,6 @@
         <g.marker @lat={{location.lat}} @lng={{location.lng}} {{!-- @onClick={{toggle "markerTooltipOpen" this}} --}}
           @onClick={{fn this.handleOnClick id}} as |m|>
           <m.infoWindow @isOpen={{location.active}} @onCloseclick={{fn (mut location.active) false}}>
-            {{log this.markerTooltipOpen}}
             {{#if location.active}}
             <div id={{id}} class="text-center">
               <div>Name: {{location.name}} </div>

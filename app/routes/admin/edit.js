@@ -1,16 +1,15 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 
-export default class AdminIndexRoute extends Route {
+export default class AdminEditRoute extends Route {
   @service session;
   @service me;
 
   async beforeModel(transition) {
     this.session.requireAuthentication(transition, 'login');
   }
+
   async model() {
-    return this.store.findAll('user');
-    // const response = await fetch('/api/v2/admin.json');
-    // return await response.json();
+    return await this.store.find('user', this.me.id);
   }
 }

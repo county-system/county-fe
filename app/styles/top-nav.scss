@@ -7,6 +7,18 @@
     font-weight: 700;
 }
 
+.navbar .dropdown-menu a:active,
+.navbar .dropdown-menu a:hover,
+.navbar .dropdown-menu i:active,
+.navbar .dropdown-menu i:hover,
+.navbar .dropdown-menu .active,
+.navbar .dropdown-menu a .active {
+  background-color: #56983F;
+  color: white !important;
+}
+
+
+
 .btn svg {
     fill: #ffffff;
 }
@@ -26,9 +38,9 @@ button .btn {
 
 li>a.nav-link {
     color: #727E8C;
-  }
+}
 
-  .user-nav {
+.user-nav {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -43,10 +55,10 @@ li>a.nav-link {
     -ms-flex-align: end;
     align-items: flex-end;
     float: left;
-  }
+}
 
-  .user-name {
+.user-name {
     display: inline-block;
     line-height: 1.2;
     font-size: smaller;
-  }
+}

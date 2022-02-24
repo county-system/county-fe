@@ -14,15 +14,18 @@ export default class AdminIndexController extends Controller {
   LoginValidations = LoginValidations;
   @tracked modelData = this.model;
   @tracked modal1 = false;
-  // @tracked totalUsers = this.modelData.users.length;
   @tracked totalUsers = 100;
+  @tracked searchLoading = false;
+  @tracked searchQuery = '';
 
   get allUsers() {
     return this.model.filter((user) => user.id);
   }
 
   get users() {
-    return this.modelData;
+    return this.modelData.filter((user) => {
+      return user.email.toLowerCase().includes(this.searchQuery.toLowerCase());
+    });
   }
 
   constructor() {
@@ -30,9 +33,10 @@ export default class AdminIndexController extends Controller {
     this.userLoginForm = new UserForm();
   }
 
-  // get modelData() {
-  //   return this.model;
-  // }
+  @action
+  async handleChange(evt) {
+    this.searchQuery = evt;
+  }
 
   @action
   createUser(model) {
