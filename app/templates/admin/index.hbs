@@ -157,9 +157,17 @@
                         <td>{{ user.department}}</td>
                         <td>{{member-since user.createdAt}}</td>
                         <td>{{user.role}}</td>
-                        {{!-- <td>
-                            <LinkTo @route="admin.edit" type="button" class="btn bg-green">View Profile</LinkTo>
-                        </td> --}}
+                        <td>
+                            {{ember-inline-edit
+                            showEditButton=true
+                            editButtonClass="btn btn-sm btn-primary"
+                            saveButtonClass="btn btn-sm btn-success"
+                            cancelButtonClass="btn btn-sm btn-danger"
+                            editorClass="form-control"
+                            value=(readonly user.role)
+                            onSave=(action (mut value))
+                            }}
+                        </td>
                     </tr>
                     {{/each}}
                 </tbody>
