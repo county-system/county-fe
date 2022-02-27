@@ -40,4 +40,5 @@ Router.map(function () {
   });
 
   this.route('indicator', function () {});
+  this.route('calendar');
 });

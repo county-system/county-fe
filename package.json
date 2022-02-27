@@ -94,6 +94,8 @@
     "edition": "octane"
   },
   "dependencies": {
+    "moment": "^2.29.1",
+    "tui-calendar": "^1.15.3",
     "webpack": "^5.64.4"
   }
 }
