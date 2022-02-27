@@ -94,12 +94,19 @@ export default class CalendarController extends Controller {
       }
       html.push(' ' + schedule.title);
     }
-
     return html.join('');
   }
 
   constructor(...args) {
     super(...args);
+    set(this, 'calendarInfo', new CalendarInfo());
+    set(this, 'calendar', new CalendarInfo());
+  }
+
+  @action
+  calendarInit(e) {
+    this.calendar = e;
+    // this.calendar.setOptions({
     this.calendar = new Calendar('#calendar', {
       defaultView: 'month',
       useCreationPopup: true,
@@ -156,6 +163,66 @@ export default class CalendarController extends Controller {
         isReadOnly: true, // schedule is read-only
       },
     ]);
+  }
+
+  @action
+  findCalendar(id) {
+    var found;
+
+    this.calendars.forEach(function (calendar) {
+      if (calendar.id === id) {
+        found = calendar;
+      }
+    });
+
+    return found || this.calendars[0];
+  }
+
+  @action
+  calendarToggle(e) {
+    const checked = e.target.checked;
+    const calendarId = e.target.value;
+    var viewAll = document.querySelector('.sidebar-calendars-item input');
+    let allCheckedCalendars = true;
+    // const calendar = this.calendars.find(
+    //   (calendar) => calendar.id === calendarId
+    // );
+    const calendarElements = Array.prototype.slice.call(
+      document.querySelectorAll('#calendarList input')
+    );
+
+    this.calendar.setOptions({
+      calendars: this.calendars,
+    });
+    this.calendars.checked = checked;
+
+    if (calendarId === 'all') {
+      allCheckedCalendars = checked;
+
+      calendarElements.forEach(function (input) {
+        var span = input.parentNode;
+        input.checked = checked;
+        span.style.backgroundColor = checked
+          ? span.style.borderColor
+          : 'transparent';
+      });
+
+      this.calendars.forEach(function (calendar) {
+        calendar.checked = checked;
+      });
+    } else {
+      this.findCalendar(calendarId).checked = checked;
+
+      allCheckedCalendars = calendarElements.every(function (input) {
+        return input.checked;
+      });
+
+      if (allCheckedCalendars) {
+        viewAll.checked = true;
+      } else {
+        viewAll.checked = false;
+      }
+    }
   }
 
   @action

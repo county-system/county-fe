@@ -1,25 +1,71 @@
 {{page-title "Calendar"}}
 {{outlet}}
-<div class="container">
+<div class="calendar-wrapper position-relative">
 
   <div class="row">
-    <div class="col">
-      {{!-- <div id="menu">
-        <span id="menu-navi">
-          <button type="button" class="btn btn-default btn-sm move-today" data-action="move-today">Today</button>
-          <button type="button" class="btn btn-default btn-sm move-day" data-action="move-prev">
-            <i class="calendar-icon ic-arrow-line-left" data-action="move-prev"></i>
+    <div class="col-md-2">
+
+
+      <!-- calendar app overlay -->
+      <div class="app-content-overlay"></div>
+      <!-- calendar sidebar start -->
+      <div id="sidebar" class="sidebar ps">
+        <div class="sidebar-new-schedule">
+          <!-- create new schedule button -->
+          <button id="btn-new-schedule" type="button" class="btn btn-primary btn-block sidebar-new-schedule-btn">
+            New schedule
           </button>
-          <button type="button" class="btn btn-default btn-sm move-day" data-action="move-next">
-            <i class="calendar-icon ic-arrow-line-right" data-action="move-next"></i>
-          </button>
-        </span>
-        <span id="renderRange" class="render-range"></span>
-      </div> --}}
-      <div>
-        {{did-insert this.calendar}}
+        </div>
+        <!-- sidebar calendar labels -->
+        <div id="sidebar-calendars" class="sidebar-calendars">
+          <div class="sidebar-calendars-item">
+            <!-- view All checkbox -->
+            {{!-- <div class="checkbox">
+              <input type="checkbox" class="checkbox-input tui-full-calendar-checkbox-square" id="checkbox1" value="all"
+                checked="">
+              <label for="checkbox1">View all</label>
+            </div> --}}
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" value="all" id="checkbox1" checked="true">
+              <label class="form-check-label" for="checkbox1">View all</label>
+            </div>
+          </div>
+          <div id="calendarList" class="sidebar-calendars-d1">
+            {{#each calendars as |calendar|}}
+            <!-- calendar checkbox -->
+            <div class="sidebar-calendars-item">
+              <label style="">
+                <input type="checkbox" class="tui-full-calendar-checkbox-round" value="{{calendar.id}}" checked="false">
+                <span style="border-color: {{calendar.borderColor}}; background-color: {{calendar.bgColor}};"></span>
+                <span>{{calendar.name}}</span>
+              </label>
+            </div>
+
+            {{/each}}
+
+          </div>
+        </div>
+        <!-- / sidebar calendar labels -->
+        <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+          <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+        </div>
+        <div class="ps__rail-y" style="top: 0px; right: 0px;">
+          <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+        </div>
       </div>
-      <div id="calendar"></div>
+      <!-- calendar sidebar end -->
+    </div>
+    <div class="col-md-10">
+      <!-- calendar view start  -->
+      <div class="calendar-view">
+        <div class="calendar-action d-flex align-items-center flex-wrap">
+          <!-- sidebar toggle button for small sceen -->
+          <button class="btn btn-icon sidebar-toggle-btn">
+            <i class="bx bx-menu font-large-1"></i>
+          </button>
+        </div>
+        <div id="calendar" {{did-insert this.calendarInit}}></div>
+      </div>
     </div>
   </div>
 </div>

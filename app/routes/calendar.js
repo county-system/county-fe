@@ -5,7 +5,7 @@ export default class CalendarRoute extends Route {
   @service me;
   @service session;
 
-  async beforeModel(transition) {
-    this.session.requireAuthentication(transition, 'login');
-  }
+  // async beforeModel(transition) {
+  //   this.session.requireAuthentication(transition, 'login');
+  // }
 }
