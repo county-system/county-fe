@@ -27,36 +27,7 @@ export default class CalendarController extends Controller {
   @service me;
   @service session;
 
-  @tracked calendars = [
-    {
-      bgColor: '#56983F',
-      borderColor: '#56983F',
-      checked: true,
-      color: '#000000',
-      dragBgColor: '#56983F',
-      id: '1',
-      name: 'Post',
-    },
-    {
-      bgColor: '#e06000',
-      borderColor: '#e06000',
-      checked: true,
-      color: '#e06000',
-      dragBgColor: '#e06000',
-      id: '2',
-      name: 'Events',
-    },
-    {
-      bgColor: '#803f98',
-      borderColor: '#803f98',
-      checked: true,
-      color: '#803f98',
-      dragBgColor: '#803f98',
-      id: '3',
-      name: 'Offer',
-    },
-  ];
-  @tracked calendarInfo = new CalendarInfo();
+  @tracked calendars = this.getCalendars;
   @tracked calendar = null;
   @tracked calendarId = null;
   @tracked calendarName = null;
@@ -71,6 +42,8 @@ export default class CalendarController extends Controller {
   @tracked calendarIsPending = false;
   @tracked calendarIsNew = false;
   @tracked calendarIsEdit = false;
+  @tracked calendarInfo = new CalendarInfo();
+  @tracked calendarEvents = this.getCalendarEvents;
 
   @action
   getTimeTemplate(schedule, isAllDay) {
@@ -97,16 +70,9 @@ export default class CalendarController extends Controller {
     return html.join('');
   }
 
-  constructor(...args) {
-    super(...args);
-    set(this, 'calendarInfo', new CalendarInfo());
-    set(this, 'calendar', new CalendarInfo());
-  }
-
   @action
   calendarInit(e) {
     this.calendar = e;
-    // this.calendar.setOptions({
     this.calendar = new Calendar('#calendar', {
       defaultView: 'month',
       useCreationPopup: true,
@@ -142,33 +108,111 @@ export default class CalendarController extends Controller {
       useSchedulePopup: true,
       useTimezones: true,
     });
-    this.calendar.createSchedules([
-      {
-        id: '1',
-        calendarId: '1',
-        title: 'schedule',
-        category: 'time',
-        dueDateClass: '',
-        start: '2022-02-22T22:30:00+09:00',
-        end: '2022-02-24T02:30:00+09:00',
-      },
-      {
-        id: '2',
-        calendarId: '1',
-        title: 'second schedule',
-        category: 'time',
-        dueDateClass: '',
-        start: '2022-02-24T17:30:00+09:00',
-        end: '2022-02-26T17:30:00+09:00',
-        isReadOnly: true, // schedule is read-only
-      },
-    ]);
+    this.calendar.createSchedules(this.calendarEvents);
   }
 
   @action
-  findCalendar(id) {
-    var found;
+  calendarToggle(e) {
+    const checked = e.target.checked;
+    const calendarId = e.target.value;
 
+    // var viewAll = document.querySelector('.sidebar-calendars-item input');
+
+    if (checked && calendarId === 'all') {
+      this.calendars.forEach(function (calendar) {
+        calendar.checked = true;
+      });
+      //   viewAll.checked = true;
+    } else if (calendarId) {
+      const calendar = this.getCalendar(calendarId);
+      calendar.checked = checked;
+      calendar.bgColor = 'transparent';
+      this.calendar.toggleSchedules(calendarId, !calendar.checked, false);
+    }
+
+    this.calendar.render(true);
+
+    //     let allCheckedCalendars = true;
+    //     // const calendar = this.calendars.find(
+    //     //   (calendar) => calendar.id === calendarId
+    //     // );
+    //     const calendarElements = Array.prototype.slice.call(
+    //       document.querySelectorAll('#calendarList input')
+    //     );
+
+    //     this.calendar.setOptions({
+    //       calendars: this.calendars,
+    //     });
+    //     this.calendars.checked = checked;
+
+    //     if (calendarId === 'all') {
+    //       allCheckedCalendars = checked;
+
+    //       calendarElements.forEach(function (input) {
+    //         var span = input.parentNode;
+    //         input.checked = checked;
+    //         span.style.backgroundColor = checked
+    //           ? span.style.borderColor
+    //           : 'transparent';
+    //       });
+
+    //       this.calendars.forEach(function (calendar) {
+    //         calendar.checked = checked;
+    //       });
+    //     } else {
+    //       this.findCalendar(calendarId).checked = checked;
+
+    //       allCheckedCalendars = calendarElements.every(function (input) {
+    //         return input.checked;
+    //       });
+
+    //       if (allCheckedCalendars) {
+    //         viewAll.checked = true;
+    //       } else {
+    //         viewAll.checked = false;
+    //       }
+    //     }
+  }
+
+  get getCalendars() {
+    // const response = await this.me.getCalendars();
+    // this.calendars = response.data;
+    const calendars = [
+      {
+        bgColor: '#56983F',
+        borderColor: '#56983F',
+        checked: true,
+        color: '#000000',
+        dragBgColor: '#56983F',
+        id: '1',
+        name: 'Post',
+      },
+      {
+        bgColor: '#e06000',
+        borderColor: '#e06000',
+        checked: true,
+        color: '#e06000',
+        dragBgColor: '#e06000',
+        id: '2',
+        name: 'Events',
+      },
+      {
+        bgColor: '#803f98',
+        borderColor: '#803f98',
+        checked: true,
+        color: '#803f98',
+        dragBgColor: '#803f98',
+        id: '3',
+        name: 'Offer',
+      },
+    ];
+    return calendars;
+  }
+  @action
+  async getCalendar(id) {
+    // const response = await this.me.getCalendar(id);
+    // this.calendarInfo = response.data;
+    let found;
     this.calendars.forEach(function (calendar) {
       if (calendar.id === id) {
         found = calendar;
@@ -176,64 +220,6 @@ export default class CalendarController extends Controller {
     });
 
     return found || this.calendars[0];
-  }
-
-  @action
-  calendarToggle(e) {
-    const checked = e.target.checked;
-    const calendarId = e.target.value;
-    var viewAll = document.querySelector('.sidebar-calendars-item input');
-    let allCheckedCalendars = true;
-    // const calendar = this.calendars.find(
-    //   (calendar) => calendar.id === calendarId
-    // );
-    const calendarElements = Array.prototype.slice.call(
-      document.querySelectorAll('#calendarList input')
-    );
-
-    this.calendar.setOptions({
-      calendars: this.calendars,
-    });
-    this.calendars.checked = checked;
-
-    if (calendarId === 'all') {
-      allCheckedCalendars = checked;
-
-      calendarElements.forEach(function (input) {
-        var span = input.parentNode;
-        input.checked = checked;
-        span.style.backgroundColor = checked
-          ? span.style.borderColor
-          : 'transparent';
-      });
-
-      this.calendars.forEach(function (calendar) {
-        calendar.checked = checked;
-      });
-    } else {
-      this.findCalendar(calendarId).checked = checked;
-
-      allCheckedCalendars = calendarElements.every(function (input) {
-        return input.checked;
-      });
-
-      if (allCheckedCalendars) {
-        viewAll.checked = true;
-      } else {
-        viewAll.checked = false;
-      }
-    }
-  }
-
-  @action
-  async getCalendars() {
-    const response = await this.me.getCalendars();
-    this.calendars = response.data;
-  }
-  @action
-  async getCalendar(id) {
-    const response = await this.me.getCalendar(id);
-    this.calendarInfo = response.data;
   }
 
   @action
@@ -256,10 +242,31 @@ export default class CalendarController extends Controller {
     this.calendars = this.calendars.filter((calendar) => calendar.id !== id);
   }
 
-  @action
-  async getCalendarEvents(id) {
-    const response = await this.me.getCalendarEvents(id);
-    this.calendar = response.data;
+  get getCalendarEvents() {
+    // const response = await this.me.getCalendarEvents();
+    // this.calendar = response.data;
+    const events = [
+      {
+        id: '1',
+        calendarId: '1',
+        title: 'schedule',
+        category: 'time',
+        dueDateClass: '',
+        start: '2022-02-22T22:30:00+09:00',
+        end: '2022-02-24T02:30:00+09:00',
+      },
+      {
+        id: '2',
+        calendarId: '1',
+        title: 'second schedule',
+        category: 'time',
+        dueDateClass: '',
+        start: '2022-02-24T17:30:00+09:00',
+        end: '2022-02-26T17:30:00+09:00',
+        isReadOnly: true,
+      },
+    ];
+    return events;
   }
 
   @action
