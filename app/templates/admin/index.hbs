@@ -156,11 +156,8 @@
                         <td>{{ user.email}}</td>
                         <td>{{ user.department}}</td>
                         <td>{{member-since user.createdAt}}</td>
-                        <td>{{user.role}}</td>
                         <td>
                             {{ember-inline-edit
-                            showEditButton=true
-                            editButtonClass="btn btn-sm btn-primary"
                             saveButtonClass="btn btn-sm btn-success"
                             cancelButtonClass="btn btn-sm btn-danger"
                             editorClass="form-control"
