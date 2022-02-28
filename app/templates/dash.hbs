@@ -156,33 +156,64 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-3 col-lg-3 align-items-center">
-        <span>{{ svg-jar "projects" height="110" width="90"}}</span>
-        <p class="text-muted">PROJECTS</p>
-        <LinkTo @route="projects">
-            <a href="#" class="bg-green btn btn-lg">view</a>
-        </LinkTo>
+    <!-- Horizontal Chart -->
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body pl-0">
+                <div class="height-300">
+                    {{ember-chart
+                    type="pie"
+                    data=this.horizontalChartData
+                    }}
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-3 col-lg-3 align-middle">
-        <span>{{ svg-jar "kpis" height="110" width="80"}}</span>
-        <p class="text-muted">KPI'S</p>
-        <LinkTo @route="indicator">
-            <a href="#" class="bg-green btn btn-lg">view</a>
-        </LinkTo>
+    <!-- Vertical Chart -->
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body pl-0">
+                <div class="height-300">
+                    {{ember-chart
+                    type="pie"
+                    data=this.horizontalChartData
+                    }}
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-3 col-lg-3">
-        <span>{{ svg-jar "county_health" height="110" width="90"}}</span>
-        <p class="text-muted">SYSTEMS HEALTH</p>
-        <LinkTo @route="systems" @disabled={{true}}>
-            <a href="#" class="bg-green btn btn-lg">view</a>
-        </LinkTo>
+</div>
+<div class="row">
+    <div class="col">
+        <div class="d-flex flex-row">
+            <div class="p-2 mx-auto">
+                <span>{{ svg-jar "projects" height="110" width="90"}}</span>
+                <p class="text-muted">PROJECTS</p>
+                <LinkTo @route="projects">
+                    <a href="#" class="bg-green btn btn-lg">view</a>
+                </LinkTo>
+            </div>
+            <div class="p-2 mx-auto">
+                <span>{{ svg-jar "kpis" height="110" width="80"}}</span>
+                <p class="text-muted">KPI'S</p>
+                <LinkTo @route="indicator">
+                    <a href="#" class="bg-green btn btn-lg">view</a>
+                </LinkTo>
+            </div>
+            <div class="p-2 mx-auto">
+                <span>{{ svg-jar "county_health" height="110" width="90"}}</span>
+                <p class="text-muted">SYSTEMS HEALTH</p>
+                <LinkTo @route="systems" @disabled={{true}}>
+                    <a href="#" class="bg-green btn btn-lg">view</a>
+                </LinkTo>
+            </div>
+            <div class="p-2 mx-auto">
+                <span>{{ svg-jar "mon_and_eval" height="110" width="100"}}</span>
+                <p class="text-muted">M&#38;E UPDATE</p>
+                <LinkTo @route="indicator">
+                    <a href="#" class="bg-green btn btn-lg">view</a>
+                </LinkTo>
+            </div>
+        </div>
     </div>
-    <div class="col-md-3 col-lg-3">
-        <span>{{ svg-jar "mon_and_eval" height="110" width="100"}}</span>
-        <p class="text-muted">M&#38;E UPDATE</p>
-        <LinkTo @route="indicator">
-            <a href="#" class="bg-green btn btn-lg">view</a>
-        </LinkTo>
-    </div>
-
 </div>

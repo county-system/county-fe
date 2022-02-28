@@ -3,7 +3,7 @@
 <div class="calendar-wrapper position-relative">
 
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-3 col-xl-2 col-lg-3 col-sm-3">
 
 
       <!-- calendar app overlay -->
@@ -17,7 +17,7 @@
           </button>
         </div>
         <!-- sidebar calendar labels -->
-        <div id="sidebar-calendars" class="sidebar-calendars">
+        <div id="sidebar-calendars" class="sidebar-calendars mt-3">
           <div class="sidebar-calendars-item" onchange={{action "calendarToggle" }}>
             <div class="form-check">
               <input type="checkbox" class="form-check-input" value="all" id="checkbox1" checked="true">
@@ -40,13 +40,6 @@
 
             {{/each}}
 
-            <style>
-              .calendar-checkbox-round-false {
-                background-color: #fff;
-                border-color: 'transparent';
-              }
-            </style>
-
           </div>
         </div>
         <!-- / sidebar calendar labels -->
@@ -60,15 +53,17 @@
       <!-- calendar sidebar end -->
     </div>
     <div class="col-md-9">
-      <!-- calendar view start  -->
-      <div class="calendar-view">
-        <div class="calendar-action d-flex align-items-center flex-wrap">
-          <!-- sidebar toggle button for small sceen -->
-          <button class="btn btn-icon sidebar-toggle-btn">
-            <i class="bx bx-menu font-large-1"></i>
-          </button>
+      <div class="card">
+        <!-- calendar view start  -->
+        <div class="calendar-view">
+          <div class="calendar-action d-flex align-items-center flex-wrap">
+            <!-- sidebar toggle button for small sceen -->
+            <button class="btn btn-icon sidebar-toggle-btn">
+              <i class="bx bx-menu font-large-1"></i>
+            </button>
+          </div>
+          <div id="calendar" {{did-insert this.calendarInit}}></div>
         </div>
-        <div id="calendar" {{did-insert this.calendarInit}}></div>
       </div>
     </div>
   </div>
