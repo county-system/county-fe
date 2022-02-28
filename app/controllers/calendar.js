@@ -1,10 +1,15 @@
 import Controller from '@ember/controller';
+import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
+import { inject as service } from '@ember/service';
+
 import Calendar from 'tui-calendar'; /* ES6 */
 import 'tui-calendar/dist/tui-calendar.css';
-import { action, set } from '@ember/object';
-import { inject as service } from '@ember/service';
 import moment from 'moment';
-import { tracked } from '@glimmer/tracking';
+
+import Chance from 'chance';
+// Instantiate Chance so it can be used
+const chance = new Chance();
 
 class CalendarInfo {
   constructor() {
@@ -22,13 +27,36 @@ class CalendarInfo {
     this.isPending = false;
   }
 }
+
+class CalendarData {
+  constructor() {
+    this.id = chance.guid();
+    this.title = null;
+    this.isAllDay = false;
+    this.start = null;
+    this.end = null;
+    this.category = null;
+    this.dueDateClass = null;
+    this.color = null;
+    this.bgColor = null;
+    this.dragBgColor = null;
+    this.borderColor = null;
+    this.location = null;
+    this.calendarId = null;
+    this.createdAt = null;
+    this.updatedAt = null;
+  }
+}
 export default class CalendarController extends Controller {
   moment = moment;
   @service me;
+  @service store;
   @service session;
 
+  @tracked modelData = this.model;
+
   @tracked calendars = this.getCalendars;
-  @tracked calendar = null;
+  @tracked calendar;
   @tracked calendarId = null;
   @tracked calendarName = null;
   @tracked calendarColor = null;
@@ -43,7 +71,7 @@ export default class CalendarController extends Controller {
   @tracked calendarIsNew = false;
   @tracked calendarIsEdit = false;
   @tracked calendarInfo = new CalendarInfo();
-  @tracked calendarEvents = this.getCalendarEvents;
+  @tracked calendarEvents = this.getCalendarEvents();
 
   @action
   getTimeTemplate(schedule, isAllDay) {
@@ -109,20 +137,108 @@ export default class CalendarController extends Controller {
       useTimezones: true,
     });
     this.calendar.createSchedules(this.calendarEvents);
+    this.calendar.on('beforeCreateSchedule', (e) => {
+      const calendar = {
+        bgColor: '#56983F',
+        borderColor: '#56983F',
+        checked: true,
+        color: '#000000',
+        dragBgColor: '#56983F',
+        id: '3',
+        name: 'Post',
+      };
+      const schedule = {
+        title: e.title,
+        isAllDay: e.isAllDay,
+        start: e.start,
+        end: e.end,
+        category: e.isAllDay ? 'allday' : 'time',
+        dueDateClass: '',
+        color: calendar.color,
+        bgColor: calendar.bgColor,
+        dragBgColor: calendar.bgColor,
+        borderColor: calendar.borderColor,
+        location: e.location,
+      };
+      if (calendar) {
+        schedule.calendarId = calendar.id;
+        schedule.color = calendar.color;
+        schedule.bgColor = calendar.bgColor;
+        schedule.borderColor = calendar.borderColor;
+      }
+      this.calendar.createSchedules([schedule]);
+      console.log('schedule', schedule);
+      this.store.createRecord('calendar', schedule);
+      const model = this.store.createRecord('calendar', schedule);
+      model.save();
+    });
+    this.setRenderRangeText();
   }
 
+  @action
+  getDataAction(target) {
+    return target.dataset
+      ? target.dataset.action
+      : target.getAttribute('data-action');
+  }
+  @action
+  onClickNavigation(e) {
+    var action = this.getDataAction(e.target);
+    switch (action) {
+      case 'move-prev':
+        this.calendar.prev();
+        break;
+      case 'move-next':
+        this.calendar.next();
+        break;
+      case 'move-today':
+        this.calendar.today();
+        break;
+      default:
+        return;
+    }
+    this.setRenderRangeText();
+    // setSchedules();
+  }
+  @action
+  setRenderRangeText() {
+    const renderRange = document.getElementById('renderRange');
+    const options = this.calendar.getOptions();
+    const viewName = this.calendar.getViewName();
+    const html = [];
+    if (viewName === 'day') {
+      html.push(moment(this.calendar.getDate().getTime()).format('YYYY-MM-DD'));
+    } else if (
+      viewName === 'month' &&
+      (!options.month.visibleWeeksCount || options.month.visibleWeeksCount > 4)
+    ) {
+      html.push(moment(this.calendar.getDate().getTime()).format('YYYY-MM'));
+    } else {
+      html.push(
+        moment(this.calendar.getDateRangeStart().getTime()).format('YYYY-MM-DD')
+      );
+      html.push('-');
+      html.push(
+        moment(this.calendar.getDateRangeEnd().getTime()).format(' MM.DD')
+      );
+    }
+    renderRange.innerHTML = html.join('');
+  }
   @action
   calendarToggle(e) {
     const checked = e.target.checked;
     const calendarId = e.target.value;
 
-    // var viewAll = document.querySelector('.sidebar-calendars-item input');
-
     if (checked && calendarId === 'all') {
       this.calendars.forEach(function (calendar) {
         calendar.checked = true;
+        this.calendar.toggleSchedules(calendarId, true, false);
       });
-      //   viewAll.checked = true;
+    } else if (!checked && calendarId === 'all') {
+      this.calendars.forEach(function (calendar) {
+        calendar.checked = false;
+      });
+      this.calendar.toggleSchedules(calendarId, false, false);
     } else if (calendarId) {
       const calendar = this.getCalendar(calendarId);
       calendar.checked = checked;
@@ -131,47 +247,6 @@ export default class CalendarController extends Controller {
     }
 
     this.calendar.render(true);
-
-    //     let allCheckedCalendars = true;
-    //     // const calendar = this.calendars.find(
-    //     //   (calendar) => calendar.id === calendarId
-    //     // );
-    //     const calendarElements = Array.prototype.slice.call(
-    //       document.querySelectorAll('#calendarList input')
-    //     );
-
-    //     this.calendar.setOptions({
-    //       calendars: this.calendars,
-    //     });
-    //     this.calendars.checked = checked;
-
-    //     if (calendarId === 'all') {
-    //       allCheckedCalendars = checked;
-
-    //       calendarElements.forEach(function (input) {
-    //         var span = input.parentNode;
-    //         input.checked = checked;
-    //         span.style.backgroundColor = checked
-    //           ? span.style.borderColor
-    //           : 'transparent';
-    //       });
-
-    //       this.calendars.forEach(function (calendar) {
-    //         calendar.checked = checked;
-    //       });
-    //     } else {
-    //       this.findCalendar(calendarId).checked = checked;
-
-    //       allCheckedCalendars = calendarElements.every(function (input) {
-    //         return input.checked;
-    //       });
-
-    //       if (allCheckedCalendars) {
-    //         viewAll.checked = true;
-    //       } else {
-    //         viewAll.checked = false;
-    //       }
-    //     }
   }
 
   get getCalendars() {
@@ -191,7 +266,7 @@ export default class CalendarController extends Controller {
         bgColor: '#e06000',
         borderColor: '#e06000',
         checked: true,
-        color: '#e06000',
+        color: '#000000',
         dragBgColor: '#e06000',
         id: '2',
         name: 'Events',
@@ -223,88 +298,100 @@ export default class CalendarController extends Controller {
   }
 
   @action
-  async createCalendar() {
-    const response = await this.me.createCalendar(this.calendarInfo);
-    this.calendarInfo = new CalendarInfo();
-    this.calendars.push(response.data);
+  createNewSchedule(event) {
+    const useCreationPopup = true;
+    const start = event.start ? new Date(event.start.getTime()) : new Date();
+    const end = event.end
+      ? new Date(event.end.getTime())
+      : moment().add(1, 'hours').toDate();
+
+    if (useCreationPopup) {
+      this.calendar.openCreationPopup({
+        start: start,
+        end: end,
+      });
+    }
   }
+
+  //   @action
+  //   async createCalendar() {
+  //     const response = await this.me.createCalendar(this.calendarInfo);
+  //     this.calendarInfo = new CalendarInfo();
+  //     this.calendars.push(response.data);
+  //   }
+
+  //   @action
+  //   async updateCalendar() {
+  //     const response = await this.me.updateCalendar(this.calendarInfo);
+  //     this.calendarInfo = new CalendarInfo();
+  //     this.calendars.push(response.data);
+  //   }
+
+  //   @action
+  //   async deleteCalendar(id) {
+  //     this.calendars = this.calendars.filter((calendar) => calendar.id !== id);
+  //   }
 
   @action
-  async updateCalendar() {
-    const response = await this.me.updateCalendar(this.calendarInfo);
-    this.calendarInfo = new CalendarInfo();
-    this.calendars.push(response.data);
+  getCalendarEvents() {
+    const allData = this.store
+      .peekAll('calendar')
+      .filter((event) => event.id)
+      .map((event) => {
+        const dataModel = new CalendarData();
+        dataModel.id = event.id;
+        dataModel.title = event.title;
+        dataModel.isAllDay = event.isAllDay;
+        dataModel.start = event.start;
+        dataModel.end = event.end;
+        dataModel.category = event.isAllDay ? 'allday' : 'time';
+        dataModel.dueDateClass = '';
+        dataModel.color = event.color;
+        dataModel.bgColor = event.bgColor;
+        dataModel.dragBgColor = event.bgColor;
+        dataModel.borderColor = event.borderColor;
+        dataModel.location = event.location;
+        return dataModel;
+      });
+    return allData;
   }
 
-  @action
-  async deleteCalendar(id) {
-    // const response = await this.me.deleteCalendar(id);
-    this.calendars = this.calendars.filter((calendar) => calendar.id !== id);
-  }
+  //   @action
+  //   async createCalendarEvent(id) {
+  //     const response = await this.me.createCalendarEvent(id, this.calendar);
+  //     this.calendar = response.data;
+  //   }
 
-  get getCalendarEvents() {
-    // const response = await this.me.getCalendarEvents();
-    // this.calendar = response.data;
-    const events = [
-      {
-        id: '1',
-        calendarId: '1',
-        title: 'schedule',
-        category: 'time',
-        dueDateClass: '',
-        start: '2022-02-22T22:30:00+09:00',
-        end: '2022-02-24T02:30:00+09:00',
-      },
-      {
-        id: '2',
-        calendarId: '1',
-        title: 'second schedule',
-        category: 'time',
-        dueDateClass: '',
-        start: '2022-02-24T17:30:00+09:00',
-        end: '2022-02-26T17:30:00+09:00',
-        isReadOnly: true,
-      },
-    ];
-    return events;
-  }
+  //   @action
+  //   async updateCalendarEvent(id) {
+  //     const response = await this.me.updateCalendarEvent(id, this.calendar);
+  //     this.calendar = response.data;
+  //   }
 
-  @action
-  async createCalendarEvent(id) {
-    const response = await this.me.createCalendarEvent(id, this.calendar);
-    this.calendar = response.data;
-  }
+  //   @action
+  //   async deleteCalendarEvent(id) {
+  //     const response = await this.me.deleteCalendarEvent(id);
+  //     this.calendar = response.data;
+  //   }
 
-  @action
-  async updateCalendarEvent(id) {
-    const response = await this.me.updateCalendarEvent(id, this.calendar);
-    this.calendar = response.data;
-  }
+  //   @action
+  //   async getCalendarEvent(id) {
+  //     const response = await this.me.getCalendarEvent(id);
+  //     this.calendar = response.data;
+  //   }
 
-  @action
-  async deleteCalendarEvent(id) {
-    const response = await this.me.deleteCalendarEvent(id);
-    this.calendar = response.data;
-  }
+  //   @action
+  //   async getCalendarEventAttendees(id) {
+  //     const response = await this.me.getCalendarEventAttendees(id);
+  //     this.calendar = response.data;
+  //   }
 
-  @action
-  async getCalendarEvent(id) {
-    const response = await this.me.getCalendarEvent(id);
-    this.calendar = response.data;
-  }
-
-  @action
-  async getCalendarEventAttendees(id) {
-    const response = await this.me.getCalendarEventAttendees(id);
-    this.calendar = response.data;
-  }
-
-  @action
-  async createCalendarEventAttendee(id) {
-    const response = await this.me.createCalendarEventAttendee(
-      id,
-      this.calendar
-    );
-    this.calendar = response.data;
-  }
+  //   @action
+  //   async createCalendarEventAttendee(id) {
+  //     const response = await this.me.createCalendarEventAttendee(
+  //       id,
+  //       this.calendar
+  //     );
+  //     this.calendar = response.data;
+  //   }
 }

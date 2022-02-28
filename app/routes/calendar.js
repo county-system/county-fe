@@ -1,11 +1,17 @@
 import Route from '@ember/routing/route';
-import { inject as service } from '@ember/service';
+import { inject } from '@ember/service';
 
 export default class CalendarRoute extends Route {
-  @service me;
-  @service session;
+  @inject me;
+  @inject router;
+  @inject session;
+  @inject store;
 
-  async beforeModel(transition) {
+  beforeModel(transition) {
     this.session.requireAuthentication(transition, 'login');
+  }
+
+  async model() {
+    return await this.store.findAll('calendar', { reload: true });
   }
 }
