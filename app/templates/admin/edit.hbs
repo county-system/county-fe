@@ -1,9 +1,77 @@
 {{page-title "Edit"}}
 {{outlet}}
+{{log this.model}}
+<div class="row mt-5 align-items-center">
+    <div class="col-md-3 text-center mb-3">
+        <div class="avatar avatar-xl">
+            {{#if this.model.profileUri}}
+            <img class="img-responsive avatar-img img-rounded  rounded-circle" width="50" alt="avatar"
+                src={{this.model.profileUri}} role="presentation">
+            {{else}}
+            <img src="/images/avatar.png" alt="avatar" class="img-fluid rounded-circle" width="50" role="presentation">
+            {{/if}}
+        </div>
+    </div>
+    <div class="col">
+        <div class="row align-items-center">
+            <div class="col-md-7">
+                <h4 class="mb-1">{{this.model.lastName}}, {{this.model.firstName}}</h4>
+                <p class="small mb-3"><span class="badge badge-dark">Turkana, KE</span></p>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-7">
+                <p class="text-muted">
+                    {{this.model.department}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<hr class="my-4" />
 
-<BsForm @model={{this.model}} @onSubmit={{this.submit}} as |form|>
-    <form.element @controlType="email" @property="email" as |el|>
-        <el.control placeholder={{me.user.email}} required="true" />
+<BsForm @formLayout="vertical" @model={{this}} @onSubmit={{this.submit}} as |form|>
+    <div class="form-row">
+        <form.element class="form-group col-md-6" @controlType="firstName" @label="First Name" @property="text" as |el|>
+            <el.control placeholder={{this.model.firstName}} value={{this.model.firstName}}  required />
+        </form.element>
+        <form.element class="form-group col-md-6" @controlType="lastName" @label="Last Name" @property="text" as |el|>
+            <el.control placeholder="{{this.model.lastName}}" value={{this.model.lastName}} required />
+        </form.element>
+    </div>
+    <form.element @controlType="email" @label="Email" @property="email" as |el|>
+        <el.control placeholder="{{this.model.email}}" readonly />
     </form.element>
     <form.submitButton>Submit</form.submitButton>
 </BsForm>
+<form>
+    <hr class="my-4" />
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="inputPassword4">Old Password</label>
+                <input type="password" class="form-control" id="inputPassword5" />
+            </div>
+            <div class="form-group">
+                <label for="inputPassword5">New Password</label>
+                <input type="password" class="form-control" id="inputPassword5" />
+            </div>
+            <div class="form-group">
+                <label for="inputPassword6">Confirm Password</label>
+                <input type="password" class="form-control" id="inputPassword6" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <p class="mb-2">Password requirements</p>
+            <p class="small text-muted mb-2">To create a new password, you have to meet all of the
+                following requirements:</p>
+            <ul class="small text-muted pl-4 mb-0">
+                <li>Minimum 8 character</li>
+                <li>At least one special character</li>
+                <li>At least one number</li>
+                <li>Cant be the same as a previous password</li>
+            </ul>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Password</button>
+</form>

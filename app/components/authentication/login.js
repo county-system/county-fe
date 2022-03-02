@@ -16,7 +16,6 @@ export default class AuthenticationLoginComponent extends Component {
 
   @action
   flashMessage(message) {
-    console.log('message', message);
     // let message = (concat "Clicked: " location.lat ", " location.lng)
     this.flashMessages.errors(message);
   }
@@ -32,7 +31,6 @@ export default class AuthenticationLoginComponent extends Component {
       .catch((err) => {
         this.loading = false;
         if (err) {
-          console.log('Logging errors.......: ', err);
           const constraint = 'errors';
           const error_message = 'Wrong username or password';
           // model.addError(constraint, error_message);

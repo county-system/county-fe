@@ -35,8 +35,6 @@ export default class MapsController extends Controller {
 
   @action
   flashMessage(message) {
-    console.log('message', message);
-    // let message = (concat "Clicked: " location.lat ", " location.lng)
     this.flashMessages.info(message);
   }
 

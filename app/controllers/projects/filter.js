@@ -46,8 +46,6 @@ export default class ProjectsFilterController extends Controller {
   @action
   dropdownValueWard(event) {
     this.value = event?.target?.value;
-    console.log(this.value);
-
     this.modelData = this.modelData.filter((data) => {
       return data.ward == this.value;
     });

@@ -6,7 +6,7 @@ export default class LoginRoute extends Route {
 
   async beforeModel() {
     if (this.me.user) {
-      this.transitionTo('dash');
+      this.router.transitionTo('dash');
     }
   }
 

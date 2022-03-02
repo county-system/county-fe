@@ -167,7 +167,6 @@ export default class CalendarController extends Controller {
         schedule.borderColor = calendar.borderColor;
       }
       this.calendar.createSchedules([schedule]);
-      console.log('schedule', schedule);
       this.store.createRecord('calendar', schedule);
       const model = this.store.createRecord('calendar', schedule);
       model.save();

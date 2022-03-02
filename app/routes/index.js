@@ -8,7 +8,7 @@ export default class IndexRoute extends Route {
 
   async beforeModel(transition) {
     if (this.me.user) {
-      this.transitionTo('dash');
+      this.router.transitionTo('dash');
     } else {
       this.session.requireAuthentication(transition, 'login');
     }

@@ -9,7 +9,7 @@ export default class AdminEditRoute extends Route {
     this.session.requireAuthentication(transition, 'login');
   }
 
-  async model() {
-    return await this.store.find('user', this.me.id);
+  model(params) {
+    return this.store.find('user', params.id);
   }
 }

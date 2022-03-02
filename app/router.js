@@ -36,7 +36,7 @@ Router.map(function () {
   this.route('ward');
   this.route('admin', function () {
     this.route('metrics');
-    this.route('edit');
+    this.route('edit', { path: '/edit/:id' });
   });
 
   this.route('indicator', function () {});

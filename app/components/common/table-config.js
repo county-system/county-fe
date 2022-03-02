@@ -7,9 +7,6 @@ export default class CommonTableConfigComponent extends Component {
   @tracked model = this.model;
 
   get model() {
-    console.log(this.store.findRecord('kpi', 1));
-    console.log(this.store.model);
-
     return this.store.findRecord('kpi', 1);
   }
 }
