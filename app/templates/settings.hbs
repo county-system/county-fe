@@ -1,191 +1,76 @@
 {{page-title "Settings"}}
 {{outlet}}
-<div class="col-12 col-lg-11 col-xl-11 mx-auto">
-    <h2 class="h3 mb-4 page-title">Settings</h2>
-    <BsTab as |tab|>
-        <tab.pane @title="Profile">
-            <form>
-                <div class="row mt-5 align-items-center">
-                    <div class="col-md-3 text-center mb-5">
-                        <div class="avatar avatar-xl">
-                            <img src="/images/prof.jpeg" alt="..." class="avatar-img rounded-circle" />
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row align-items-center">
-                            <div class="col-md-7">
-                                <h4 class="mb-1">Jere, Apalia</h4>
-                                <p class="small mb-3"><span class="badge badge-dark">Turkana, KE</span></p>
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-md-7">
-                                <p class="text-muted">
-                                    Governor of Turkana, KE
-                                </p>
-                            </div>
-                            <div class="col">
-                                <p class="small mb-0 text-muted">Nec Urna Suscipit Ltd</p>
-                                <p class="small mb-0 text-muted">P.O. Box 464, 5975 1st Avenue</p>
-                                <p class="small mb-0 text-muted">(254)) 714-094-298</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr class="my-4" />
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="firstname">Firstname</label>
-                        <input type="text" id="firstname" class="form-control" placeholder="Jere" />
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="lastname">Lastname</label>
-                        <input type="text" id="lastname" class="form-control" placeholder="Apalia" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="jere.apalia@go.ke" />
-                </div>
-                <div class="form-group">
-                    <label for="inputAddress5">Address</label>
-                    <input type="text" class="form-control" id="inputAddress5"
-                        placeholder="P.O. Box 464, 30500 1st Avenue" />
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputCompany5">Company</label>
-                        <input type="text" class="form-control" id="inputCompany5"
-                            placeholder="Nec Urna Suscipit Ltd" />
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputState5">State</label>
-                        <select id="inputState5" class="form-control">
-                            <option selected="">Choose...</option>
-                            <option>...</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputZip5">Zip</label>
-                        <input type="text" class="form-control" id="inputZip5" placeholder="30500" />
-                    </div>
-                </div>
-                <hr class="my-4" />
-                <div class="row mb-4">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="inputPassword4">Old Password</label>
-                            <input type="password" class="form-control" id="inputPassword5" />
-                        </div>
-                        <div class="form-group">
-                            <label for="inputPassword5">New Password</label>
-                            <input type="password" class="form-control" id="inputPassword5" />
-                        </div>
-                        <div class="form-group">
-                            <label for="inputPassword6">Confirm Password</label>
-                            <input type="password" class="form-control" id="inputPassword6" />
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <p class="mb-2">Password requirements</p>
-                        <p class="small text-muted mb-2">To create a new password, you have to meet all of the
-                            following requirements:</p>
-                        <ul class="small text-muted pl-4 mb-0">
-                            <li>Minimum 8 character</li>
-                            <li>At least one special character</li>
-                            <li>At least one number</li>
-                            <li>Cant be the same as a previous password</li>
-                        </ul>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Save Change</button>
-            </form>
-        </tab.pane>
-        {{!-- <tab.pane @title="Notifications"> --}}
-        <tab.pane @title="">
-            <h5 class="mb-0 mt-5">Notifications Settings</h5>
-            <p>Select notification you want to receive</p>
-            <hr class="my-4" />
-            <strong class="mb-0">Security</strong>
-            <p>Control security alert you will be notified.</p>
-            <div class="list-group mb-5 shadow">
-                <div class="list-group-item">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <strong class="mb-0">Unusual activity notifications</strong>
-                            <p class="text-muted mb-0">Donec in quam sed urna bibendum tincidunt quis mollis mauris.</p>
-                        </div>
-                        <div class="col-auto">
-                            <div class="custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" id="alert1" checked="" />
-                                <span class="custom-control-label"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="list-group-item">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <strong class="mb-0">Unauthorized financial activity</strong>
-                            <p class="text-muted mb-0">Fusce lacinia elementum eros, sed vulputate urna eleifend nec.
-                            </p>
-                        </div>
-                        <div class="col-auto">
-                            <div class="custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" id="alert2" />
-                                <span class="custom-control-label"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="row mt-5 align-items-center">
+    <div class="col-md-3 text-center mb-3">
+        <div class="avatar avatar-xl">
+            {{#if this.model.profileUri}}
+            <img class="img-responsive avatar-img img-rounded  rounded-circle" width="50" alt="avatar"
+                src={{this.model.profileUri}} role="presentation">
+            {{else}}
+            <img src="/images/avatar.png" alt="avatar" class="img-fluid rounded-circle" width="50" role="presentation">
+            {{/if}}
+        </div>
+    </div>
+    <div class="col">
+        <div class="row align-items-center">
+            <div class="col-md-7">
+                <h4 class="mb-1">{{this.model.lastName}}, {{this.model.firstName}}</h4>
+                <p class="small mb-3"><span class="badge badge-dark">Turkana, KE</span></p>
             </div>
-            <hr class="my-4" />
-            <strong class="mb-0">System</strong>
-            <p>Please enable system alert you will get.</p>
-            <div class="list-group mb-5 shadow">
-                <div class="list-group-item">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <strong class="mb-0">Notify me about new features and updates</strong>
-                            <p class="text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="col-auto">
-                            <div class="custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" id="alert3" checked="" />
-                                <span class="custom-control-label"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="list-group-item">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <strong class="mb-0">Notify me by email for latest news</strong>
-                            <p class="text-muted mb-0">Nulla et tincidunt sapien. Sed eleifend volutpat elementum.</p>
-                        </div>
-                        <div class="col-auto">
-                            <div class="custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" id="alert4" checked="" />
-                                <span class="custom-control-label"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="list-group-item">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <strong class="mb-0">Notify me about tips on using account</strong>
-                            <p class="text-muted mb-0">Donec in quam sed urna bibendum tincidunt quis mollis mauris.</p>
-                        </div>
-                        <div class="col-auto">
-                            <div class="custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" id="alert5" />
-                                <span class="custom-control-label"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-7">
+                <p class="text-muted">
+                    {{this.model.department}}
+                </p>
             </div>
-        </tab.pane>
-    </BsTab>
+        </div>
+    </div>
 </div>
+<hr class="my-4" />
+
+<BsForm @formLayout="vertical" @model={{this}} @onSubmit={{this.submit}} as |form|>
+    <div class="form-row">
+        <form.element class="form-group col-md-6" @controlType="firstName" @label="First Name" @property="text" as |el|>
+            <el.control placeholder={{this.model.firstName}} value={{this.model.firstName}}  required />
+        </form.element>
+        <form.element class="form-group col-md-6" @controlType="lastName" @label="Last Name" @property="text" as |el|>
+            <el.control placeholder="{{this.model.lastName}}" value={{this.model.lastName}} required />
+        </form.element>
+    </div>
+    <form.element @controlType="email" @label="Email" @property="email" as |el|>
+        <el.control placeholder="{{this.model.email}}" readonly />
+    </form.element>
+    <form.submitButton>Submit</form.submitButton>
+</BsForm>
+<form>
+    <hr class="my-4" />
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="inputPassword4">Old Password</label>
+                <input type="password" class="form-control" id="inputPassword5" />
+            </div>
+            <div class="form-group">
+                <label for="inputPassword5">New Password</label>
+                <input type="password" class="form-control" id="inputPassword5" />
+            </div>
+            <div class="form-group">
+                <label for="inputPassword6">Confirm Password</label>
+                <input type="password" class="form-control" id="inputPassword6" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <p class="mb-2">Password requirements</p>
+            <p class="small text-muted mb-2">To create a new password, you have to meet all of the
+                following requirements:</p>
+            <ul class="small text-muted pl-4 mb-0">
+                <li>Minimum 8 character</li>
+                <li>At least one special character</li>
+                <li>At least one number</li>
+                <li>Cant be the same as a previous password</li>
+            </ul>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Password</button>
+</form>

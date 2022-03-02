@@ -101,12 +101,17 @@ export default class MeService extends Service {
     }
     return null;
   }
+  get isNotBasic() {
+    if (this.user && this.user.role) {
+      return this.user.role.toLowerCase() != 'basic';
+    }
+    return false;
+  }
 
   get isAdmin() {
     if (this.user && this.user.role) {
       return this.user.role.toLowerCase() === 'admin';
     }
-
     return false;
   }
 }
