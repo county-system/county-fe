@@ -20,15 +20,7 @@
   <li class="dropdown dropdown-user nav-item">
     <a class="dropdown-toggle nav-link dropdown-user-link" href="javascript:void(0);" data-toggle="dropdown"
       aria-expanded="false">
-      {{#if this.session.isAuthenticated}}
-      <span>
-        {{!-- {{svg-jar "account_circle_white" class="green" alt="avatar" height="40" width="40" }} --}}
-        <img class="round" src={{this.me.profileUri}} alt="avatar" height="40" width="40">
-
-      </span>
-      {{else}}
-      <img class="round" src="/images/avatar.png" alt="avatar" height="40" width="40">
-      {{/if}}
+      <Avatar::Avatar/>
     </a>
     <div class="dropdown-menu dropdown-menu-right pb-0">
       {{#if this.session.isAuthenticated}}

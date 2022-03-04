@@ -1,0 +1,13 @@
+{{yield}}
+
+
+{{#if this.session.isAuthenticated}}
+<div class="avatar online">
+    <span><img class="round img-responsive img-rounded  rounded-circle" src={{this.me.user.profileUri}} alt="avatar"
+            height="40" width="40" role="presentation"></span>
+</div>
+{{else}}
+<div class="avatar online">
+    <img class="round" src="/images/avatar.png" alt="avatar" height="40" width="40">
+</div>
+{{/if}}

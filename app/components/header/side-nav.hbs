@@ -12,31 +12,9 @@
 
     </div>
     <div class="sidebar-header">
-      <div class="user-pic">
-
-          <img class="img-responsive img-rounded"
-          src="/images/prof.jpeg"
-          alt="User picture">
-
-      </div>
-      <div class="user-info">
-        <span class="user-name">{{me.user.firstName}}
-          <strong>{{me.user.lastName}}</strong>
-        </span>
-        {{!-- <span class="user-role">Administrator</span> --}}
-        <span class="user-role">{{me.user.role}}</span>
-        <span class="user-status">
-          <i class="fa fa-circle"></i>
-          <span>Online</span>
-        </span>
-      </div>
     </div>
     <div class="sidebar-menu">
       <ul>
-        {{!-- <li class="header-menu">
-          <span>Financial</span>
-        </li> --}}
-
         <li class="sidebar">
           {{#link-to "dash" class="green"}}
           <i class="fa fa-tachometer-alt"></i>
