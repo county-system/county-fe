@@ -8,8 +8,6 @@ export default class MapsRoute extends Route {
     this.session.requireAuthentication(transition, 'login');
   }
   async model() {
-    // return this.store.findAll('maps');
-    const response = await fetch('/api/v2/maps.json');
-    return await response.json();
+    return this.store.findAll('maps');
   }
 }
