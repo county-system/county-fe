@@ -8,6 +8,6 @@ export default class MapsRoute extends Route {
     this.session.requireAuthentication(transition, 'login');
   }
   async model() {
-    return this.store.findAll('maps');
+    return this.store.findAll('map');
   }
 }

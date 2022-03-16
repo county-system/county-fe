@@ -8,8 +8,6 @@ export default class UsersRoute extends Route {
     this.session.requireAuthentication(transition, 'login');
   }
   async model() {
-    // return this.store.findAll('users');
-    const response = await fetch('/api/v2/users.json');
-    return await response.json();
+    return this.store.findAll('users');
   }
 }

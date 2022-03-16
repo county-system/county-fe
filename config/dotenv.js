@@ -8,8 +8,12 @@ module.exports = function (env) {
   return {
     fastbootAllowedKeys: [],
     enabled: !isCI, // disable for CI
-    clientAllowedKeys: ['GOOGLE_MAPS_API_KEY'],
-    failOnMissingKey: false,
+    clientAllowedKeys: [
+      'GOOGLE_MAPS_API_KEY',
+      'BACKEND_API',
+      'GOOGLE_MAPS_API',
+    ],
+    failOnMissingKey: true,
     path: path.join(path.dirname(__dirname), `.env.${env}`),
   };
 };
